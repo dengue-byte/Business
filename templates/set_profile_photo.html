@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Set Profile Photo') }} - Business{% endblock %}
+
+{% block content %}
+<div class="profile-photo-setup">
+    <button id="ignore-btn" class="ignore-btn">{{ _('Ignore') }}</button>
+    <div class="upload-container">
+        <div class="upload-area" id="upload-area">
+            <i class="fa-solid fa-cloud-arrow-up fa-3x"></i>
+            <p>{{ _('Drag & drop or click to upload') }}</p>
+            <input type="file" id="photo-input" accept="image/*" hidden>
+            <button class="button-primary">{{ _('Choose Photo') }}</button>
+        </div>
+        <div id="preview-container" class="preview-container hidden">
+            <img id="preview-img" src="" alt="Preview">
+            <div class="preview-actions">
+                <button id="upload-btn" class="button-primary">{{ _('Save') }}</button>
+                <button id="cancel-btn" class="button-secondary">{{ _('Cancel') }}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="message-container"></div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/set_profile_photo.js') }}"></script>
+{% endblock %}

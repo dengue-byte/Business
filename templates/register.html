@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Create an account') }} - Troquez-Ici{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>{{ _('Create an account') }}</h2>
+    <p>{{ _('Join our exchange and sharing community.') }}</p>
+    <div id="message-container"></div>
+    <form id="registerForm">
+        <div class="form-group">
+            <label for="username">{{ _('Username') }}</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="email">{{ _('Email address') }}</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">{{ _('Password') }}</label>
+            <input type="password" id="password" name="password" required>
+            
+            <div id="password-rules" class="password-rules">
+                <div id="length-rule" class="rule invalid">{{ _('At least 6 characters') }}</div>
+                <div id="lower-rule" class="rule invalid">{{ _('One lowercase letter') }}</div>
+                <div id="upper-rule" class="rule invalid">{{ _('One uppercase letter') }}</div>
+                <div id="number-rule" class="rule invalid">{{ _('One digit') }}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="confirm_password">{{ _('Confirm the password') }}</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+        </div>
+        <div class="form-group">
+    <label for="location">{{ _('Your Department') }}</label>
+    <select id="location-selector" name="location"></select>
+</div>
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/geolocation.js') }}"></script>
+<script src="{{ url_for('static', filename='js/register.js') }}"></script>
+{% endblock %}
+        <button type="submit" class="button-primary">{{ _('Sign up') }}</button>
+    </form>
+    <p class="form-footer-text">{{ _('Already have an account?') }} <a href="{{ url_for('login_page') }}">{{ _('Log in here') }}</a>.</p>
+</div>
+{% endblock %}

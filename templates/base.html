@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Business{% endblock %}</title>
+    
+    <link rel="manifest" href="{{ url_for('manifest') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}">
+    <meta name="theme-color" content="#0d6efd">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Business">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
+    {% block head_extra %}{% endblock %}
+</head>
+<body>
+    <div id="preloader"><div class="spinner"></div></div>
+    <div id="toast-container"></div>
+    
+    <header>
+        <div class="container">
+            <nav class="top-nav-level-1">
+                <div class="top-bar-left">
+                    <a href="{{ url_for('index_page') }}" class="logo-container">
+                        <span class="logo-text">Business</span>
+                    </a>
+                    <label class="theme-switch" for="dark-mode-toggle" title="{{ _('Change theme') }}">
+                        <input type="checkbox" id="dark-mode-toggle" />
+                        <i class="fa-solid fa-moon moon-icon"></i>
+                        <i class="fa-solid fa-sun sun-icon"></i>
+                    </label>
+                </div>
+    
+                <div class="top-bar-right">
+    <div class="search-container" id="header-search-container">
+        <div class="search-input-header-fake"></div>
+        
+        <button id="search-icon-btn" class="search-icon-btn" title="{{ _('Search') }}">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
+    
+                    {% if g.user %}
+                        <div class="notification-menu">
+                            <a href="{{ url_for('notifications_page') }}" class="notification-bell" title="{{ _('Notifications') }}">
+                                <i class="fa-solid fa-bell"></i>
+                            </a>
+                        </div>
+                        <div class="user-menu">
+                            <button class="user-menu-button">
+                                <i class="fa-solid fa-circle-user"></i>
+                            </button>
+                            <ul class="user-menu-dropdown">
+                                <li><a href="{{ url_for('profile_page', username=g.user.username) }}"><i class="fa-solid fa-user fa-fw"></i> {{ _('Profile') }}</a></li>
+                                <li><a href="{{ url_for('favorites_page') }}"><i class="fa-solid fa-bookmark fa-fw"></i> {{ _('My Favorites') }}</a></li>
+                                <li><a href="{{ url_for('settings_page') }}"><i class="fa-solid fa-gear fa-fw"></i> {{ _('Settings') }}</a></li>
+                                <li><a href="{{ url_for('help_page') }}"><i class="fa-solid fa-circle-question fa-fw"></i> {{ _('Help') }}</a></li>
+                                <li class="separator"><a href="#" id="logout-button"><i class="fa-solid fa-right-from-bracket fa-fw"></i> {{ _('Logout') }}</a></li>
+                            </ul>
+                        </div>
+                    {% else %}
+                        <button class="icon-button" id="about-button" title="{{ _('About') }}">
+                            <i class="fa-solid fa-circle-question"></i>
+                        </button>
+                        <div class="language-menu">
+                            <button class="language-menu-button" title="{{ _('Change language') }}">
+                                <i class="fa-solid fa-globe"></i>
+                            </button>
+                            <ul class="language-menu-dropdown">
+                                <li><a href="#" class="lang-selector" data-lang="fr">Français</a></li>
+                                <li><a href="#" class="lang-selector" data-lang="en">English</a></li>
+                            </ul>
+                        </div>
+                    {% endif %}
+                </div>
+            </nav>
+    
+            <nav class="top-nav-level-2">
+                {% if g.user %}
+                    <a href="{{ url_for('index_page') }}" class="desktop-nav-item mobile-nav-item" title="{{ _('Home') }}">
+                        <i class="fa-solid fa-house-chimney"></i><span>{{ _('Home') }}</span>
+                    </a>
+                    <a href="{{ url_for('posts_page') }}" class="desktop-nav-item mobile-nav-item" title="{{ _('Posts') }}">
+                        <i class="fa-solid fa-th-large"></i><span>{{ _('Posts') }}</span>
+                    </a>
+                    <a href="{{ url_for('create_post_page') }}" class="desktop-nav-item mobile-nav-item nav-create-post create" title="{{ _('Create Post') }}">
+                        <i class="fa-solid fa-plus-circle"></i><span class="create-span">{{ _('Create') }}</span>
+                    </a>
+                    <a href="{{ url_for('messages_page') }}" class="desktop-nav-item mobile-nav-item" title="{{ _('Messages') }}">
+                        <i class="fa-solid fa-comment-dots"></i><span>{{ _('Messages') }}</span>
+                    </a>
+                    <a href="{{ url_for('my_posts_page') }}" class="desktop-nav-item mobile-nav-item" title="{{ _('My Posts') }}">
+                        <i class="fa-solid fa-folder-open"></i><span>{{ _('My Posts') }}</span>
+                    </a>
+                {% else %}
+                    <a href="{{ url_for('index_page') }}" class="desktop-nav-item mobile-nav-item" title="{{ _('Home') }}">
+                        <i class="fa-solid fa-house-chimney"></i><span>{{ _('Home') }}</span>
+                    </a>
+                    <a href="{{ url_for('register_page') }}" class="desktop-nav-item mobile-nav-item" title="{{ _('Register') }}">
+                        <i class="fa-solid fa-user-plus"></i><span>{{ _('Register') }}</span>
+                    </a>
+                    <a href="{{ url_for('login_page') }}" class="desktop-nav-item mobile-nav-item" title="{{ _('Login') }}">
+                        <i class="fa-solid fa-right-to-bracket"></i><span>{{ _('Login') }}</span>
+                    </a>
+                {% endif %}
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div  class="site-footer">
+            <p>&copy; 2025 Business. {{ _('All rights reserved.') }}</p>
+        </div>
+    </footer>
+
+    <button id="back-to-top" title="{{ _('Go to top') }}"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <div id="image-viewer-modal" class="modal-overlay hidden">
+        <div class="modal-content-photo">
+            <img id="modal-image-content" src="" alt="Aperçu de l'image">
+        </div>
+        <button class="close-modal-btn">&times;</button>
+    </div>
+
+    <div id="alert-modal" class="modal-overlay hidden">
+    <div class="alert-modal-content">
+        <div id="alert-modal-text"></div>
+        <div id="alert-modal-actions" class="modal-actions">
+            </div> 
+    </div>
+</div>
+
+    <div id="about-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="close-modal-btn">&times;</button>
+            <h3>{{ _('Welcome to Business!') }}</h3>
+            <p>{{ _('Business is a local platform for exchange and sharing. Here, you can give a second life to your objects by exchanging them, or share your skills by offering services.') }}</p>
+            <p>{{ _('To start interacting with the community, discover all the features, and post your own ads, creating an account is necessary. Join us!') }}</p>
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <a href="{{ url_for('register_page') }}" class="button-primary">{{ _('Sign up for free') }}</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    
+    <script>
+        // Script de traduction
+        window._ = function(text, vars) {
+            let translated = text;
+            if (vars) {
+                for (const key in vars) {
+                    translated = translated.replace(`%(${key})s`, vars[key]);
+                }
+            }
+            return translated;
+        };
+        fetch('/api/translations')
+            .then(res => res.json())
+            .then(data => {
+                window.translations = data;
+                window._ = function(text, vars) {
+                    let translated = window.translations[text] || text;
+                    if (vars) {
+                        for (const key in vars) {
+                            translated = translated.replace(`%(${key})s`, vars[key]);
+                        }
+                    }
+                    return translated;
+                };
+            })
+            .catch(error => console.error("Could not load translations:", error));
+    </script>
+    <script src="{{ url_for('static', filename='js/auth_check.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/dark_mode.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/header_search.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/mobile_nav.js') }}"></script> 
+    <script src="{{ url_for('static', filename='js/nav_active.js') }}"></script> 
+    <script src="{{ url_for('static', filename='js/ux_enhancer.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/global_socket.js') }}"></script>
+    
+    {% if not g.user %}
+    <script src="{{ url_for('static', filename='js/guest_nav.js') }}"></script>
+    {% endif %}
+
+    {% block scripts %}{% endblock %}
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register("{{ url_for('service_worker') }}").then(reg => {
+                    console.log('Service worker registered!', reg);
+                }).catch(err => {
+                    console.log('Service worker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+    
+    {% if g.user %}
+    <script>
+        const VAPID_PUBLIC_KEY = "{{ config.VAPID_PUBLIC_KEY }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/push-notifications.js') }}"></script>
+    {% endif %}
+</body>
+</html>

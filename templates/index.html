@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Home') }} - Business{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+    <h1>{{ _('Exchanges, Share, Discover.') }}</h1>
+    <p>{{ _('Give a second life to your objects and share your services with a benevolent local community.') }}</p>
+    <a href="{{ url_for('posts_page') }}" class="button-primary">{{ _('See all ads') }}</a>
+</div>
+
+<div class="page-header">
+    <h2>{{ _('Last Ads') }}</h2>
+    <div class="modern-search-bar homepage-search">
+        <i class="fa-solid fa-search"></i>
+        <input type="search" id="search-input" placeholder="{{ _('What are you looking for today?') }}">
+    </div>
+</div>
+
+<div id="message-container"></div>
+<div id="posts-list-container" class="posts-grid">
+    {% if latest_posts %}
+    {% for post in latest_posts %}
+        <div class="post-card">
+            
+            {% set favoritedClass = 'favorited' if g.user and post in g.user.favorite_posts else '' %}
+            <button class="favorite-btn {{ favoritedClass }}" data-post-id="{{ post.id }}" title="{{ _('Save') }}">
+                <svg width="24" height="24" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"></path></svg>
+            </button>
+            
+            <a href="{{ url_for('post_detail_page', post_id=post.id) }}" class="post-card-link">
+                {% if post.images %}
+                <div class="post-card-image" style="background-image: url({{ url_for('uploaded_file', filename=post.images[0].file_path) }});"></div>
+                {% endif %}
+                <div class="post-card-content">
+                    <span class="post-card-category category-{{ post.category|lower }}">
+                        {{ post.category }}
+                    </span>
+                    <h3>{{ post.title }}</h3>
+                    {% if post.locations %}
+    <div class="post-card-location">
+        <i class="fa-solid fa-map-marker-alt"></i>
+        <span>{{ post.locations|map(attribute='name')|join(', ') }}</span>
+    </div>
+    {% endif %}
+                </div>
+            </a>
+            <div class="post-card-footer-new">
+                <div class="footer-left">
+                    {% if post.author.profile_photo %}
+                        <a href="#" class="author-avatar-link" data-img-url="{{ url_for('uploaded_file', filename=post.author.profile_photo) }}" title="Voir la photo">
+                            <img src="{{ url_for('uploaded_file', filename=post.author.profile_photo) }}" class="author-photo-small">
+                        </a>
+                    {% else %}
+                        <div class="author-initial-small">{{ post.author.username[0]|upper }}</div>
+                    {% endif %}
+                    <a href="{{ url_for('profile_page', username=post.author.username, from_post=post.id) }}" title="Voir le profil">{{ post.author.username }}</a>
+                </div>
+                
+<div class="footer-center interactive-footer-item" 
+         data-message="{{ _('%(count)s people interact with this ad.', count=post.interest_count) }}" 
+         data-author-id="{{ post.user_id }}" 
+         data-post-id="{{ post.id }}" 
+         title="Voir les interactions">
+        <i class="fa-solid fa-comments"></i>
+        <span>{{ post.interest_count }}</span>
+    </div>
+
+    <div class="footer-right interactive-footer-item" 
+         data-message="{{ _('This ad has been viewed %(count)s times.', count=post.view_count) }}" 
+         title="Voir les vues">
+        <i class="fa-solid fa-eye"></i>
+        <span>{{ post.view_count }}</span>
+    </div>
+</div>
+            </div>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>{{ _('No ad for the moment. Be the first to create one!') }}</p>
+{% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}

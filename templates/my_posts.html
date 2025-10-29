@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('My ads') }} - Business{% endblock %}
+
+{% block content %}
+<div class="page-content-wrapper">
+
+    <div class="page-header">
+        <h2>{{ _('My ads') }}</h2>
+        
+        <div class="main-actions-menu">
+            <button id="main-actions-button" class="actions-button" title="{{ _('Actions') }}">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+            <div id="main-actions-dropdown" class="actions-dropdown">
+                <!-- Le contenu est généré par JS -->
+            </div>
+        </div>
+    </div>
+
+    <div id="message-container"></div>
+
+    <div id="my-posts-list-container" class="posts-grid">
+        <!-- Les annonces sont chargées ici par JS -->
+    </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/my_posts.js') }}"></script>
+{% endblock %}

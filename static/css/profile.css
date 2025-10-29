@@ -1,0 +1,200 @@
+/* ============================================= */
+/* --- STYLE DE LA PAGE PROFIL (MODERNISÉ) --- */
+/* ============================================= */
+
+:root {
+    --star-color: #ffc107; /* Jaune doré pour les étoiles */
+}
+
+/* --- Conteneurs principaux --- */
+.profile-container,
+.profile-reviews-container {
+    background-color: var(--light-surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* --- En-tête du Profil (Avatar, Nom, etc.) --- */
+.profile-header {
+    display: flex;
+    flex-direction: column; /* Empilé sur mobile */
+    align-items: center;   /* Centré sur mobile */
+    text-align: center;    /* Texte centré sur mobile */
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem; /* Marge en bas sur mobile */
+    flex-shrink: 0;
+}
+
+.profile-info h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+}
+
+.profile-info p {
+    margin: 0;
+    color: var(--light-text-secondary);
+}
+
+.profile-email {
+    font-size: 0.9rem;
+    background-color: var(--light-bg-color);
+    padding: 5px 10px;
+    border-radius: var(--border-radius-sm);
+    display: inline-block;
+    margin-top: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.profile-info .button-primary {
+    margin-top: 15px;
+}
+
+/* --- Note par étoiles --- */
+.profile-rating {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer à la ligne si pas assez de place */
+    justify-content: center; /* Centre sur mobile */
+    align-items: center;
+    gap: 0.5rem 1rem;
+    margin-top: 10px;
+}
+
+.profile-rating .stars {
+    font-size: 1.5rem;
+}
+
+.profile-rating .stars .star.filled {
+    color: var(--star-color);
+}
+
+.profile-rating .stars .star {
+    color: var(--border-color);
+}
+
+.profile-rating .rating-text {
+    font-size: 0.9rem;
+    color: var(--light-text-secondary);
+}
+
+/* --- Section des annonces de l'utilisateur --- */
+.profile-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Section des avis reçus --- */
+.profile-reviews-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.review-card {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+.review-card:first-of-type {
+    padding-top: 0;
+}
+.review-card:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.author-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--light-text-secondary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+.author-info strong a {
+    text-decoration: none;
+    color: var(--light-text-color);
+}
+.author-info strong a:hover {
+    color: var(--primary-color);
+}
+
+.review-date {
+    font-size: 0.8rem;
+    color: var(--light-text-secondary);
+}
+
+.review-stars {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.review-stars .star.filled {
+    color: var(--star-color);
+}
+
+.review-stars .star {
+    color: var(--border-color);
+}
+
+.review-comment {
+    color: var(--light-text-color);
+    line-height: 1.6;
+    background-color: var(--light-bg-color);
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    border-left: 3px solid var(--primary-color);
+    font-size: 0.9rem;
+}
+
+/* ============================================= */
+/* --- Styles pour Ordinateur (min-width: 768px) --- */
+/* ============================================= */
+@media (min-width: 768px) {
+    .profile-container,
+    .profile-reviews-container {
+        padding: 2.5rem;
+    }
+
+    .profile-header {
+        flex-direction: row; /* Côte à côte sur grand écran */
+        text-align: left;    /* Texte aligné à gauche */
+    }
+
+    .profile-avatar {
+        margin-right: 2rem; /* Marge à droite sur grand écran */
+        margin-bottom: 0;
+    }
+
+    .profile-rating {
+        justify-content: flex-start; /* Aligné à gauche sur grand écran */
+    }
+}

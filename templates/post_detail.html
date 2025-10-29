@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Details of the ad') }} - Troquez-Ici{% endblock %}
+{% block head_extra %}
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<style>
+    .swiper-button-next, .swiper-button-prev { color: var(--primary-color); }
+    .swiper-pagination-bullet-active { background: var(--primary-color); }
+</style>
+{% endblock %}
+
+{% block content %}
+<div id="message-container"></div>
+<div class="post-detail-container">
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const POST_ID = "{{ post_id }}";
+</script>
+<script src="{{ url_for('static', filename='js/post_detail.js') }}"></script>
+{% endblock %}

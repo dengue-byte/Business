@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Create an ad') }} - Business{% endblock %}
+
+{% block content %}
+<div class="form-container modern-form">
+    <h2>{{ _('Create your Ad') }}</h2>
+    <p class="subtitle">{{ _('Follow the steps to publish your ad easily.') }}</p>
+    
+    <div id="message-container"></div>
+    <form id="createPostForm">
+        
+        <fieldset class="form-step">
+            <legend><span class="step-number">1</span> {{ _('Basic Information') }}</legend>
+            <div class="form-group">
+                <label for="title">{{ _('Ad title') }}</label>
+                <input type="text" id="title" name="title" required placeholder="{{ _('Ex: Object exchange, gardening service...') }}">
+            </div>
+            <div class="form-group">
+                <label for="description">{{ _('Detailed description') }}</label>
+                <textarea id="description" name="description" rows="5" required placeholder="{{ _('Describe precisely what you are offering or looking for.') }}"></textarea>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-step">
+            <legend><span class="step-number">2</span> {{ _('Category & Type') }}</legend>
+            <div class="form-group-grid">
+                <div class="form-group">
+                    <label for="category-pills">{{ _('Category') }}</label>
+                    <div id="category-pills" class="choice-pills">
+                        <button type="button" class="pill-btn" data-category="Objet"><i class="fa-solid fa-box-open"></i> {{ _('Object') }}</button>
+                        <button type="button" class="pill-btn" data-category="Service"><i class="fa-solid fa-handshake-angle"></i> {{ _('Service') }}</button>
+                    </div>
+                </div>
+                 <div class="form-group">
+                    <label for="type-pills">{{ _('Ad type') }}</label>
+                    <div id="type-pills" class="choice-pills">
+                        <button type="button" class="pill-btn" data-type="Offre"><i class="fa-solid fa-arrow-up-from-bracket"></i> {{ _('I offer') }}</button>
+                        <button type="button" class="pill-btn" data-type="Demande"><i class="fa-solid fa-arrow-down-to-bracket"></i> {{ _('I request') }}</button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-step">
+            <legend><span class="step-number">3</span> {{ _('Add Photos') }}</legend>
+            <div class="form-group">
+                <label for="file" class="upload-area">
+                    <i class="fa-solid fa-cloud-arrow-up fa-2x"></i>
+                    <p><strong>{{ _('Click here') }}</strong> {{ _('or drag and drop images') }}</p>
+                    <span class="form-hint">{{ _('The first image will be the cover.') }}</span>
+                </label>
+                <input type="file" id="file" name="file" accept="image/*" multiple style="display: none;">
+                <div id="image-preview-container" class="image-preview-container"></div>
+            </div>
+        </fieldset>
+        
+        <fieldset class="form-step">
+            <legend><span class="step-number">4</span> {{ _('Location') }}</legend>
+            <div class="form-group">
+                <label for="location-selector">{{ _('Department(s) concerned') }}</label>
+                <p class="form-hint">{{ _('You can select multiple departments.') }}</p>
+                <select id="location-selector" name="location" required multiple></select>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="button-primary submit-btn-large">{{ _('Publish my Ad') }} <i class="fa-solid fa-rocket"></i></button>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+<script src="{{ url_for('static', filename='js/geolocation.js') }}"></script>
+<script src="{{ url_for('static', filename='js/create_post.js') }}"></script>
+{% endblock %}

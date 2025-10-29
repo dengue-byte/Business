@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Modify an ad') }} - Business{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>{{ _('Modify the ad') }}</h2>
+    <div id="message-container"></div>
+    <form id="editPostForm">
+        <input type="hidden" id="postId" value="{{ post_id }}">
+        
+        <div class="form-group">
+            <label for="title">{{ _('Title') }}</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="description">{{ _('Description') }}</label>
+            <textarea id="description" name="description" rows="6" required></textarea>
+        </div>
+        
+        <div class="form-group">
+            <label for="type">{{ _('Type of ad') }}</label>
+            <select id="type" name="type" required>
+                <option value="Offre">{{ _('I offer') }}</option>
+                <option value="Demande">{{ _('I request') }}</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="category">{{ _('Category') }}</label>
+            <select id="category" name="category" required>
+                <option value="Objet">{{ _('Object') }}</option>
+                <option value="Service">{{ _('Service') }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>{{ _('Current image') }}</label>
+            <div id="image-preview-container" class="image-preview-container">
+                </div>
+                <div class="form-group">
+    <label for="file">{{ _('Image(s)') }}</label>
+    <input type="file" id="file" name="file" accept="image/*" multiple>
+    <div id="image-preview-container" class="image-preview-container"></div>
+</div>
+            <label for="file">{{ _('Change or add an image') }}</label>
+            <input type="file" id="file" name="file" accept="image/*" multiple>
+        </div>
+        <div class="form-group">
+    <label for="location-selector">{{ _('Ad Location(s)') }}</label>
+    <select id="location-selector" name="location" required multiple></select>
+</div>
+        
+        <button type="submit" class="button-primary">{{ _('Update the ad') }}</button>
+    </form>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/geolocation.js') }}"></script>
+<script src="{{ url_for('static', filename='js/edit_post.js') }}"></script>
+{% endblock %}

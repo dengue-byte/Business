@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Help Center') }} - Business{% endblock %}
+
+{% block content %}
+<div class="static-page-container">
+    <h1><i class="fa-solid fa-circle-question"></i> {{ _('Help Center') }}</h1>
+    <p class="subtitle">{{ _('Welcome to the Business usage guide. Find here all the answers to your questions.') }}</p>
+
+    <nav class="toc">
+        <h3>{{ _('Table of contents') }}</h3>
+        <ul>
+            <li><a href="#section-1">{{ _('1. First Steps on Business') }}</a></li>
+            <li><a href="#section-2">{{ _('2. Posting and Managing Your Ads') }}</a></li>
+            <li><a href="#section-3">{{ _('3. Interacting with the Community') }}</a></li>
+            <li><a href="#section-4">{{ _('4. Using Private Messaging') }}</a></li>
+            <li><a href="#section-5">{{ _('5. Managing Your Account and Settings') }}</a></li>
+            <li><a href="#section-6">{{ _('6. For Visitors (Without an Account)') }}</a></li>
+        </ul>
+    </nav>
+
+    <section id="section-1" class="help-section">
+        <h2>{{ _('1. First Steps on Business') }}</h2>
+        <h3><i class="fa-solid fa-user-plus"></i> {{ _('Create an account and log in') }}</h3>
+        <p>{{ _('To enjoy all features, you must first create an account. Click on "Register" in the navigation bar. Fill in the form with a username, a valid email address, and a secure password (at least 6 characters, including an uppercase letter, a lowercase letter, and a digit). A confirmation email will be sent to you to activate your account.') }}</p>
+        <p>{{ _('Once your account is activated, you can log in via the "Login" page. You will then be prompted to add a profile picture, which you can do immediately or ignore to do it later.') }}</p>
+    </section>
+
+    <section id="section-2" class="help-section">
+        <h2>{{ _('2. Posting and Managing Your Ads') }}</h2>
+        <h3><i class="fa-solid fa-circle-plus"></i> {{ _('Create an ad') }}</h3>
+        <p>{{ _('Click on the "Create" icon. You will first have to choose if you want to post a <strong>Service</strong> or an <strong>Object</strong>. Then fill in the form by giving a clear title, a detailed description, and specifying if it is an <strong>Offer</strong> (you provide) or a <strong>Request</strong> (you are looking for). You can add several photos to your ad and select multiple locations.') }}</p>
+        
+        <h3><i class="fa-solid fa-folder-open"></i> {{ _('Manage "My Ads"') }}</h3>
+        <p>{{ _('This section groups all the ads you have published. For each ad, you can:') }}</p>
+        <ul>
+            <li><strong>{{ _('Hide/Show:') }}</strong> {{ _('Use the <i class="fa-solid fa-eye"></i> or <i class="fa-solid fa-eye-slash"></i> button to make an ad temporarily invisible or visible to other users.') }}</li>
+            <li><strong>{{ _('Edit:') }}</strong> {{ _('The <i class="fa-solid fa-pen-to-square"></i> button opens the editing form to change the title, description, or photos.') }}</li>
+            <li><strong>{{ _('Delete:') }}</strong> {{ _('The <i class="fa-solid fa-trash"></i> button permanently deletes the ad.') }}</li>
+            <li><strong>{{ _('Multiple Selection:') }}</strong> {{ _('Press and hold an ad on mobile (or use the options menu <i class="fa-solid fa-ellipsis-vertical"></i> at the top right) to select multiple ads and perform bulk actions (hide, show, delete all).') }}</li>
+        </ul>
+    </section>
+
+    <section id="section-3" class="help-section">
+        <h2>{{ _('3. Interacting with the Community') }}</h2>
+        <h3><i class="fa-solid fa-magnifying-glass"></i> {{ _('Browsing and Filtering Ads') }}</h3>
+        <p>{{ _('On the "Ads" page, you can search for a specific term, filter by type (Offers/Requests), by category (Objects/Services), by location, and sort the results (Newest/Oldest).') }}</p>
+        
+        <h3><i class="fa-solid fa-bookmark"></i> {{ _('Favorites') }}</h3>
+        <p>{{ _('Click on the bookmark icon on an ad card to add it to your "My Favorites" page. This allows you to easily find it later.') }}</p>
+
+        <h3><i class="fa-solid fa-star"></i> {{ _('Understanding a User Profile') }}</h3>
+        <p>{{ _('By clicking on a user\'s name, you access their profile where you can find:') }}</p>
+        <ul>
+            <li><strong>{{ _('Average Rating:') }}</strong> {{ _('The average of the ratings (out of 5 stars) left by other users.') }}</li>
+            <li><strong>{{ _('Interactions:') }}</strong> {{ _('The total number of interests accumulated on all their ads. It reflects their activity and the attractiveness of what they offer on the platform.') }}</li>
+            <li><strong>{{ _('Their active ads:') }}</strong> {{ _('A list of all the ads currently published by that user.') }}</li>
+        </ul>
+    </section>
+    
+    <section id="section-4" class="help-section">
+        <h2>{{ _('4. Using Private Messaging') }}</h2>
+        <p>{{ _('Messaging allows you to chat privately and securely with other users.') }}</p>
+        <h3><i class="fa-solid fa-paper-plane"></i> {{ _('Start a conversation') }}</h3>
+        <p>{{ _('To contact a user, go to one of their ads and click on the "Contact by Chat" button. This will create a new conversation in your messaging and increase the ad\'s interest count by one.') }}</p>
+        <h3><i class="fa-solid fa-toolbox"></i> {{ _('Features') }}</h3>
+        <ul>
+            <li><strong>{{ _('Text, voice, and files:') }}</strong> {{ _('You can send written messages, record voice notes by holding the microphone icon <i class="fa-solid fa-microphone"></i>, or attach image files with the paperclip icon <i class="fa-solid fa-paperclip"></i>.') }}</li>
+            <li><strong>{{ _('Reply to a message:') }}</strong> {{ _('Hover over (or tap on) a message to display a reply icon <i class="fa-solid fa-reply"></i>. Click on it to quote this message in your response.') }}</li>
+            <li><strong>{{ _('Rate a user:') }}</strong> {{ _('After an interaction, you can leave a rating for your interlocutor using the "Rate" button at the top of the conversation.') }}</li>
+            <li><strong>{{ _('Message Status:') }}</strong> {{ _('A single check <i class="fa-solid fa-check"></i> means sent. Two gray checks <i class="fa-solid fa-check-double"></i> mean delivered. Two blue checks mean read.') }}</li>
+        </ul>
+    </section>
+
+    <section id="section-5" class="help-section">
+        <h2>{{ _('5. Managing Your Account and Settings') }}</h2>
+        <h3><i class="fa-solid fa-gear"></i> {{ _('The Settings page') }}</h3>
+        <p>{{ _('Accessible from the user menu, the "Settings" page allows you to control your account. You can:') }}</p>
+        <ul>
+            <li><strong>{{ _('Language:') }}</strong> {{ _('Change the application language. This choice will be saved for your future visits.') }}</li>
+            <li><strong>{{ _('Theme:') }}</strong> {{ _('Switch between light and dark themes using the sun/moon icon in the top navigation bar.') }}</li>
+            <li>{{ _('Modify your username, email, and profile picture.') }}</li>
+            <li>{{ _('Change your password.') }}</li>
+            <li>{{ _('Log out.') }}</li>
+            <li>{{ _('Permanently delete your account (warning, this action is irreversible).') }}</li>
+        </ul>
+    </section>
+
+    <section id="section-6" class="help-section">
+        <h2>{{ _('6. For Visitors (Without an Account)') }}</h2>
+        <h3><i class="fa-solid fa-binoculars"></i> {{ _('Discovering the Platform') }}</h3>
+        <p>{{ _('Even without an account, you can browse the latest ads. In the navigation bar, you will find an "About" icon (?) that explains the concept of the application and a globe icon to change the display language.') }}</p>
+        <h3>{{ _('Why Register?') }}</h3>
+        <p>{{ _('Registration is free and necessary to unlock all features: contact other members, post your own ads, save your favorites, and much more.') }}</p>
+    </section>
+</div>
+{% endblock %}

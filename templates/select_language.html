@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="{{ get_locale() }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ _('Welcome - Bienvenue') }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+            color: #004d40;
+        }
+        .selection-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 3rem 4rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        .logo {
+            width: 80px;
+            margin-bottom: 1.5rem;
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+        .language-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        .lang-btn {
+            background-color: #00796b;
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .lang-btn:hover {
+            background-color: #004d40;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+    <div class="selection-container">
+        <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="{{ _('Business Logo') }}" class="logo">
+        <h1>{{ _('Welcome / Bienvenue') }}</h1>
+        <p>{{ _('Please select your language. / Veuillez sélectionner votre langue.') }}</p>
+        <form method="POST" action="{{ url_for('select_language') }}">
+            <div class="language-buttons">
+                <button type="submit" name="language" value="en" class="lang-btn">English</button>
+                <button type="submit" name="language" value="fr" class="lang-btn">Français</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

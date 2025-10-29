@@ -1,0 +1,3304 @@
+/* ============================================= */
+/* --- 1. VARIABLES & STYLES GLOBAUX --- */
+/* ============================================= */
+
+:root {
+    --primary-color: #0d6efd;
+    --primary-color-dark: #0b5ed7;
+    --light-bg-color: #f8f9fa;
+    --light-surface-color: #ffffff;
+    --light-text-color: #212529;
+    --light-text-secondary: #6c757d;
+    --border-color: #dee2e6;
+    --shadow-color: rgba(0, 0, 0, 0.075);
+    --success-color: #198754;
+    --error-color: #dc3545;
+    --info-color: #6c757d;
+    --font-family-base: 'Roboto', sans-serif;
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --transition-speed: 0.2s;
+     --service-color: #28a745;
+/* Vert pour Services */
+    --object-color: #17a2b8;
+/* Bleu pour Objets */
+    --gradient-service: linear-gradient(135deg, var(--service-color), #20c997);
+    --gradient-object: linear-gradient(135deg, var(--object-color), #0dcaf0);
+}
+
+/* Force heure en noir en mode clair */
+body:not(.dark-mode) .message-meta span,
+body:not(.dark-mode) .chat-item-time {
+    color: #000 !important;
+}
+
+body.dark-mode {
+    --light-bg-color: #121212;
+    --light-surface-color: #1e1e1e;
+    --light-text-color: #e3e3e3;
+    --light-text-secondary: #a0a0a0;
+    --border-color: #343a40;
+    --shadow-color: rgba(0, 0, 0, 0.25);
+    --service-color: #198754; /* Vert plus sombre */
+    --object-color: #0dcaf0;
+/* Bleu plus clair en dark */
+    --gradient-service: linear-gradient(135deg, #198754, #20c997);
+    --gradient-object: linear-gradient(135deg, #0dcaf0, #17a2b8);
+}
+
+body.dark-mode .message-meta span,
+body.dark-mode .chat-item-time {
+    color: var(--light-text-secondary);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-base);
+    background-color: var(--light-bg-color);
+    color: var(--light-text-color);
+    line-height: 1.6;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+a:hover {
+    color: var(--primary-color-dark);
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ============================================= */
+/* --- 2. HEADER & NAVIGATION --- */
+/* ============================================= */
+
+header {
+    background-color: var(--light-surface-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color var(--transition-speed) ease;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 35px;
+    display: block;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--light-text-color);
+}
+
+.top-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.center-desktop-nav {
+    display: none;
+}
+
+.nav-item, .mobile-nav-item {
+    position: relative;
+}
+.mobile-nav-item .nav-notification-badge {
+    top: -5px !important;
+    right: 10px !important;
+    display: flex !important;
+}
+
+.nav-notification-badge {
+    position: absolute;
+    top: -8px; 
+    right: -8px;
+    background-color: var(--error-color);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--light-surface-color);
+    padding: 0 4px;
+    visibility: visible !important;
+}
+
+.center-desktop-nav .nav-notification-badge {
+    top: -5px;
+    right: 0px;
+}
+
+.nav-item.active, .mobile-nav-item.active {
+    color: var(--primary-color) !important;
+}
+
+.nav-item.active i, .mobile-nav-item.active i {
+    color: var(--primary-color) !important;
+}
+
+.nav-item:hover, .mobile-nav-item:hover {
+    color: var(--primary-color-dark);
+}
+
+/* Mobile Nav */
+.top-nav-level-2 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 55px;
+    border-top: 1px solid var(--border-color);
+}
+
+.mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    color: var(--light-text-secondary);
+    font-size: 0.7rem;
+    text-decoration: none;
+}
+
+.mobile-nav-item i {
+    font-size: 1.8rem !important;
+}
+
+.mobile-nav-item span {
+    display: none !important;
+}
+
+.mobile-nav-item.active i {
+    color: var(--primary-color) !important;
+}
+
+.mobile-nav-item[href="/messages"] .nav-notification-badge {
+    top: -15px; /* Ajusté pour être plus près du haut de l'icône */
+    right: 15px;
+/* Ajusté pour décaler le badge vers la gauche */
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* Search Bar */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--light-text-secondary);
+    padding: 0.5rem;
+}
+
+.search-input-header-fake {
+  /* Recopie les styles de ton ancien input : couleur, fond, padding, etc. */
+  background-color: var(--input-bg);
+  color: var(--text-color-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  width: 100%;
+  font-size: 0.9rem;
+  cursor: pointer; /* Indique qu'on peut cliquer */
+}
+
+.search-container.active .search-input-header {
+    width: 150px;
+    opacity: 1;
+    padding: 0.5rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Theme Switch */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: var(--light-text-secondary);
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.theme-switch .sun-icon,
+.theme-switch .moon-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.theme-switch .sun-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+body.dark-mode .theme-switch .sun-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0);
+}
+
+body.dark-mode .theme-switch .moon-icon {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* User Menu */
+.user-menu { position: relative;
+}
+
+.user-menu-button {
+    font-size: 1.1rem; /* Ajuste la taille de l'icône à l'intérieur */
+    background-color: var(--light-bg-color);
+/* Un fond léger */
+    border: 1px solid var(--border-color);
+/* Une bordure subtile */
+    color: var(--light-text-secondary); /* Couleur de l'icône */
+    width: 40px;
+/* Largeur fixe */
+    height: 40px; /* Hauteur fixe */
+    border-radius: 50%;
+/* La magie pour le rendre rond ! */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.user-menu-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.user-menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background-color: var(--light-surface-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    list-style: none;
+    padding: 0.5rem 0;
+    width: 220px;
+    z-index: 1100;
+}
+
+.user-menu-dropdown.active { display: block; }
+
+.user-menu-dropdown li a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: var(--light-text-color);
+    font-size: 0.9rem;
+}
+
+.user-menu-dropdown li a:hover {
+    background-color: var(--light-bg-color);
+    text-decoration: none;
+}
+
+.user-menu-dropdown i { width: 20px;
+    text-align: center; }
+
+li.separator { border-top: 1px solid var(--border-color); margin: 0.5rem 0;
+}
+
+/* Desktop Adjustments */
+@media (min-width: 768px) {
+    .top-nav-level-2 { display: none;
+    }
+
+    .top-nav-level-1 {
+        gap: 2rem;
+        justify-content: normal;
+    }
+
+    .center-desktop-nav {
+        display: flex;
+        gap: 2rem;
+        margin: 0 auto;
+    }
+
+    .center-desktop-nav a {
+        font-weight: 600;
+        color: var(--light-text-secondary);
+        text-decoration: none;
+    }
+
+    .center-desktop-nav a:hover {
+        color: var(--primary-color);
+    }
+
+    .user-menu-button .mobile-icon { display: none; }
+    .user-menu-button .desktop-icon { display: block;
+    }
+
+    .search-container.active .search-input-header { width: 200px; }
+}
+
+/* ============================================= */
+/* --- 3. COMPOSANTS COMMUNS --- */
+/* ============================================= */
+
+.button-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-family-base);
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+    text-align: center;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.button-primary:hover, .button-primary:focus {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-2px);
+}
+
+.button-primary:disabled {
+    background-color: var(--light-text-secondary);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background-color: var(--light-surface-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.form-container h2 { margin-bottom: 0.5rem;
+    text-align: center; }
+
+.form-container p { text-align: center; margin-bottom: 2rem; color: var(--light-text-secondary); }
+
+.form-group { margin-bottom: 1.5rem; }
+
+.form-group label { display: block;
+    margin-bottom: 0.5rem; font-weight: 600; }
+
+input[type="text"], input[type="email"], input[type="password"], input[type="search"], textarea, select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--light-bg-color);
+    color: var(--light-text-color);
+    font-family: var(--font-family-base);
+    font-size: 1rem;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+}
+
+.form-footer-text { margin-top: 1.5rem; text-align: center; font-size: 0.9rem;
+}
+
+#message-container { margin: 1rem 0; }
+
+.message { padding: 1rem; border-radius: var(--border-radius-sm); margin-bottom: 1rem; text-align: center; opacity: 1;
+    transition: opacity 0.5s ease; }
+
+.message.success { background-color: var(--success-color); color: white; }
+
+.message.error { background-color: var(--error-color); color: white; }
+
+.message.info { background-color: var(--info-color);
+    color: white; }
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
+}
+
+.modal-overlay:not(.hidden) { opacity: 1; visibility: visible; }
+
+.modal-content { background-color: var(--light-surface-color); padding: 2rem;
+    border-radius: var(--border-radius-md); box-shadow: 0 5px 15px rgba(0,0,0,0.3); width: 90%; max-width: 450px; position: relative; }
+
+.close-modal-btn { position: absolute; top: 10px;
+    right: 15px; background: none; border: none; font-size: 1.5rem; color: var(--light-text-secondary); cursor: pointer; }
+
+.star-rating { display: flex; justify-content: center;
+    margin: 1.5rem 0; }
+
+.star-rating .star { font-size: 2.5rem; cursor: pointer; color: var(--border-color); transition: color 0.2s, transform 0.2s;
+}
+
+.star-rating:hover .star, .star-rating .star.hovered { color: #ffc107; transform: scale(1.1); }
+
+.star-rating .star:hover ~ .star { color: var(--border-color); transform: scale(1);
+}
+
+/* ============================================= */
+/* --- 4. STYLE DES ANNONCES --- */
+/* ============================================= */
+
+.hero-section { text-align: center; padding: 4rem 1rem; margin-bottom: 2rem;
+    border-radius: var(--border-radius-md); background-color: var(--light-surface-color); }
+
+.hero-section h1 { margin-bottom: 1rem; font-size: 2.5rem; }
+
+.hero-section p { max-width: 600px;
+    margin: 0 auto 1.5rem auto; color: var(--light-text-secondary); }
+
+.posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; padding: 2rem 0;
+}
+
+.post-card { background-color: var(--light-surface-color); border-radius: var(--border-radius-md); overflow: hidden; box-shadow: 0 4px 8px var(--shadow-color); transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    position: relative; display: flex; flex-direction: column; }
+
+.post-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px var(--shadow-color); }
+
+.post-card-link { text-decoration: none;
+    color: inherit; display: flex; flex-direction: column; flex-grow: 1; }
+
+.post-card-link:hover { text-decoration: none; }
+
+.post-card-image { height: 200px; background-size: cover; background-position: center;
+}
+
+.post-card-content { padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1; }
+
+.post-card-category {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0.6rem; /* Plus compact */
+    border-radius: var(--border-radius-sm);
+    display: inline-block;
+/* Fond subtil avec transparence pour voir le texte */
+    background: rgba(255, 255, 255, 0.8);
+/* Blanc semi-transparent en light mode */
+    color: var(--light-text-color);
+/* Texte toujours visible */
+    transition: all var(--transition-speed) ease;
+    box-shadow: none;
+/* On enlève l'ombre pour l'instant, on l'ajoute au hover */
+}
+
+/* Couleurs dynamiques par catégorie (dégradé léger) */
+.category-service {
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.15), rgba(32, 201, 151, 0.15));
+/* Très transparent */
+    color: var(--service-color); /* Texte en vert */
+    border: 1px solid rgba(40, 167, 69, 0.3);
+/* Bordure fine verte */
+}
+
+.category-objet {
+    background: linear-gradient(135deg, rgba(23, 162, 184, 0.15), rgba(13, 202, 240, 0.15));
+/* Très transparent */
+    color: var(--object-color); /* Texte en bleu */
+    border: 1px solid rgba(23, 162, 184, 0.3);
+/* Bordure fine bleue */
+}
+
+/* En mode sombre : Ajuste pour contraste */
+body.dark-mode .post-card-category {
+    background: rgba(0, 0, 0, 0.3);
+/* Gris sombre semi-transparent */
+    color: var(--light-text-color);
+}
+
+body.dark-mode .category-service {
+    background: linear-gradient(135deg, rgba(25, 135, 84, 0.2), rgba(32, 201, 151, 0.2));
+    color: var(--service-color);
+    border: 1px solid rgba(25, 135, 84, 0.4);
+}
+
+body.dark-mode .category-objet {
+    background: linear-gradient(135deg, rgba(13, 202, 240, 0.2), rgba(23, 162, 184, 0.2));
+    color: var(--object-color);
+    border: 1px solid rgba(13, 202, 240, 0.4);
+}
+
+/* Hover pour un petit effet (optionnel, mais cool) */
+.post-card:hover .post-card-category {
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-card h3 { margin-bottom: 0.5rem; font-size: 1.2rem; line-height: 1.3;
+}
+
+.post-card p { color: var(--light-text-secondary); font-size: 0.9rem; flex-grow: 1; margin-bottom: 1rem; }
+
+.post-card-footer { display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.8rem; color: var(--light-text-secondary); border-top: 1px solid var(--border-color); padding-top: 1rem; margin-top: auto; }
+
+.favorite-btn { position: absolute; top: 10px; right: 10px;
+    background: rgba(255, 255, 255, 0.8); border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center;
+    justify-content: center; transition: transform 0.2s ease; }
+
+.favorite-btn:hover { transform: scale(1.1); }
+
+.favorite-btn svg { fill: var(--light-text-secondary); transition: fill 0.2s ease;
+}
+
+.favorite-btn.favorited svg { fill: var(--primary-color); }
+
+.post-actions { display: flex; gap: 0.5rem; padding: 0.75rem; border-top: 1px solid var(--border-color);
+}
+
+.post-action-btn { flex-grow: 1; flex-basis: 0; justify-content: center; padding: 0.6rem 0.5rem; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.5rem;
+    border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); background-color: var(--light-surface-color); color: var(--light-text-color); text-decoration: none; cursor: pointer;
+    transition: background-color var(--transition-speed) ease, border-color var(--transition-speed) ease; }
+
+.post-action-btn:hover { background-color: var(--light-bg-color); border-color: var(--primary-color); }
+
+.post-action-btn.edit { border-color: var(--info-color); color: var(--info-color);
+}
+
+.post-action-btn.edit:hover { background-color: rgba(108, 117, 125, 0.1); }
+
+.post-action-btn.delete { border-color: var(--error-color); color: var(--error-color); }
+
+.post-action-btn.delete:hover { background-color: rgba(220, 53, 69, 0.1);
+}
+
+/* ============================================= */
+/* --- 5. PAGES SPÉCIFIQUES --- */
+/* ============================================= */
+
+.form-wrapper.hidden, .choice-box.hidden { display: none !important; }
+
+.create-choice-container { display: flex;
+    gap: 1.5rem; margin-bottom: 2rem; }
+
+.choice-box { flex: 1; padding: 2rem 1rem; border: 2px solid var(--border-color); border-radius: var(--border-radius-md); text-align: center;
+    cursor: pointer; transition: all var(--transition-speed) ease; }
+
+.choice-box:hover { border-color: var(--primary-color); background-color: var(--light-bg-color); }
+
+.choice-box.active { border-color: var(--primary-color);
+    background-color: rgba(13, 110, 253, 0.1); box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+}
+
+.choice-box svg { margin: 0 auto 1rem auto; color: var(--primary-color); }
+
+.choice-box span { display: block; }
+
+.image-preview-container { display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 1rem; margin-bottom: 1rem; padding: 1rem; background-color: var(--light-bg-color); border-radius: var(--border-radius-md); }
+
+.image-preview { position: relative; border-radius: var(--border-radius-sm);
+    overflow: hidden; }
+
+.image-preview img { width: 100%; height: 100%; object-fit: cover; }
+
+.remove-image-btn { position: absolute; top: 5px; right: 5px;
+    width: 24px; height: 24px; background-color: rgba(0, 0, 0, 0.6); color: white; border: none; border-radius: 50%; cursor: pointer; display: flex;
+    align-items: center; justify-content: center; font-size: 1rem; font-weight: bold; line-height: 1; opacity: 0; transition: opacity 0.2s ease;
+}
+
+.image-preview:hover .remove-image-btn { opacity: 1; }
+
+.post-detail-container { display: flex; flex-direction: column; gap: 2rem; padding: 2rem 0; }
+
+.post-detail-image-container { width: 100%;
+    position: relative; }
+
+.photo-grid { display: grid; gap: 4px; border-radius: var(--border-radius-md); overflow: hidden; max-height: 500px; }
+
+.photo-grid a { display: block;
+    width: 100%; height: 100%; }
+
+.photo-grid img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.2s ease;
+}
+
+.photo-grid a:hover img { transform: scale(1.05); }
+
+.photo-grid[data-count="1"] { grid-template-columns: 1fr; }
+
+.photo-grid[data-count="2"] { grid-template-columns: 1fr 1fr; }
+
+.photo-grid[data-count="3"] { grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr; }
+
+.photo-grid[data-count="3"] a:first-child { grid-row: span 2; }
+
+.photo-grid[data-count="4"] { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;
+}
+
+.photo-grid[data-count="5"] { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; }
+
+.photo-grid[data-count="5"] a:first-child { grid-column: span 2;
+}
+
+/* ============================================= */
+/* --- STYLE DE LA PAGE PROFIL --- */
+/* ============================================= */
+
+.profile-container,
+.profile-reviews-container {
+    background-color: var(--light-surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+}
+
+.profile-info h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+}
+
+.profile-info p {
+    margin: 0;
+    color: var(--light-text-secondary);
+}
+
+.profile-rating {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    margin-top: 10px;
+}
+
+.profile-rating .stars {
+    font-size: 1.5rem;
+}
+
+.profile-rating .stars .star.filled {
+    color: var(--star-color);
+}
+
+.profile-rating .stars .star {
+    color: var(--border-color);
+}
+
+.profile-rating .rating-text {
+    font-size: 0.9rem;
+    color: var(--light-text-secondary);
+}
+
+.profile-email {
+    font-size: 0.9rem;
+    background-color: var(--light-bg-color);
+    padding: 5px 10px;
+    border-radius: var(--border-radius-sm);
+    display: inline-block;
+    margin-top: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.profile-info .button-primary {
+    margin-top: 15px;
+}
+
+.profile-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.profile-reviews-container h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.review-card {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.review-card:first-of-type { padding-top: 0; }
+
+.review-card:last-of-type { border-bottom: none;
+    padding-bottom: 0; }
+
+.review-author {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.author-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--light-text-secondary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-right: 1rem;
+}
+
+.author-info strong a {
+    text-decoration: none;
+    color: var(--light-text-color);
+}
+
+.author-info strong a:hover { color: var(--primary-color);
+}
+
+.review-date {
+    font-size: 0.8rem;
+    color: var(--light-text-secondary);
+}
+
+.review-stars {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.review-stars .star.filled { color: var(--star-color); }
+
+.review-stars .star { color: var(--border-color); }
+
+.review-comment {
+    color: var(--light-text-color);
+    line-height: 1.6;
+    background-color: var(--light-bg-color);
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+    border-left: 3px solid var(--primary-color);
+    font-size: 0.9rem;
+}
+
+/* Responsive Profil */
+@media (min-width: 768px) {
+    .profile-container,
+    .profile-reviews-container { padding: 2.5rem;
+    }
+
+    .profile-header {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .profile-avatar { margin-right: 2rem; margin-bottom: 0; }
+
+    .profile-rating { justify-content: flex-start;
+    }
+}
+
+/* ============================================= */
+/* --- 7. DARK MODE & RESPONSIVE GLOBAL --- */
+/* ============================================= */
+
+.theme-switch-wrapper { display: flex; align-items: center;
+}
+
+.theme-switch { position: relative; display: inline-block; width: 50px; height: 26px; }
+
+.theme-switch input { opacity: 0; width: 0; height: 0;
+}
+
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px;
+}
+
+.slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 3px; bottom: 3px; background-color: white; transition: .4s; border-radius: 50%;
+}
+
+input:checked + .slider { background-color: var(--primary-color); }
+
+input:checked + .slider:before { transform: translateX(24px);
+}
+
+@media (max-width: 768px) {
+    .container { padding: 0 1rem;
+    }
+
+    main.container { padding: 1.5rem 1rem; }
+
+    .form-container { padding: 1.5rem;
+    }
+
+    .hamburger { display: block; cursor: pointer; background: none; border: none; z-index: 1001;
+    }
+
+    .hamburger .line { width: 25px; height: 3px; background-color: var(--light-text-color); margin: 5px; transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger.active .line:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+
+    .hamburger.active .line:nth-child(2) { opacity: 0;
+    }
+
+    .hamburger.active .line:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: var(--light-surface-color);
+        box-shadow: -4px 0 10px var(--shadow-color);
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        transition: right 0.4s ease-in-out;
+    }
+
+    .nav-links.active { right: 0;
+    }
+
+    .nav-links a { font-size: 1.2rem; }
+
+    .post-detail-container { grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) {
+    .hamburger.has-notification::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        width: 10px;
+        height: 10px;
+        background-color: var(--error-color);
+        border-radius: 50%;
+        border: 2px solid var(--light-surface-color);
+    }
+}
+
+/* ============================================= */
+/* --- 8. PAGE PARAMÈTRES --- */
+/* ============================================= */
+
+.settings-container h2 {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.settings-menu {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--light-surface-color);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.settings-menu-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    text-align: left;
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    font-family: var(--font-family-base);
+    color: var(--light-text-color);
+    transition: background-color 0.2s ease;
+}
+
+.settings-menu-item:last-child { border-bottom: none;
+}
+
+.settings-menu-item:hover { background-color: var(--light-bg-color); }
+
+.settings-menu-item i:first-child {
+    font-size: 1.2rem;
+    color: var(--light-text-secondary);
+    width: 30px;
+    margin-right: 1rem;
+}
+
+.menu-item-text {
+    flex-grow: 1;
+}
+
+.menu-item-text strong {
+    display: block;
+    font-size: 1rem;
+}
+
+.menu-item-text span {
+    font-size: 0.9rem;
+    color: var(--light-text-secondary);
+}
+
+.settings-menu-item i.fa-chevron-right {
+    font-size: 0.9rem;
+    color: var(--light-text-secondary);
+}
+
+.settings-menu-item.danger .menu-item-text strong,
+.settings-menu-item.danger i:first-child {
+    color: var(--error-color);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.button-secondary {
+    padding: 0.75rem 1.5rem;
+    background-color: transparent;
+    border: 1px solid var(--light-text-secondary);
+    color: var(--light-text-secondary);
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+}
+
+.button-danger {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--error-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    cursor: pointer;
+}
+
+/* ============================================= */
+/* --- 9. PAGES STATIQUES (AIDE) --- */
+/* ============================================= */
+
+.static-page-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background-color: var(--light-surface-color);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+}
+
+.static-page-container h1 { text-align: center; margin-bottom: 0.5rem;
+}
+
+.static-page-container .subtitle { text-align: center; margin-bottom: 3rem; font-size: 1.1rem; color: var(--light-text-secondary); }
+
+.help-section { margin-bottom: 3rem; padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color); }
+
+.help-section:last-of-type { border-bottom: none; margin-bottom: 0; }
+
+.help-section h2 { font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--primary-color);
+}
+
+.help-section h3 { font-size: 1.3rem; margin-bottom: 1rem; }
+
+.help-section p, .help-section ul { margin-bottom: 1rem; line-height: 1.7;
+}
+
+.help-section ul { list-style-position: inside; padding-left: 1rem; }
+
+.toc { margin-bottom: 3rem; padding: 1.5rem; background-color: var(--light-bg-color); border-radius: var(--border-radius-sm);
+}
+
+.toc h3 { margin-bottom: 1rem; }
+
+.toc ul { list-style: none; padding-left: 0; }
+
+.toc ul li { margin-bottom: 0.5rem;
+}
+
+.toc ul li a { text-decoration: none; font-weight: 600; }
+
+/* ============================================= */
+/* --- 10. SÉLECTION MULTIPLE (MES ANNONCES) --- */
+/* ============================================= */
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-actions-menu { position: relative; }
+
+.actions-button {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--light-text-secondary);
+}
+
+.actions-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--light-surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 12px var(--shadow-color);
+    min-width: 200px;
+    z-index: 100;
+    overflow: hidden;
+    padding: 0.5rem 0;
+}
+
+.actions-dropdown.show { display: block; }
+
+.actions-dropdown .dropdown-item,
+.actions-dropdown a.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: none;
+    text-align: left;
+    color: var(--light-text-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.actions-dropdown .dropdown-item:hover,
+.actions-dropdown a.dropdown-item:hover { background-color: var(--light-bg-color); }
+
+.actions-dropdown .dropdown-item.danger { color: var(--error-color); }
+
+.actions-dropdown hr { border: 0; border-top: 1px solid var(--border-color);
+    margin: 0.5rem 0; }
+
+.posts-grid.selection-mode .post-card-link { pointer-events: none; }
+
+.post-card .selection-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(13, 110, 253, 0.5);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+    border-radius: var(--border-radius-md);
+}
+
+.post-card.selected { transform: scale(0.95);
+}
+
+.post-card.selected .selection-overlay { opacity: 1; }
+
+.post-card { display: flex; flex-direction: column; justify-content: space-between; }
+
+.post-actions { flex-wrap: wrap; padding: 0.5rem;
+}
+
+.post-action-btn { flex-grow: 1; text-align: center; }
+
+/* Page Favoris */
+.actions-menu { position: relative; }
+
+.actions-dropdown { top: 100%; right: 0;
+    margin-top: 0.5rem; }
+
+/* Page Inscription */
+.password-rules .rule { transition: color 0.3s ease; }
+
+.password-rules .rule.invalid { color: var(--error-color);
+}
+
+.password-rules .rule.valid { color: var(--success-color); }
+
+.password-rules .rule.valid::before { content: '? '; font-weight: bold; }
+
+.password-rules .rule.invalid::before { content: '? ';
+    font-weight: bold; }
+
+/* Page Paramètres */
+.settings-menu-item.non-button { display: flex; align-items: center; width: 100%; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-color);
+}
+
+.language-switcher { margin-left: auto; padding: 0.5rem; border-radius: var(--border-radius-sm); border: 1px solid var(--border-color); background-color: var(--light-bg-color); color: var(--light-text-color);
+}
+
+/* Responsive Global */
+@media (max-width: 768px) {
+    .container { padding: 0 1rem;
+    }
+    main.container { padding: 1.5rem 1rem; }
+    .form-container { padding: 1.5rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .center-desktop-nav { display: flex;
+    }
+}
+/* DANS static/css/style.css, ajoutez ceci dans la section "HEADER & NAVIGATION" */
+
+.logo-text {
+    font-size: 1.6rem;
+/* Un peu plus grand pour compenser l'absence de logo */
+    font-weight: 700;
+    color: var(--primary-color);
+/* La couleur bleue demandée */
+    text-decoration: none;
+}
+.notification-bell {
+    font-size: 1.3rem;
+    color: var(--light-text-secondary);
+    position: relative;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.notification-bell .nav-notification-badge {
+    top: -5px;
+    right: -5px;
+}
+/* Dans style.css, ajoute pour notifications */
+
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.notification-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--light-bg-color);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.notification-item:hover {
+    background-color: var(--light-surface-color);
+}
+
+.notification-item.read {
+    opacity: 0.7;
+}
+
+.notif-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.notif-content {
+    flex-grow: 1;
+}
+
+.notif-content p {
+    margin: 0;
+}
+
+.notif-content strong {
+    font-weight: 700;
+}
+
+.timestamp {
+    font-size: 0.8rem;
+    color: var(--light-text-secondary);
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.notif-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1rem;
+    color: var(--star-color);
+/* Jaune pour étoile ; pour bookmark, ajuste si besoin */
+}
+
+.notif-icon.fa-bookmark {
+    color: var(--primary-color);
+}
+/* DANS static/css/style.css, à la fin du fichier */
+
+/* === STYLES POUR LA SÉLECTION DES NOTIFICATIONS === */
+
+/* Change le curseur quand on peut sélectionner */
+/* DANS static/css/style.css, à la fin du fichier */
+
+/* === STYLES (CORRIGÉS) POUR LA SÉLECTION DES NOTIFICATIONS === */
+
+/* Change le curseur quand on peut sélectionner */
+.notifications-list.selection-mode .notification-item {
+    cursor: pointer;
+}
+
+/* Style appliqué à un item de notification quand il a la classe "selected" */
+.notification-item.selected {
+    background-color: rgba(13, 110, 253, 0.15);
+/* Fond bleu très léger */
+    border-left: 3px solid var(--primary-color);
+/* Bordure gauche bleue pour bien marquer */
+    border-color: var(--primary-color);
+}
+.post-card {
+    /* ... styles existants ... */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.loading-spinner {
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);
+    }
+    100% { transform: rotate(360deg); }
+}
+/* Animation fade-in pour les posts */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px); /* Monte de 30px */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.post-card {
+    animation: fadeInUp 0.6s ease-out forwards;
+/* Applique à toutes les cartes */
+    opacity: 0;
+/* Cache au départ */
+}
+
+/* Délai progressif pour effet cascade (optionnel, cool pour les grids) */
+.posts-grid .post-card:nth-child(1) { animation-delay: 0.1s;
+}
+.posts-grid .post-card:nth-child(2) { animation-delay: 0.2s; }
+.posts-grid .post-card:nth-child(3) { animation-delay: 0.3s; }
+.posts-grid .post-card:nth-child(n+4) { animation-delay: 0.4s;
+} /* Les suivants à 0.4s */
+/* Icônes thématiques pour catégories et avatars */
+.category-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+    transition: color var(--transition-speed) ease;
+}
+
+/* Icônes par catégorie (dans les badges) */
+.category-service .category-icon {
+    color: var(--service-color);
+}
+
+.category-objet .category-icon {
+    color: var(--object-color);
+}
+
+/* Avatar avec icône (remplace l'initiale) */
+.profile-avatar, .author-avatar, .notif-avatar {
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-avatar::before, .author-avatar::before, .notif-avatar::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+/* Exemples d'icônes (ajuste selon tes catégories) */
+/* Pour "Service" : Icône d'outil */
+[data-category="Service"] .profile-avatar::before,
+.category-service + .profile-avatar::before { /* Si besoin de cibler plus finement */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ffffff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1' /%3E%3C/svg%3E");
+/* Wrench icon en blanc */
+    background-size: contain;
+}
+
+/* Pour "Objet" : Icône de boîte */
+[data-category="Objet"] .profile-avatar::before,
+.category-objet + .profile-avatar::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ffffff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4' /%3E%3C/svg%3E");
+/* Archive icon en blanc */
+    background-size: contain;
+}
+
+/* Hover pour fun */
+.post-card:hover .category-icon {
+    transform: scale(1.1);
+}
+.category-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 0.4rem;
+    display: inline-block;
+    vertical-align: middle;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/* Service : Icône outil (wrench) */
+.hi-wrench {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1' /%3E%3C/svg%3E");
+}
+
+/* Objet : Icône boîte (archive) */
+.hi-archive {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4' /%3E%3C/svg%3E");
+}
+
+/* Couleurs par catégorie */
+.category-service .category-icon { stroke: var(--service-color); } /* Vert pour le trait */
+.category-objet .category-icon { stroke: var(--object-color);
+} /* Bleu pour le trait */
+/* Nav mobile : Icônes plus cool et interactives */
+@media (max-width: 768px) {
+    .mobile-nav-item i {
+        font-size: 1.8rem !important;
+/* Taille base mobile */
+        color: var(--light-text-secondary);
+        transition: all var(--transition-speed) ease;
+        display: block;
+        margin-bottom: 0.3rem; /* Plus d'espace sous icône (diminue rapprochement) */
+    }
+
+    /* Responsive : Plus petites sur très petits écrans */
+    @media (max-width: 480px) {
+        .mobile-nav-item i {
+            font-size: 1.6rem !important;
+/* Réduit sur mini-mobile */
+            margin-bottom: 0.4rem;
+/* Encore plus d'espace */
+        }
+    }
+
+    .mobile-nav-item:hover i,
+    .mobile-nav-item.active i {
+        color: var(--primary-color);
+        transform: scale(1.2);
+        filter: drop-shadow(0 2px 4px rgba(13, 110, 253, 0.3));
+    }
+
+    .mobile-nav-item.create i {
+        color: var(--success-color);
+        font-size: 2rem !important;
+/* Un peu plus grand pour "Create" (pop) */
+    }
+
+    .mobile-nav-item.create:hover i {
+        transform: scale(1.3) rotate(90deg);
+        color: #198754;
+    }
+
+    .mobile-nav-item span {
+        font-size: 0.7rem;
+        opacity: 0.8;
+        padding-top: 0.2rem; /* Espace global pour aérer */
+    }
+
+    /* Aère la nav entière */
+    .top-nav-level-2 {
+        gap: 1rem;
+/* Plus d'espace entre icônes */
+        padding: 0.5rem;
+/* Padding interne pour respirer */
+    }
+}
+/* Footer posts : Auteur + Vues plus cool */
+.post-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--light-text-secondary);
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    margin-top: auto;
+    gap: 0.5rem;
+/* Espace entre éléments */
+}
+
+.post-card-footer .author-info {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+/* Petit espace icône-nom */
+    flex-grow: 1;
+/* Prend l'espace dispo */
+}
+
+.post-card-footer .author-icon {
+    width: 14px;
+    height: 14px;
+    color: var(--light-text-secondary);
+    flex-shrink: 0;
+}
+
+.post-card-footer a {
+    color: var(--light-text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color var(--transition-speed) ease;
+}
+
+.post-card-footer a:hover {
+    color: var(--primary-color); /* Bleu au hover */
+    text-shadow: 0 0 4px rgba(13, 110, 253, 0.3);
+/* Glow subtil */
+}
+
+.view-count {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    white-space: nowrap;
+/* Garde ensemble */
+}
+
+.view-count svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+/* Responsive footer : Wrap sur très petit écran */
+@media (max-width: 480px) {
+    .post-card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+.profile-photo-setup {
+    max-width: 500px;
+    margin: 2rem auto;
+    text-align: center;
+}
+.ignore-btn {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: none;
+    border: none;
+    color: var(--light-text-secondary);
+    font-size: 1rem;
+    cursor: pointer;
+}
+.upload-container { padding: 2rem; }
+.upload-area {
+    border: 2px dashed var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 3rem 2rem;
+    transition: border-color var(--transition-speed);
+    cursor: pointer;
+}
+.upload-area:hover { border-color: var(--primary-color); }
+.upload-area i { color: var(--primary-color); margin-bottom: 1rem;
+}
+.upload-area p { color: var(--light-text-secondary); margin-bottom: 1rem; }
+.preview-container { margin-top: 2rem; }
+.preview-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    margin-bottom: 1rem;
+}
+.preview-actions { display: flex; gap: 1rem; justify-content: center;
+}
+.photo-upload { text-align: center; margin-top: 1rem; }
+.current-photo-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    margin-bottom: 0.5rem;
+}
+#photo-file { margin-bottom: 0.5rem; }
+#delete-photo-btn { background: var(--error-color); color: white; border: none; padding: 0.5rem;
+    border-radius: var(--border-radius-sm); cursor: pointer; }
+.profile-avatar img.avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+.author-initial {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.author-photo { width: 24px; height: 24px; border-radius: 50%; object-fit: cover;
+}
+.profile-photo-setup {
+    position: relative; /* Container relatif pour absolute */
+    max-width: 500px;
+    margin: 2rem auto;
+    text-align: center;
+    padding-top: 2rem; /* Espace pour bouton */
+}
+
+.ignore-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--light-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    padding: 0.5rem 1rem;
+    color: var(--light-text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background var(--transition-speed);
+    z-index: 10; /* Au-dessus */
+}
+
+.ignore-btn:hover {
+    background: var(--primary-color);
+    color: white;
+}
+.empty-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed rgba(255,255,255,0.5);
+    transition: all var(--transition-speed);
+}
+
+.empty-avatar:hover {
+    border-color: white;
+    transform: scale(1.05);
+    background: var(--primary-color-dark);
+}
+
+.photo-upload { position: relative; text-align: center; margin-top: 1rem; }
+#delete-photo-btn { z-index: 2; }
+.photo-upload { text-align: center; margin-top: 1rem;
+}
+.current-photo-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.photo-buttons {
+    display: flex;
+    gap: 0.5rem;
+/* Espacement entre boutons */
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.photo-btn {
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--border-radius-sm);
+    border: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed);
+    min-width: 80px;
+/* Largeur min pour équilibre */
+}
+
+.photo-btn.primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.photo-btn.primary:hover {
+    background: var(--primary-color-dark);
+    transform: translateY(-1px);
+}
+
+.photo-btn.danger {
+    background: var(--error-color);
+    color: white;
+}
+
+.photo-btn.danger:hover {
+    background: #dc3545;
+    transform: translateY(-1px);
+}
+
+.empty-avatar:hover {
+    transform: scale(1.05);
+    background: var(--primary-color-dark);
+}
+/* Dans static/css/style.css */
+
+/* === STYLES POUR L'UPLOAD DE PHOTO (PARAMÈTRES) === */
+
+.photo-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; /* Espace entre l'aperçu et les boutons */
+}
+
+.current-photo-preview {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.empty-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed rgba(255, 255, 255, 0.6);
+    transition: all var(--transition-speed) ease;
+}
+
+.empty-avatar:hover {
+    transform: scale(1.05);
+    background: var(--primary-color-dark);
+    border-color: white;
+}
+
+.photo-buttons {
+    display: flex;
+    gap: 0.75rem;
+/* Espace entre les boutons */
+    justify-content: center;
+}
+
+.photo-btn {
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-sm);
+    border: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    min-width: 100px;
+    text-align: center;
+}
+
+.photo-btn.primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.photo-btn.primary:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.photo-btn.danger {
+    background-color: transparent;
+    color: var(--error-color);
+    border: 1px solid var(--error-color);
+}
+
+.photo-btn.danger:hover {
+    background-color: var(--error-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+/* Dans static/css/profile.css */
+
+/* Style pour l'initiale dans l'avatar */
+.profile-initial {
+    font-size: 3.5rem;
+/* Grande taille pour l'initiale */
+    font-weight: 600;
+    color: white;
+}
+
+/* Rendre la photo cliquable plus évidente au survol */
+.profile-photo-clickable {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    width: 100%; /* S'assure que l'image remplit l'avatar */
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-photo-clickable:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+
+/* Styles pour la modale photo (réutilise le style de base) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+/* Fond plus sombre pour les images */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content-photo {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+#modal-image {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 8px; /* Bords arrondis pour l'image agrandie */
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: -40px;
+/* Positionne le bouton au-dessus de l'image */
+    right: 0;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    line-height: 1;
+}
+/* DANS static/css/style.css, AJOUTEZ CECI À LA FIN */
+
+/* ============================================= */
+/* --- 11. AMÉLIORATIONS MESSAGERIE & PROFIL --- */
+/* ============================================= */
+
+/* --- Nouveau Footer pour les cartes annonces --- */
+.post-card-content h3 {
+    min-height: 48px;
+/* Assure une hauteur minimale pour 2 lignes */
+}
+
+.post-card-footer-new {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--border-color);
+    margin-top: auto;
+    background-color: var(--light-surface-color);
+/* AJOUTEZ CES DEUX LIGNES CI-DESSOUS */
+    position: relative;
+/* Nécessaire pour que z-index fonctionne */
+    z-index: 2;
+/* Force le pied de page à être au-dessus du lien principal */
+}
+.footer-left, .footer-center, .footer-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--light-text-secondary);
+}
+.author-photo-small {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.author-initial-small {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* --- Améliorations Profil --- */
+.profile-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.profile-interest {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--light-text-secondary);
+}
+.profile-interest i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+/* ============================================= */
+/* --- 12. PRELOADER & UX EXTRAS --- */
+/* ============================================= */
+
+/* --- Preloader / Spinner --- */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: var(--light-bg-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid var(--border-color);
+    border-bottom-color: var(--primary-color);
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg);
+    }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- Bouton "Retour en haut" --- */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+#back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#back-to-top:hover {
+    background-color: var(--primary-color-dark);
+    transform: scale(1.1);
+}
+
+/* Sur mobile, on remonte le bouton pour ne pas gêner la barre de navigation */
+@media (max-width: 768px) {
+    #back-to-top {
+        bottom: 80px;
+/* Au-dessus de la nav mobile */
+    }
+}
+/* DANS static/css/style.css, à la fin du fichier */
+
+/* ============================================= */
+/* --- 13. STYLES POUR MODALES INTERACTIVES --- */
+/* ============================================= */
+
+/* Base pour le fond de la modale */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+/* Fond noir semi-transparent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    backdrop-filter: blur(5px); /* Effet de flou moderne */
+}
+
+.modal-overlay:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* --- Modale pour l'image --- */
+.modal-content-photo {
+    position: relative;
+    max-width: 90vw;
+    max-height: 80vh;
+    animation: zoomIn 0.3s ease-out;
+}
+
+#modal-image-content {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* --- Modale pour les alertes --- */
+.alert-modal-content {
+    background-color: var(--light-surface-color);
+    padding: 2rem 2.5rem;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    animation: zoomIn 0.3s ease-out;
+}
+
+#alert-modal-text {
+    font-size: 1.1rem;
+    color: var(--light-text-color);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.close-modal-btn-styled {
+    min-width: 100px;
+}
+
+/* --- Bouton de fermeture générique --- */
+.close-modal-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    line-height: 1;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+
+/* Animation d'apparition */
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/* ======================================================= */
+/* --- 14. AMÉLIORATIONS VISUELLES DU FOOTER (CORRECTION) --- */
+/* ======================================================= */
+
+/* On supprime la rustine z-index qui n'est plus nécessaire */
+.post-card-footer-new {
+    z-index: initial;
+/* Remplace z-index: 2; */
+}
+
+/* On agrandit le padding global du footer pour lui donner de l'air */
+.post-card-footer-new {
+    padding: 0.85rem 1.25rem;
+/* Anciennement 0.75rem 1rem */
+}
+
+/* On augmente la taille de la photo de profil et de l'initiale */
+.author-photo-small, .author-initial-small {
+    width: 32px;
+/* Anciennement 24px */
+    height: 32px; /* Anciennement 24px */
+}
+
+/* On ajuste la taille de la police pour l'initiale */
+.author-initial-small {
+    font-size: 1rem;
+/* Anciennement 0.8rem */
+}
+
+/* On augmente la taille de la police pour le nom et les compteurs */
+.footer-left a, .footer-center span, .footer-right span {
+    font-size: 0.95rem;
+/* Un peu plus grand pour être lisible */
+    font-weight: 500;
+}
+
+/* On grossit également les icônes pour qu'elles correspondent au texte */
+.footer-center i, .footer-right i {
+    font-size: 1.1rem;
+/* Plus visible */
+}
+/* ============================================= */
+/* --- 15. NOUVELLE NAVIGATION ADAPTATIVE --- */
+/* ============================================= */
+
+/* --- Styles de base pour les nouveaux éléments --- */
+.icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: var(--light-text-secondary);
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.language-menu {
+    position: relative;
+}
+
+.language-menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: var(--light-text-secondary);
+    padding: 0.5rem;
+}
+
+.language-menu-dropdown {
+    display: none;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background-color: var(--light-surface-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    list-style: none;
+    padding: 0.5rem 0;
+    width: 150px;
+    z-index: 1100;
+}
+
+.language-menu-dropdown.active {
+    display: block;
+}
+
+.language-menu-dropdown li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--light-text-color);
+}
+
+.language-menu-dropdown li a:hover {
+    background-color: var(--light-bg-color);
+    text-decoration: none;
+}
+
+
+/* --- Logique pour ECRANS MOBILES (par défaut) --- */
+
+header {
+    position: fixed;
+/* Reste en haut */
+    width: 100%;
+    top: 0;
+}
+
+body {
+    padding-top: 60px;
+/* Espace pour le header fixe */
+    padding-bottom: 60px;
+/* Espace pour la nav du bas */
+}
+
+.top-nav-level-2 {
+    display: flex;
+/* Visible par défaut */
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: var(--light-surface-color);
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -2px 5px var(--shadow-color);
+    z-index: 1000;
+}
+
+.nav-item-lvl2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    color: var(--light-text-secondary);
+    font-size: 0.75rem;
+    text-decoration: none;
+    flex-grow: 1; /* Pour occuper tout l'espace */
+    padding: 0.5rem 0;
+}
+
+.nav-item-lvl2 i {
+    font-size: 1.5rem;
+}
+
+.nav-item-lvl2 span {
+    display: block;
+/* Toujours visible sur mobile */
+}
+
+/* Le bouton "+" est juste une icône */
+.nav-item-lvl2.create i {
+    font-size: 2.2rem;
+}
+.nav-item-lvl2.create span {
+    display: none;
+}
+
+/* Masquer la nav centrale sur mobile */
+.center-desktop-nav {
+    display: none;
+}
+
+
+/* --- Logique pour GRANDS ECRANS (PC) --- */
+@media (min-width: 769px) {
+    header {
+        position: sticky;
+/* Comportement normal sur PC */
+    }
+
+    body {
+        padding-top: 0;
+/* Pas d'espace nécessaire */
+        padding-bottom: 0;
+    }
+
+    /* La nav niveau 2 devient une barre sous la première */
+    .top-nav-level-2 {
+        position: relative;
+/* N'est plus fixée en bas */
+        height: auto;
+        box-shadow: none;
+        border-top: 1px solid var(--border-color);
+        padding: 0.5rem 0;
+        justify-content: center; /* Centrer les éléments */
+        gap: 2.5rem;
+/* Espace entre les éléments */
+    }
+    
+    .nav-item-lvl2 {
+        flex-direction: row;
+/* Icône et texte côte à côte */
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius-sm);
+        transition: background-color 0.2s ease;
+    }
+
+    .nav-item-lvl2:hover {
+        background-color: var(--light-bg-color);
+    }
+    
+    .nav-item-lvl2 i {
+        font-size: 1.1rem;
+    }
+
+    .nav-item-lvl2.create {
+        display: none;
+/* Le bouton créer est déjà dans la barre principale sur PC */
+    }
+
+    /* Afficher la nav centrale sur PC */
+    .center-desktop-nav {
+        display: flex;
+        margin: 0 auto;
+        gap: 2rem;
+    }
+    
+    /* Le bouton créer spécial pour PC */
+    .center-desktop-nav a.create {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background-color: var(--primary-color);
+        color: white;
+        padding: 0.5rem 1.2rem;
+        border-radius: 50px;
+        font-weight: 600;
+    }
+    .center-desktop-nav a.create:hover {
+        background-color: var(--primary-color-dark);
+        color: white;
+        text-decoration: none;
+    }
+}
+/* ======================================================= */
+/* --- 15. NOUVELLE NAVIGATION PC & FILTRES MODERNES --- */
+/* ======================================================= */
+
+/* --- Style de la nouvelle navigation sur ordinateur --- */
+@media (min-width: 768px) {
+    .desktop-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px; /* Espace entre l'icône et le texte */
+        padding: 8px 12px;
+        border-radius: var(--border-radius-md);
+        color: var(--light-text-secondary);
+        transition: all 0.2s ease-in-out;
+        border: 2px solid transparent;
+    }
+
+    .desktop-nav-item:hover {
+        color: var(--primary-color);
+        background-color: var(--light-bg-color);
+        text-decoration: none;
+    }
+
+    .desktop-nav-item.active {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+        background-color: rgba(13, 110, 253, 0.05);
+    }
+    
+    .desktop-nav-item i {
+        font-size: 1.5rem;
+    }
+    
+    .desktop-nav-item span {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+}
+
+/* --- Style du bouton "Créer une annonce" (PC & Mobile) --- */
+.desktop-nav-item.nav-create-post,
+.mobile-nav-item.create {
+    color: var(--success-color);
+}
+
+.desktop-nav-item.nav-create-post:hover,
+.mobile-nav-item.create:hover {
+    color: white;
+    background-color: var(--success-color);
+}
+
+.desktop-nav-item.nav-create-post.active,
+.mobile-nav-item.create.active {
+    color: white;
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+
+/* --- Style des nouveaux filtres sur la page Annonces --- */
+.filters-and-nav-container {
+    padding: 1rem;
+    background-color: var(--light-surface-color);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.filters-bar-new {
+    display: flex;
+    flex-wrap: wrap;
+/* Passe à la ligne sur mobile */
+    gap: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-bg-color);
+    border-radius: var(--border-radius-sm);
+    flex-grow: 1;
+/* Les groupes prennent la même largeur */
+}
+
+.filter-group .filter-icon {
+    padding: 0 0.75rem;
+    color: var(--light-text-secondary);
+}
+
+.filter-group select {
+    border: none;
+    background: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+}
+
+/* --- Style de la nouvelle sous-navigation par catégorie --- */
+.category-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.category-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+/* Bords très arrondis */
+    border: 1px solid var(--border-color);
+    background-color: var(--light-surface-color);
+    color: var(--light-text-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.category-nav-item:hover {
+    background-color: var(--light-bg-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.category-nav-item.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(13, 110, 253, 0.2);
+}
+
+.category-nav-item.active i {
+    color: white;
+}
+
+.category-nav-item i {
+    color: var(--light-text-secondary);
+    transition: color 0.2s ease;
+}
+/* ======================================================= */
+/* --- 15. CORRECTIONS NAVIGATION & FILTRES MODERNES --- */
+/* ======================================================= */
+
+/* --- Correction de la navigation sur ordinateur --- */
+@media (min-width: 769px) {
+    /* On cache les classes 'mobile' et on affiche les classes 'desktop' */
+    .mobile-nav-item {
+        display: none;
+    }
+    .desktop-nav-item {
+        display: flex;
+/* Affiche les items sur PC */
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 8px 16px;
+        border-radius: var(--border-radius-md);
+        color: var(--light-text-secondary);
+        transition: all 0.2s ease-in-out;
+        border: 2px solid transparent;
+        background: none;
+    }
+    
+    .desktop-nav-item:hover {
+        color: var(--primary-color);
+        background-color: var(--light-bg-color);
+        text-decoration: none;
+    }
+
+    .desktop-nav-item.active {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+        background-color: rgba(13, 110, 253, 0.05);
+    }
+    
+    .desktop-nav-item i {
+        font-size: 1.5rem;
+    }
+    
+    .desktop-nav-item span {
+        font-size: 0.8rem;
+        font-weight: 600;
+        display: block !important; /* Force l'affichage du texte */
+    }
+
+    /* Le texte "Créer" est différent des autres */
+    .desktop-nav-item .create-span {
+        font-weight: 600;
+    }
+}
+
+
+/* --- Style du bouton "Créer une annonce" (PC & Mobile) --- */
+.nav-create-post,
+.mobile-nav-item.create {
+    color: var(--success-color) !important;
+}
+
+.nav-create-post:hover,
+.mobile-nav-item.create:hover {
+    color: white !important;
+    background-color: var(--success-color);
+}
+
+.desktop-nav-item.nav-create-post.active,
+.mobile-nav-item.create.active {
+    color: white !important;
+    background-color: var(--success-color);
+    border-color: var(--success-color) !important;
+}
+
+/* On cache l'ancien `sub-nav` qui n'est plus utilisé */
+.sub-nav {
+    display: none;
+}
+
+
+/* --- Style des nouveaux filtres sur la page Annonces --- */
+.filters-and-nav-container {
+    padding: 1rem;
+    background-color: var(--light-surface-color);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.filters-bar-new {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    background-color: var(--light-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-sm);
+    flex-grow: 1; 
+}
+
+.filter-group i {
+    padding: 0 0.75rem;
+    color: var(--light-text-secondary);
+}
+
+.filter-group select {
+    border: none;
+    background: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+}
+
+.category-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.category-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 50px;
+    border: 1px solid var(--border-color);
+    background-color: var(--light-surface-color);
+    color: var(--light-text-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.category-nav-item:hover {
+    background-color: var(--light-bg-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.category-nav-item.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(13, 110, 253, 0.2);
+}
+
+.category-nav-item.active i {
+    color: white;
+}
+
+.category-nav-item i {
+    color: var(--primary-color);
+    transition: color 0.2s ease;
+}
+/* ============================================= */
+/* --- 16. MODERN SEARCH BAR (PAGE ANNONCES) --- */
+/* ============================================= */
+
+.modern-search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Limite la largeur sur les grands écrans */
+}
+
+.modern-search-bar .fa-search {
+    position: absolute;
+    top: 50%;
+    left: 15px; /* Icône à l'intérieur, à gauche */
+    transform: translateY(-50%);
+    color: var(--light-text-secondary);
+    font-size: 1rem;
+}
+
+.modern-search-bar input[type="search"] {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 45px;
+/* Espace à gauche pour l'icône */
+    border-radius: 50px;
+/* Bords très arrondis */
+    border: 1px solid var(--border-color);
+    background-color: var(--light-surface-color);
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.modern-search-bar input[type="search"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+}
+
+.modern-search-bar input[type="search"]::placeholder {
+    color: var(--light-text-secondary);
+}
+
+/* On s'assure que le header s'adapte bien */
+@media (max-width: 600px) {
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .modern-search-bar {
+        max-width: 100%;
+    }
+}
+/* ======================================================= */
+/* --- 17. MODERNISATION RECHERCHE PAGE D'ACCUEIL --- */
+/* ======================================================= */
+
+/* Style spécifique pour la barre de recherche sur la page d'accueil */
+.homepage-search {
+    max-width: 600px;
+/* Plus large que sur la page des annonces */
+    margin: 2rem auto 0 auto;
+/* Centrée et avec de l'espace au-dessus */
+}
+
+.homepage-search input[type="search"] {
+    padding: 1rem 1rem 1rem 55px;
+/* Plus haute pour un meilleur impact */
+    font-size: 1.1rem;
+    background-color: var(--light-surface-color);
+/* Fond blanc pour contraster */
+}
+
+.homepage-search .fa-search {
+    font-size: 1.2rem;
+    left: 20px;
+/* Un peu plus d'espace pour l'icône */
+}
+/* ============================================= */
+/* --- 18. ANIMATIONS D'APPARITION AU SCROLL --- */
+/* ============================================= */
+
+/*
+  État initial de nos cartes d'annonces :
+  - Complètement transparentes (opacity: 0)
+  - Légèrement décalées vers le bas (transform: translateY(20px))
+*/
+.post-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.post-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ======================================================= */
+/* --- 19. MODERNISATION RECHERCHE HEADER & FORMULAIRES --- */
+/* ======================================================= */
+
+/* --- Barre de recherche du header --- */
+.top-nav-level-1 .search-container {
+    background-color: var(--light-bg-color);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.top-nav-level-1 .search-container:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
+}
+
+.top-nav-level-1 .search-input-header {
+    width: 0;
+/* Caché par défaut */
+    border: none;
+    background: transparent;
+    padding: 0;
+    transition: all 0.3s ease;
+}
+
+.top-nav-level-1 .search-icon-btn {
+    color: var(--light-text-secondary);
+}
+
+/* Quand on clique sur l'icône sur mobile */
+.top-nav-level-1 .search-container.active .search-input-header {
+    width: 150px;
+    padding: 0.5rem 0 0.5rem 1rem;
+}
+
+/* Sur PC, la barre est toujours un peu visible */
+@media(min-width: 769px) {
+    .top-nav-level-1 .search-input-header {
+        width: 200px;
+        padding: 0.5rem 0 0.5rem 1rem;
+    }
+}
+/* --- Style global pour les formulaires --- */
+/* --- Style pour la prévisualisation des images --- */
+.image-preview-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.image-preview {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+.image-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--border-color);
+}
+.remove-image-btn {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 22px;
+    height: 22px;
+    background-color: var(--error-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-container {
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--light-text-secondary);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    background-color: var(--light-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md); /* Bords arrondis */
+    color: var(--light-text-color);
+    transition: all 0.2s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: var(--light-surface-color);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.2);
+}
+/* --- Correction pour la superposition de la nav mobile --- */
+@media (max-width: 768px) {
+    main.container + footer {
+        margin-bottom: 60px;
+/* Hauteur de la barre de navigation */
+    }
+}
+/* ======================================================= */
+/* --- 20. SYSTÈME DE GÉOLOCALISATION --- */
+/* ======================================================= */
+
+/* Style pour la localisation sur les cartes d'annonces */
+.post-card-location {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--light-text-secondary);
+    margin-top: 0.75rem;
+/* Espace sous le titre */
+    font-weight: 500;
+}
+
+.post-card-location i {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+/* Style pour la localisation sur la page de détail */
+.post-detail-meta {
+    display: flex;
+    flex-direction: column; /* Empile les infos */
+    gap: 0.5rem;
+/* Espace entre les lignes */
+    margin-bottom: 1.5rem;
+    color: var(--light-text-secondary);
+}
+
+.post-detail-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+}
+
+.post-detail-location i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* Amélioration de Choices.js pour la sélection multiple */
+.choices__list--multiple .choices__item {
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color-dark);
+    color: white;
+    font-weight: 500;
+}
+
+.choices__list--multiple .choices__item .choices__button {
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    filter: invert(1);
+/* Rend la croix de suppression blanche */
+}
+/* Style pour la zone de téléversement d'images modernisée */
+.upload-area {
+    border: 2px dashed var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-color: var(--light-bg-color);
+    margin-top: 0.5rem;
+}
+
+.upload-area:hover {
+    border-color: var(--primary-color);
+    background-color: var(--light-surface-color);
+}
+
+.upload-area i {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.upload-area p {
+    color: var(--light-text-secondary);
+    margin: 0;
+}
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
+    flex-wrap: wrap; /* Permet de passer à la ligne sur petits écrans */
+}
+
+/* --- Formulaire de création d'annonce moderne --- */
+.modern-form .subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+.form-step {
+    border: none;
+    padding: 0;
+    margin: 0 0 2.5rem 0;
+}
+.form-step legend {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    color: var(--primary-color);
+}
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+}
+.form-group-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.choice-pills {
+    display: flex;
+    gap: 0.75rem;
+}
+.pill-btn {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    background-color: var(--light-surface-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+.pill-btn:hover {
+    background-color: var(--light-bg-color);
+    border-color: var(--primary-color);
+}
+.pill-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+.cover-badge {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: var(--border-radius-sm);
+}
+.submit-btn-large {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+.spinner-small {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-bottom-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}
+
+/* ======================================================= */
+/* --- 22. MODERNISATION FORMULAIRE DE CRÉATION --- */
+/* ======================================================= */
+
+@media (max-width: 600px) {
+    /* On passe les 2 colonnes en 1 seule sur mobile */
+    .form-group-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem; /* On garde un espace vertical */
+    }
+
+    /* On s'assure que les boutons pilules ne débordent pas */
+    .choice-pills {
+        flex-wrap: wrap;
+/* Permet de passer à la ligne si besoin */
+    }
+
+    .pill-btn {
+        flex-grow: 1;
+/* Permet aux boutons de prendre la largeur disponible */
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--light-text-secondary);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--light-surface-color);
+}
+/* DANS static/css/style.css */
+
+/* --- Amélioration des actions dans la modale --- */
+
+/* On transforme le conteneur en flexbox pour aligner les boutons */
+.modal-actions {
+    display: flex;
+    justify-content: flex-end; /* Aligne les boutons à droite */
+    gap: 0.75rem; /* Espace entre les boutons */
+    margin-top: 2rem; /* Espace au-dessus des boutons */
+}
+
+/* Style pour un bouton secondaire (notre bouton "OK") */
+.button-secondary {
+    padding: 0.65rem 1.5rem;
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--light-text-secondary);
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.button-secondary:hover {
+    background-color: var(--light-bg-color);
+    border-color: var(--light-text-secondary);
+}
+/* DANS static/css/style.css */
+
+/* Centre les actions de la modale si elle n'a qu'un seul bouton */
+.modal-actions.center-actions {
+    justify-content: center;
+}
+
+/* Ajoute un petit espace entre l'icône et le texte du bouton */
+.button-primary i {
+    margin-right: 0.5rem;
+}
+.post-card.selected {
+    transform: scale(0.97); /* Effet de rétrécissement pour montrer la sélection */
+    box-shadow: 0 0 0 3px var(--primary-color), 0 8px 16px var(--shadow-color); /* Bordure bleue et ombre plus prononcée */
+    border-color: var(--primary-color);
+}
+
+/* On s'assure que la transition est fluide */
+.post-card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+
+/* --- Style pour une notification sélectionnée --- */
+.notification-item.selected {
+    background-color: rgba(13, 110, 253, 0.1); /* Fond bleu très léger */
+    border-left: 4px solid var(--primary-color); /* Bordure gauche bleue bien visible */
+    border-color: var(--primary-color);
+}
+
+/* ============================================= */
+/* --- 23. ANIMATIONS ET AMÉLIORATIONS UX --- */
+/* ============================================= */
+
+/* --- Animation d'apparition au scroll --- */
+
+
+
+/* --- Preloader amélioré --- */
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 5px solid var(--border-color);
+    border-bottom-color: var(--primary-color); /* Fait tourner juste une partie */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* --- Style pour les conversations par annonce --- */
+.chat-item-post-title {
+    font-size: 0.8rem;
+    color: var(--light-text-secondary);
+    font-style: italic;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- Menu d'actions sur les conversations --- */
+.chatroom-actions {
+    margin-left: auto;
+}
+.more-actions-btn {
+    color: var(--light-text-secondary);
+}
+
+/* --- Vidéos dans le chat --- */
+.chat-video {
+    max-width: 100%;
+    border-radius: var(--border-radius-sm);
+    display: block;
+}
+
+/* --- Header de sélection de message --- */
+.selection-actions {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+}
+
+/* --- Spinner de chargement des messages --- */
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

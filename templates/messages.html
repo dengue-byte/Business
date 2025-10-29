@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block body_class %}messages-page{% endblock %}
+{% block title %}{{ _('Mes Messages') }} - Business{% endblock %}
+
+{% block head_extra %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/messages.css') }}">
+    <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="page-wrapper-chat">
+    <div class="chat-container">
+        <aside id="chat-list-panel" class="chat-list-panel">
+            <div class="chat-list-header">
+                <h2>{{ _('Conversations') }}</h2>
+            </div>
+            <div id="chatrooms-list" class="chat-list-body">
+                </div>
+        </aside>
+
+        <main id="chat-area-panel" class="chat-area-panel">
+            <div id="chat-welcome-screen" class="chat-welcome-screen">
+                <i class="fa-solid fa-comments welcome-icon"></i>
+                <h3>{{ _('Votre messagerie') }}</h3>
+                <p>{{ _("Sélectionnez une conversation pour commencer.") }}</p>
+            </div>
+
+            <div id="chat-main-screen" class="chat-main-screen hidden">
+                <header id="current-chat-header" class="chat-area-header"></header>
+                <div id="messages-display" class="messages-display"></div>
+                
+                <footer id="message-input-area" class="message-input-area">
+                    <div id="reply-preview-container" class="reply-preview-container hidden">
+                        <div class="reply-preview-content"></div>
+                        <button id="cancel-reply-btn" class="cancel-reply-btn" title="{{ _('Annuler la réponse') }}">&times;</button>
+                    </div>
+
+                    <div class="input-mode-text">
+                        </div>
+
+                    <div class="input-mode-voice">
+                        </div>
+    <div class="input-mode-text">
+        <div class="text-input-wrapper">
+            <button id="emoji-button" class="chat-icon-button" title="{{ _('Émojis') }}"><i class="fa-solid fa-smile"></i></button>
+            <textarea id="message-input" placeholder="{{ _('Message') }}" rows="1"></textarea>
+            <button id="attach-file-button" class="chat-icon-button" title="{{ _('Joindre un fichier') }}"><i class="fa-solid fa-paperclip"></i></button>
+            </div>
+
+        <button id="mic-or-send-btn" class="chat-icon-button mic-mode" title="{{ _('Message vocal') }}">
+            <i class="fa-solid fa-microphone"></i>
+        </button>
+    </div>
+
+    <div class="input-mode-voice">
+    <div class="voice-recorder-top">
+        <span id="record-timer">0:00</span>
+        <div id="waveform-container">
+            </div>
+    </div>
+    <div class="voice-recorder-bottom">
+        <button id="cancel-voice-btn" class="voice-action-btn" title="{{ _('Annuler') }}">
+            <i class="fa-solid fa-trash"></i>
+        </button>
+        <button id="pause-resume-btn" class="voice-action-btn pause-btn" title="{{ _('Mettre en pause') }}">
+            <i class="fa-solid fa-pause"></i>
+        </button>
+        <button id="voice-send-btn" class="voice-action-btn send-btn" title="{{ _('Envoyer') }}">
+            <i class="fa-solid fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
+
+    <div id="attachment-popup" class="attachment-popup">
+        <button class="attachment-option" data-action="gallery">
+            <i class="fa-solid fa-images"></i> <span>{{ _('Galerie') }}</span>
+        </button>
+        <button class="attachment-option" data-action="camera">
+            <i class="fa-solid fa-camera"></i> <span>{{ _('Appareil photo') }}</span>
+        </button>
+        <button class="attachment-option" data-action="document">
+            <i class="fa-solid fa-file-alt"></i> <span>{{ _('Document') }}</span>
+        </button>
+    </div>
+    <div style="display: none;">
+    <input type="file" id="gallery-input" accept="image/*,video/*" multiple> 
+    <input type="file" id="camera-input" accept="image/*" capture="environment"> 
+    <input type="file" id="document-input" accept=".pdf,.doc,.docx,.txt,.xls,.xlsx,.ppt,.pptx" multiple>
+    
+</div>
+</footer>
+
+            </div>
+        </main>
+    </div>
+</div>
+
+<div id="rating-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+        <button class="close-modal-btn">&times;</button>
+        <h3>{{ _('Rate the user') }}</h3>
+        <p>{{ _('What rating would you give to') }} <strong id="rated-username"></strong> ?</p>
+        <form id="rating-form">
+            <div class="star-rating">
+                <span class="star" data-value="1"><i class="fa-regular fa-star"></i></span>
+                <span class="star" data-value="2"><i class="fa-regular fa-star"></i></span>
+                <span class="star" data-value="3"><i class="fa-regular fa-star"></i></span>
+                <span class="star" data-value="4"><i class="fa-regular fa-star"></i></span>
+                <span class="star" data-value="5"><i class="fa-regular fa-star"></i></span>
+            </div>
+            <input type="hidden" id="rating-value" name="stars" value="0">
+            <div class="form-group">
+                <label for="rating-comment">{{ _('Add a comment (optional)') }}</label>
+                <textarea id="rating-comment" name="comment" rows="3"></textarea>
+            </div>
+            <button type="submit" class="button-primary">{{ _('Send the evaluation') }}</button>
+        </form>
+    </div>    
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/messages.js') }}"></script>
+{% endblock %}

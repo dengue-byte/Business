@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Settings') }} - Troquez-Ici{% endblock %}
+
+{% block content %}
+<div class="settings-container">
+    <h2>{{ _('Settings') }}</h2>
+    <div id="settings-message-container"></div>
+
+    <div class="settings-menu">
+        <div class="settings-menu-item non-button">
+            <i class="fa-solid fa-language fa-fw"></i>
+            <div class="menu-item-text">
+                <strong>{{ _('Language') }}</strong>
+                <span>{{ _('Change the application language') }}</span>
+            </div>
+            <select id="language-switcher" class="language-switcher">
+                <option value="fr" {% if get_locale() == 'fr' %}selected{% endif %}>Français</option>
+                <option value="en" {% if get_locale() == 'en' %}selected{% endif %}>English</option>
+            </select>
+        </div>
+
+        <button class="settings-menu-item" id="open-profile-modal">
+            <i class="fa-solid fa-user-pen fa-fw"></i>
+            <div class="menu-item-text">
+                <strong>{{ _('Modify information') }}</strong>
+                <span>{{ _('Username, email') }}</span>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="settings-menu-item" id="open-password-modal">
+            <i class="fa-solid fa-lock fa-fw"></i>
+            <div class="menu-item-text">
+                <strong>{{ _('Security and password') }}</strong>
+                <span>{{ _('Change your password') }}</span>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="settings-menu-item" id="logout-btn">
+            <i class="fa-solid fa-right-from-bracket fa-fw"></i>
+            <div class="menu-item-text">
+                <strong>{{ _('Change account') }}</strong>
+                <span>{{ _('Log out') }}</span>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <button class="settings-menu-item danger" id="open-delete-modal">
+            <i class="fa-solid fa-trash-can fa-fw"></i>
+            <div class="menu-item-text">
+                <strong>{{ _('Delete account') }}</strong>
+                <span>{{ _('This action is irreversible') }}</span>
+            </div>
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+</div>
+
+<div id="profile-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+        <button class="close-modal-btn">&times;</button>
+        <h3>{{ _('Modify information') }}</h3>
+        <form id="profile-form">
+            <div class="form-group">
+                <label for="username">{{ _('Username') }}</label>
+                <input type="text" id="username" value="{{ g.user.username }}" required>
+            </div>
+            <div class="form-group">
+                <label for="email">{{ _('Email address') }}</label>
+                <input type="email" id="email" value="{{ g.user.email }}" required>
+            </div>
+            <div class="form-group">
+    <label>{{ _('Profile Photo') }}</label>
+    <div id="photo-upload-container" class="photo-upload">
+        
+        <div id="photo-preview-wrapper">
+            {% if g.user.profile_photo %}
+                <img id="current-photo" src="{{ url_for('uploaded_file', filename=g.user.profile_photo) }}" alt="Photo actuelle" class="current-photo-preview">
+            {% else %}
+                <div id="empty-avatar-placeholder" class="empty-avatar" style="cursor: pointer;">
+                    <span>{{ g.user.username[0]|upper }}</span>
+                    <i class="fa-solid fa-camera" style="color: rgba(255,255,255,0.8); font-size: 1.2rem; margin-top: 0.5rem;"></i>
+                    <p style="font-size: 0.8rem; margin-top: 0.2rem;">{{ _('Ajouter une photo') }}</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <div id="photo-buttons-wrapper" class="photo-buttons">
+            {% if g.user.profile_photo %}
+                <button type="button" id="edit-photo-btn" class="photo-btn primary">{{ _('Modifier') }}</button>
+                <button type="button" id="delete-photo-btn" class="photo-btn danger">{{ _('Supprimer') }}</button>
+            {% else %}
+                <button type="button" id="add-photo-btn" class="photo-btn primary">{{ _('Ajouter une photo') }}</button>
+            {% endif %}
+        </div>
+        
+        <input type="file" id="photo-file" accept="image/*" hidden>
+    </div>
+</div>
+    <button type="submit" class="button-primary">{{ _('Save') }}</button>
+        </form>
+    </div>
+</div>
+
+<div id="password-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+        <button class="close-modal-btn">&times;</button>
+        <h3>{{ _('Change the password') }}</h3>
+        <form id="password-form">
+            <div class="form-group">
+                <label for="current-password">{{ _('Current password') }}</label>
+                <input type="password" id="current-password" required>
+            </div>
+            <div class="form-group">
+                <label for="new-password">{{ _('New password') }}</label>
+                <input type="password" id="new-password" required>
+            </div>
+            <button type="submit" class="button-primary">{{ _('Update') }}</button>
+        </form>
+    </div>
+</div>
+
+<div id="delete-confirm-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+        <button class="close-modal-btn">&times;</button>
+        <h3>{{ _('Are you absolutely certain?') }}</h3>
+        <p>{{ _('This action cannot be undone. Your account and all your data will be permanently deleted.') }}</p>
+        <form id="delete-confirm-form">
+            <div class="form-group">
+                <label for="delete-password">{{ _('Confirm with your password') }}</label>
+                <input type="password" id="delete-password" required>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="button-secondary cancel-delete-btn">{{ _('Cancel') }}</button>
+                <button type="submit" class="button-danger">{{ _('Permanently delete') }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+{% endblock %}

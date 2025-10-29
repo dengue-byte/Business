@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('My Favorites') }} - Business{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>{{ _('My Favorites') }}</h2>
+    <div class="actions-menu">
+        <button class="actions-button">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+        <div class="actions-dropdown">
+            <button id="clear-favorites-button" class="dropdown-item danger"><i class="fa-solid fa-trash"></i> {{ _('Clear the list') }}</button>
+        </div>
+    </div>
+</div>
+
+<div id="message-container"></div>
+<div id="favorites-list-container" class="posts-grid">
+    <!-- Les favoris sont chargés ici -->
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/favorites.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Log in') }} - Troquez-Ici{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>{{ _('Log in') }}</h2>
+    <p>{{ _('Happy to see you again!') }}</p>
+    <div id="message-container"></div>
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="email">{{ _('Email address') }}</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">{{ _('Password') }}</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <div class="form-extra-links">
+            <a href="{{ url_for('forgot_password_page') }}">{{ _('Forgot password?') }}</a>
+        </div>
+        <button type="submit" class="button-primary">{{ _('Log in') }}</button>
+    </form>
+    <p class="form-footer-text">{{ _('Not an account yet?') }} <a href="{{ url_for('register_page') }}">{{ _('Sign up here') }}</a>.</p>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const message = urlParams.get('message');
+
+    if (message === 'confirmed') {
+        displayMessage('{{ _("Your account has been successfully confirmed! You can now log in.") }}', 'success');
+    } else if (message === 'already_confirmed') {
+        displayMessage('{{ _("Your account has already been confirmed. You can log in.") }}', 'info');
+    } else if (message === 'password_reset_success') {
+        displayMessage('{{ _("Your password has been successfully reset.") }}', 'success');
+    }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,847 @@
+/* ===========================================================
+   messages.css - Ultra-Modern 21st Century Messaging UI
+   - Merged updates: Robust structure for perfect scroll, exact voice interface match, stylized quoted messages, improved mobile ergonomics
+   - CORRECTIONS INTÉGRÉES : Layout mobile fixe, gestion de l'espace, positionnement du clavier emoji et de l'aperçu de réponse.
+   =========================================================== */
+
+/* ---------- 0. Base variables & fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+
+:root {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --muted: #9aa4b2;
+  --text: #0f1723;
+  --accent: #0066ff;
+  --accent-2: #7c3aed; /* purple accent for gradients */
+  --success: #12b886;
+  --danger: #ff5252;
+  --glass: rgba(255,255,255,0.6);
+  --glass-2: rgba(255,255,255,0.04);
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --shadow-sm: 0 4px 12px rgba(16,24,40,0.06);
+  --shadow-md: 0 10px 30px rgba(16,24,40,0.12);
+  --transition-fast: 170ms;
+  --transition-smooth: 300ms;
+  --max-width: 1100px;
+  --ui-gap: 14px;
+  --message-width: min(74%, 680px);
+  --incoming-bg: linear-gradient(135deg, #ffffff, #f3f6fb);
+  --outgoing-bg: linear-gradient(135deg, #e6f0ff, #dbe9ff);
+  --date-sep-bg: rgba(15,23,35,0.03);
+  --elevate: 0 6px 22px rgba(2,6,23,0.08);
+  --focus-ring: 0 0 0 4px rgba(0,102,255,0.08);
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --reply-bg: rgba(0, 0, 0, 0.05); 
+  --reply-border: var(--accent);
+  --header-height: auto; 
+  --footer-base-height: none;
+  --emoji-picker-height: 200px;
+  --attachment-popup-height: 400px;
+  
+}
+
+/* ---------- 1. Page layout ---------- */
+.messages-page {
+  font-family: var(--font);
+  background: linear-gradient(180deg, var(--bg), var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page-wrapper-chat {
+  max-width: var(--max-width);
+  margin: 1.5rem auto;
+  padding: 1rem;
+}
+
+.chat-container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 1rem;
+  align-items: stretch;
+  overflow: hidden;
+  /* MODIFICATION 1 : Donne une hauteur au conteneur sur ordinateur */
+  height: calc(100vh - 3rem);
+}
+
+/* ======================================================================= */
+/* --- CORRECTION : Layout mobile "WhatsApp" --- */
+/* ======================================================================= */
+@media (max-width: 767px) {
+    /* Étape 1: Empêcher la page entière de scroller en mode chat */
+    html, body {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 0;
+    }
+    html, body.in-chat-view {
+        height: auto;
+        overflow: hidden;
+    }
+
+    /* Étape 2: Forcer les conteneurs à occuper tout l'écran, sans marges */
+    body.in-chat-view .page-wrapper-chat,
+    body.in-chat-view .chat-container {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+
+    }
+    
+    .chat-container {
+        grid-template-columns: 1fr;
+        display: block;
+        position: relative;
+    }
+
+    /* Logique de transition entre la liste et la discussion */
+    .chat-list-panel, .chat-area-panel {
+        /* Ces règles (position: absolute) écrasent les règles ordinateur */
+        position: absolute; top: 0; bottom: 0; left: 0; width: 100%;
+        height: 100%; /* S'assure que la hauteur est 100% sur mobile */
+        transition: transform var(--transition-smooth);
+        background: var(--bg);
+        overflow: hidden; /* Empêche le panneau lui-même de scroller */
+    }
+    .chat-list-panel { transform: translateX(0); z-index: 10; }
+    .chat-area-panel { transform: translateX(100%); z-index: 10; }
+    .chat-container.chat-view-active .chat-list-panel { transform: translateX(-100%); }
+    .chat-container.chat-view-active .chat-area-panel { transform: translateX(0); z-index: 3; }
+    .chat-container.chat-view-active .chat-welcome-screen { display: none; }
+
+  
+    body.in-chat-view > header,
+body.in-chat-view > footer {
+    display: none !important;
+}
+
+    /* Étape 3: Structurer l'écran de discussion avec Flexbox */
+    body.in-chat-view .chat-main-screen {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Doit maintenant hériter la pleine hauteur (top:0, bottom:0) */
+    overflow: hidden;
+    width: 100%;
+    margin-top: 0;
+}
+
+    /* Étape 4: Fixer le header en haut */
+    body.in-chat-view .chat-area-header {
+        position: sticky;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: var(--header-height);
+        z-index: 101;
+        border-radius: 0;
+        box-shadow: var(--shadow-sm);
+    }
+
+    /* Étape 5: Faire de la zone de messages la seule partie scrollable */
+    body.in-chat-view .messages-display {
+        flex: 1; /* Prend tout l'espace disponible */
+        overflow-y: auto; /* Active le scroll vertical */
+        margin-bottom: 80px;
+        /* Ajoute de l'espace pour ne pas être caché par le header et le footer */
+        padding-top: var(--header-height);
+        padding-bottom: 25px;
+        padding-left: 0;
+        padding-right: 0;
+        transition: padding-bottom var(--transition-smooth); /* Pour l'animation emoji */
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E0E7F1' fill-opacity='0.4'%3E%3Cpath d='M36 34.094c0 2.15-1.75 3.906-3.906 3.906H26.094A3.906 3.906 0 0 1 22.188 34.094V26.094A3.906 3.906 0 0 1 26.094 22.188h5.99c1.02 0 1.94.39 2.62.97l.01-1.05c0-2.15-1.75-3.906-3.906-3.906H26.094A3.906 3.906 0 0 0 22.188 22.094v12c0 2.15 1.75 3.906 3.906 3.906h5.812c2.15 0 3.906-1.75 3.906-3.906V34.094z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-color: #f0f2f5; /* Une couleur de fond douce */
+    }
+
+    /* Étape 6: Fixer la zone de saisie (footer) en bas */
+    body.in-chat-view .message-input-area {
+        position: fixed;
+        bottom: 25px; /* Décalé pour laisser de la place au clavier emoji */
+    
+        left: 0;
+        width: 100%;
+        height: auto; 
+        z-index: 10;
+        margin: 0;
+        border-radius: 0;
+        background: var(--bg);
+        flex-direction: column; 
+        align-items: stretch;
+        gap: 0;
+        transition: bottom var(--transition-smooth); /* Pour l'animation emoji */
+}
+    
+    /* --- CORRECTION CLÉ : Position de l'aperçu de réponse --- */
+    #reply-preview-container {
+        background: var(--surface);
+        padding: 8px 12px;
+        margin: 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        border-left-width: 3px;
+        border-radius: 0;
+        order: -1; /* Place l'aperçu AVANT la zone de saisie dans le flex container */
+    }
+    #reply-preview-container.hidden { display: none; }
+
+    /* --- CORRECTION CLÉ : Comportement du clavier Emoji --- */
+    emoji-picker {
+        display: none;
+        position: fixed;
+        bottom: calc(-1 * var(--emoji-picker-height)); /* Caché sous l'écran */
+        left: 0;
+        width: 100%;
+        height: var(--emoji-picker-height);
+        z-index: 1000;
+        border-radius: 0;
+        transition: bottom var(--transition-smooth);
+    }
+    emoji-picker.visible {
+        display: block;
+        bottom: 0; /* Apparaît en glissant depuis le bas */
+    }
+
+    /* Quand le picker est actif, on déplace TOUT le footer vers le haut */
+    body.emoji-picker-active .message-input-area {
+        bottom: var(--emoji-picker-height);
+    }
+    /* On ajuste aussi le padding des messages pour voir le dernier message */
+    body.emoji-picker-active .messages-display {
+        padding-bottom: calc(var(--footer-base-height) + var(--emoji-picker-height));
+    }
+    
+    #message-input:focus { box-shadow: none; }
+}
+
+/* ---------- 2. Chat list (left column) ---------- */
+.chat-list-panel {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 12px;
+  box-shadow: var(--shadow-md);
+  z-index: 3;
+  height: 100%; /* <-- AJOUTÉ (pour remplir la grille) */
+  overflow: hidden; /* <-- AJOUTÉ (pour que .chat-list-body scrolle) */
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--reply-bg);
+}
+
+.chat-list-header {
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.chat-list-header h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.chat-list-body {
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  overflow-y: auto; /* C'est cet élément qui doit scroller */
+}
+
+.chat-list-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  user-select: none;
+}
+
+.chat-list-item:hover {
+  background: rgba(2,6,23,0.02);
+  transform: translateY(-2px);
+}
+
+.chat-list-item.active {
+  background: linear-gradient(90deg, rgba(0,102,255,0.06), rgba(124,58,237,0.04));
+  box-shadow: var(--elevate);
+}
+
+.chat-item-avatar, .avatar-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  overflow: hidden;
+  transition: box-shadow var(--transition-fast);
+}
+
+.chat-list-item:hover .chat-item-avatar {
+  box-shadow: 0 0 12px rgba(0,102,255,0.3);
+}
+
+.avatar-img {
+  object-fit: cover;
+}
+
+.chat-item-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.chat-item-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-item-time {
+  font-size: 0.78rem;
+  color: var(--muted);
+  min-width: 44px;
+  text-align: right;
+}
+
+.chat-item-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.last-message-preview {
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.notification-badge {
+  background: linear-gradient(180deg, var(--danger), #c83636);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 4px 7px;
+  border-radius: 999px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(200,40,40,0.12);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.chat-status-icon {
+  margin-right: 6px;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+
+/* ---------- 3. Chat area (right column) ---------- */
+.chat-area-panel {
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); 
+  height: 100%; /* <-- AJOUTÉ (pour remplir la grille) */
+  overflow: hidden;
+  z-index: 1;
+}
+
+.chat-welcome-screen {
+  background: linear-gradient(180deg, var(--glass), var(--glass-2));
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-welcome-screen .welcome-icon {
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.chat-main-screen {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* <-- AJOUTÉ (pour remplir le panneau) */
+  overflow: hidden;
+  border: 1px solid rgba(15,23,35,0.03);
+}
+
+.chat-area-header {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(15,23,35,0.03);
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  flex-shrink: 0;
+  z-index: 10; /* S'assure qu'il est au-dessus de .messages-display */
+}
+
+.messages-display {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* Fond pour ordinateur (la règle mobile l'écrasera) */
+  background-color: var(--bg); 
+}
+
+.date-separator {
+  text-align: center;
+  margin: 12px 0;
+  position: relative;
+}
+
+.date-separator span {
+  background: var(--date-sep-bg);
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  position: relative;
+  z-index: 1;
+}
+
+.message-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: var(--message-width);
+  animation: messagePop 0.3s ease-out;
+}
+
+@keyframes messagePop {
+  from { opacity: 0; transform: scale(0.95) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.message-wrapper.received {
+  align-self: flex-start;
+}
+
+.message-wrapper.sent {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.message-bubble {
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  background: var(--incoming-bg);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  backdrop-filter: blur(8px);
+  transition: transform var(--transition-fast);
+}
+
+.message-wrapper.sent .message-bubble {
+  background: var(--outgoing-bg);
+}
+
+.message-wrapper.received .message-bubble {
+  border-top-left-radius: 0;
+}
+
+.message-wrapper.sent .message-bubble {
+  border-top-right-radius: 0;
+}
+/* --- NOUVEAU : Style pour les messages sélectionnés --- */
+.message-wrapper.selected > .message-bubble-container .message-bubble {
+    background-color: rgba(5, 128, 250, 0.15); /* Surbrillance bleue semi-transparente */
+    transform: scale(0.98); /* Léger effet de pression */
+}
+
+.message-bubble:hover {
+  transform: translateY(-2px);
+}
+
+.message-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  opacity: 0.8;
+}
+
+.quoted-message {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  border-left: 3px solid var(--accent);
+  font-size: 0.9rem;
+}
+
+.quoted-message strong {
+  color: var(--accent);
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* --- Zone de saisie principale --- */
+.message-input-area {
+  padding: 8px 12px;
+  background: var(--surface);
+  border-top: 1px solid rgba(15,23,35,0.03);
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  position: relative;
+  min-height: var(--footer-base-height);
+  flex-shrink: 0; /* Empêche la zone de saisie de rétrécir */
+}
+
+.input-mode-text {
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.text-input-wrapper {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  background-color: var(--surface);
+  border-radius: 24px;
+  padding: 4px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(15,23,35,0.03);
+}
+
+#message-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  resize: none;
+  max-height: 120px;
+  overflow-y: auto;
+  font-size: 1rem;
+  color: var(--text);
+  padding: 8px 4px;
+}
+
+#message-input::placeholder {
+  color: var(--muted);
+}
+
+.chat-icon-button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+#mic-or-send-btn {
+  background-color: var(--accent);
+  color: white;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#mic-or-send-btn:hover {
+  transform: scale(1.1);
+}
+
+/* --- Popup d'attachements --- */
+#attachment-popup {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 12px;
+  width: calc(100% - 24px);
+  max-width: 350px;
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s ease-out;
+  z-index: 1001;
+}
+
+#attachment-popup.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.attachment-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 8px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 0.8rem;
+  transition: background-color 0.2s;
+}
+
+.attachment-option:hover {
+  background-color: var(--glass-2);
+}
+
+.attachment-option i {
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+/* --- Interface d'enregistrement vocal --- */
+.input-mode-voice {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  height: 100%;
+  align-items: center;
+}
+
+.message-input-area.recording-active .input-mode-text {
+  display: none;
+}
+
+.message-input-area.recording-active .input-mode-voice {
+  display: flex;
+}
+
+.voice-recorder-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+#record-timer {
+  font-family: monospace;
+  font-size: 1rem;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+#waveform-container {
+  flex-grow: 1;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  overflow: hidden;
+}
+
+.waveform-bar {
+  width: 3px;
+  height: 5%;
+  background-color: var(--muted);
+  border-radius: 5px;
+  transition: height 0.1s ease;
+}
+
+.message-input-area.recording-active .waveform-bar {
+  background-color: var(--accent);
+}
+
+.voice-recorder-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.voice-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 1.5rem;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.voice-action-btn:hover {
+  background-color: var(--glass-2);
+}
+
+#pause-resume-btn i {
+  color: var(--danger);
+}
+
+#voice-send-btn {
+  color: white;
+  font-size: 1.2rem;
+}
+
+/* --- Couleurs personnalisées pour les boutons vocaux --- */
+#cancel-voice-btn i {
+  color: var(--danger);
+}
+
+#cancel-voice-btn:hover {
+  background-color: rgba(255, 82, 82, 0.1);
+}
+
+#voice-send-btn {
+  background-color: var(--accent);
+  color: white;
+}
+
+#voice-send-btn:hover {
+  filter: brightness(1.1);
+}
+
+#pause-resume-btn:hover {
+  background-color: var(--glass-2);
+}
+
+/* --- Styles divers --- */
+:focus {
+  outline: none;
+}
+
+.chat-icon-button:focus, .chat-list-item:focus {
+  box-shadow: var(--focus-ring);
+}
+
+@media (min-width: 768px) {
+  .page-wrapper-chat {
+    padding: 2rem;
+  }
+  .chat-list-panel {
+    width: 320px;
+  }
+}
+
+.upload-spinner {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+.message-wrapper.uploading .message-bubble {
+   opacity: 0.7;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.message-status.read i {
+    color: #34b7f1; /* Un bleu vif, style WhatsApp/Telegram */
+}
+
+/* Empêche la sélection du texte à l'intérieur de la bulle lors d'un appui long */
+.message-bubble {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard */
+}
+
+/* Style pour une bulle de message sélectionnée */
+.message-wrapper.selected > .message-bubble-container .message-bubble {
+    background-image: none; /* On enlève le dégradé pour que la couleur soit uniforme */
+    background-color: #d1e7ff; /* Un bleu clair de surbrillance */
+    transform: scale(0.98); /* Léger effet de "pression" */
+    transition: transform 150ms ease-out, background-color 150ms ease-out;
+}
+
+/* Style pour une bulle envoyée et sélectionnée */
+.message-wrapper.sent.selected > .message-bubble-container .message-bubble {
+    background-color: #c1d2ee; 
+}
+
+/* DANS : messages.css */
+/* AJOUTEZ ce bloc (à la place de l'ancien) : */
+
+/* --- Conteneur pour le bouton d'actions --- */
+.chatroom-actions {
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+}
+
+/* --- Style pour le bouton de suppression direct --- */
+.chatroom-actions .delete-chatroom-btn {
+    color: var(--muted);
+    font-size: 1rem; /* Taille de l'icône */
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.chatroom-actions .delete-chatroom-btn:hover {
+    color: var(--danger); /* Devient rouge */
+    background-color: rgba(255, 82, 82, 0.08); /* Fond rouge léger */
+}

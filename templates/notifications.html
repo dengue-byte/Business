@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('Notifications') }} - Business{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>{{ _('Notifications') }}</h2>
+    
+    <div class="main-actions-menu">
+        <button id="main-actions-button" class="actions-button" title="{{ _('Actions') }}">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+        <div id="main-actions-dropdown" class="actions-dropdown">
+            </div>
+    </div>
+    </div>
+
+<div id="message-container"></div>
+<div id="notifications-list-container" class="notifications-list">
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/notifications.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,2205 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Business 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-10-01 00:00+0000\n"
+"PO-Revision-Date: 2025-10-01 00:00+0000\n"
+"Last-Translator: AI Assistant\n"
+"Language-Team: xAI\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Home"
+msgstr "Accueil"
+
+msgid "Posts"
+msgstr "Annonces"
+
+msgid "Messages"
+msgstr "Messages"
+
+msgid "My Posts"
+msgstr "Mes annonces"
+
+msgid "My Favorites"
+msgstr "Mes favoris"
+
+msgid "Profile"
+msgstr "Profil"
+
+msgid "Settings"
+msgstr "Paramètres"
+
+msgid "Help"
+msgstr "Aide"
+
+msgid "Notifications"
+msgstr "Notifications"
+
+msgid "Logout"
+msgstr "Déconnexion"
+
+msgid "Login"
+msgstr "Connexion"
+
+msgid "Register"
+msgstr "Inscription"
+
+msgid "Search..."
+msgstr "Rechercher..."
+
+msgid "Change theme"
+msgstr "Changer le thème"
+
+msgid "Search"
+msgstr "Rechercher"
+
+msgid "Create Post"
+msgstr "Créer une annonce"
+
+msgid "All rights reserved."
+msgstr "Tous droits réservés."
+
+msgid "Go to top"
+msgstr "Aller en haut"
+
+msgid "Exchanges, Share, Discover."
+msgstr "Échanges, Partage, Découverte."
+
+msgid "Give a second life to your objects and share your services with a benevolent local community."
+msgstr "Donnez une seconde vie à vos objets et partagez vos services avec une communauté bienveillante locale."
+
+msgid "See all ads"
+msgstr "Voir toutes les annonces"
+
+msgid "Last Ads"
+msgstr "Dernières annonces"
+
+msgid "No ad for the moment. Be the first to create one!"
+msgstr "Aucune annonce pour le moment. Soyez le premier à en créer une !"
+
+msgid "Save"
+msgstr "Sauvegarder"
+
+msgid "Object"
+msgstr "Objet"
+
+msgid "Service"
+msgstr "Service"
+
+msgid "person(s) interact with this ad."
+msgstr "%(count)s personne(s) interagissent avec cette annonce."
+
+msgid "This ad has been viewed %(count)s times."
+msgstr "Cette annonce a été consultée %(count)s fois."
+
+msgid "Log in"
+msgstr "Se connecter"
+
+msgid "Happy to see you again!"
+msgstr "Ravi de vous revoir !"
+
+msgid "Email address"
+msgstr "Adresse e-mail"
+
+msgid "Password"
+msgstr "Mot de passe"
+
+msgid "Forgot password?"
+msgstr "Mot de passe oublié ?"
+
+msgid "Not an account yet? Sign up here."
+msgstr "Pas encore de compte ? Inscrivez-vous ici."
+
+msgid "Your account has been successfully confirmed! You can now log in."
+msgstr "Votre compte a été confirmé avec succès ! Vous pouvez maintenant vous connecter."
+
+msgid "Your account has already been confirmed. You can log in."
+msgstr "Votre compte a déjà été confirmé. Vous pouvez vous connecter."
+
+msgid "Your password has been successfully reset."
+msgstr "Votre mot de passe a été réinitialisé avec succès."
+
+msgid "Create an account"
+msgstr "Créer un compte"
+
+msgid "Join our exchange and sharing community."
+msgstr "Rejoignez notre communauté d'échanges et de partages."
+
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+msgid "Confirm the password"
+msgstr "Confirmer le mot de passe"
+
+msgid "Sign up"
+msgstr "S'inscrire"
+
+msgid "Already have an account? Log in here."
+msgstr "Déjà un compte ? Connectez-vous ici."
+
+msgid "At least 6 characters"
+msgstr "Au moins 6 caractères"
+
+msgid "One lowercase letter"
+msgstr "Une lettre minuscule"
+
+msgid "One uppercase letter"
+msgstr "Une lettre majuscule"
+
+msgid "One digit"
+msgstr "Un chiffre"
+
+msgid "The password does not meet all the rules."
+msgstr "Le mot de passe ne respecte pas toutes les règles."
+
+msgid "The passwords do not match."
+msgstr "Les mots de passe ne correspondent pas."
+
+msgid "Forgot password"
+msgstr "Mot de passe oublié"
+
+msgid "Reset the password"
+msgstr "Réinitialiser le mot de passe"
+
+msgid "Enter your email address and we will send you a link to reset your password."
+msgstr "Entrez votre adresse e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe."
+
+msgid "Send the reset link"
+msgstr "Envoyer le lien de réinitialisation"
+
+msgid "Back to login"
+msgstr "Retour à la connexion"
+
+msgid "If an account with this email exists, a reset link has been sent."
+msgstr "Si un compte avec cet e-mail existe, un lien de réinitialisation a été envoyé."
+
+msgid "Choose a new password"
+msgstr "Choisir un nouveau mot de passe"
+
+msgid "Please enter your new password below."
+msgstr "Veuillez entrer votre nouveau mot de passe ci-dessous."
+
+msgid "New password"
+msgstr "Nouveau mot de passe"
+
+msgid "Confirm the new password"
+msgstr "Confirmer le nouveau mot de passe"
+
+msgid "Reset the password"
+msgstr "Réinitialiser le mot de passe"
+
+msgid "Missing data."
+msgstr "Données manquantes."
+
+msgid "The link is invalid or has expired."
+msgstr "Le lien est invalide ou a expiré."
+
+msgid "The password does not meet security criteria."
+msgstr "Le mot de passe ne respecte pas les critères de sécurité."
+
+msgid "User not found."
+msgstr "Utilisateur non trouvé."
+
+msgid "Welcome - Bienvenue"
+msgstr "Bienvenue"
+
+msgid "Please select your language. / Veuillez sélectionner votre langue."
+msgstr "Veuillez sélectionner votre langue."
+
+msgid "Welcome / Bienvenue"
+msgstr "Bienvenue"
+
+msgid "Business Logo"
+msgstr "Logo Business"
+
+msgid "Set Profile Photo"
+msgstr "Définir la photo de profil"
+
+msgid "Ignore"
+msgstr "Ignorer"
+
+msgid "Drag & drop or click to upload"
+msgstr "Glisser-déposer ou cliquer pour uploader"
+
+msgid "Choose Photo"
+msgstr "Choisir une photo"
+
+msgid "Save"
+msgstr "Sauvegarder"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Photo saved!"
+msgstr "Photo sauvegardée !"
+
+msgid "No file"
+msgstr "Aucun fichier"
+
+msgid "Invalid image"
+msgstr "Image invalide"
+
+msgid "File save error"
+msgstr "Erreur de sauvegarde de fichier"
+
+msgid "Settings"
+msgstr "Paramètres"
+
+msgid "Language"
+msgstr "Langue"
+
+msgid "Change the application language"
+msgstr "Changer la langue de l'application"
+
+msgid "Modify information"
+msgstr "Modifier les informations"
+
+msgid "Username, email"
+msgstr "Nom d'utilisateur, e-mail"
+
+msgid "Security and password"
+msgstr "Sécurité et mot de passe"
+
+msgid "Change your password"
+msgstr "Changer votre mot de passe"
+
+msgid "Change account"
+msgstr "Changer de compte"
+
+msgid "Log out"
+msgstr "Se déconnecter"
+
+msgid "Delete account"
+msgstr "Supprimer le compte"
+
+msgid "This action is irreversible"
+msgstr "Cette action est irréversible"
+
+msgid "Modify information"
+msgstr "Modifier les informations"
+
+msgid "Save"
+msgstr "Sauvegarder"
+
+msgid "This username is already taken."
+msgstr "Ce nom d'utilisateur est déjà pris."
+
+msgid "This email address is already in use."
+msgstr "Cette adresse e-mail est déjà utilisée."
+
+msgid "Profile updated successfully!"
+msgstr "Profil mis à jour avec succès !"
+
+msgid "Change the password"
+msgstr "Changer le mot de passe"
+
+msgid "Current password"
+msgstr "Mot de passe actuel"
+
+msgid "New password"
+msgstr "Nouveau mot de passe"
+
+msgid "Update"
+msgstr "Mettre à jour"
+
+msgid "The current password is incorrect."
+msgstr "Le mot de passe actuel est incorrect."
+
+msgid "The new password does not meet security criteria."
+msgstr "Le nouveau mot de passe ne respecte pas les critères de sécurité."
+
+msgid "Password changed successfully!"
+msgstr "Mot de passe modifié avec succès !"
+
+msgid "Are you absolutely certain?"
+msgstr "Êtes-vous absolument certain ?"
+
+msgid "This action cannot be undone. Your account and all your data will be permanently deleted."
+msgstr "Cette action ne peut pas être annulée. Votre compte et toutes vos données seront définitivement supprimées."
+
+msgid "Confirm with your password"
+msgstr "Confirmer avec votre mot de passe"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Permanently delete"
+msgstr "Supprimer définitivement"
+
+msgid "The password is incorrect."
+msgstr "Le mot de passe est incorrect."
+
+msgid "Account deleted successfully."
+msgstr "Compte supprimé avec succès."
+
+msgid "Attention: This action is irreversible. Do you really want to continue?"
+msgstr "Attention : Cette action est irréversible. Voulez-vous vraiment continuer ?"
+
+msgid "Language updated successfully!"
+msgstr "Langue mise à jour avec succès !"
+
+msgid "Invalid language selected."
+msgstr "Langue sélectionnée invalide."
+
+msgid "An error occurred while sending the file: %(message)s"
+msgstr "Une erreur est survenue lors de l'envoi du fichier : %(message)s"
+
+msgid "My ads"
+msgstr "Mes annonces"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Hide all"
+msgstr "Masquer tout"
+
+msgid "Show all"
+msgstr "Afficher tout"
+
+msgid "Delete all"
+msgstr "Tout supprimer"
+
+msgid "Hide the selection"
+msgstr "Masquer la sélection"
+
+msgid "Show the selection"
+msgstr "Afficher la sélection"
+
+msgid "Delete the selection"
+msgstr "Supprimer la sélection"
+
+msgid "Cancel the selection"
+msgstr "Annuler la sélection"
+
+msgid "Are you sure you want to delete this ad?"
+msgstr "Êtes-vous sûr de vouloir supprimer cette annonce ?"
+
+msgid "Hide"
+msgstr "Masquer"
+
+msgid "Show"
+msgstr "Afficher"
+
+msgid "Edit"
+msgstr "Modifier"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "No ad selected."
+msgstr "Aucune annonce sélectionnée."
+
+msgid "%(count)s ad(s) deleted."
+msgstr "%(count)s annonce(s) supprimée(s)."
+
+msgid "Invalid action or selection."
+msgstr "Action ou sélection invalide."
+
+msgid "Visibility of %(count)s ad(s) updated."
+msgstr "Visibilité de %(count)s annonce(s) mise à jour."
+
+msgid "Hide/Show: Allows to make an ad temporarily invisible to other users."
+msgstr "Masquer/Afficher : Permet de rendre une annonce temporairement invisible aux autres utilisateurs."
+
+msgid "Edit: Opens the editing form to change the title, description or photos."
+msgstr "Modifier : Ouvre le formulaire d'édition pour changer le titre, la description ou les photos."
+
+msgid "Delete: Permanently deletes the ad."
+msgstr "Supprimer : Supprime définitivement l'annonce."
+
+msgid "Multiple Selection: Press and hold (on mobile) or use the menu at the top right to select multiple ads and perform bulk actions (hide, show, delete)."
+msgstr "Sélection multiple : Appuyez longuement (sur mobile) ou utilisez le menu en haut à droite pour sélectionner plusieurs annonces et effectuer des actions en masse (masquer, afficher, supprimer)."
+
+msgid "Clear the list"
+msgstr "Vider la liste"
+
+msgid "Are you sure you want to clear your favorites list? This action is irreversible."
+msgstr "Êtes-vous sûr de vouloir vider votre liste de favoris ? Cette action est irréversible."
+
+msgid "Your favorites list has been cleared."
+msgstr "Votre liste de favoris a été vidée."
+
+msgid "Network error during deletion."
+msgstr "Erreur réseau lors de la suppression."
+
+msgid "You have no ad in your favorites."
+msgstr "Vous n'avez aucune annonce dans vos favoris."
+
+msgid "Loading..."
+msgstr "Chargement..."
+
+msgid "Network error."
+msgstr "Erreur réseau."
+
+msgid "My Messages"
+msgstr "Mes messages"
+
+msgid "Conversations"
+msgstr "Conversations"
+
+msgid "Your messaging"
+msgstr "Votre messagerie"
+
+msgid "Select a conversation to start."
+msgstr "Sélectionnez une conversation pour commencer."
+
+msgid "No conversation."
+msgstr "Aucune conversation."
+
+msgid "Write your message..."
+msgstr "Écrivez votre message..."
+
+msgid "Attach a file"
+msgstr "Joindre un fichier"
+
+msgid "Voice message"
+msgstr "Message vocal"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Pause"
+msgstr "Pause"
+
+msgid "Send the voice message"
+msgstr "Envoyer le message vocal"
+
+msgid "Cancel the response"
+msgstr "Annuler la réponse"
+
+msgid "Rate the user"
+msgstr "Noter l'utilisateur"
+
+msgid "What rating would you give to"
+msgstr "Quelle note donneriez-vous à"
+
+msgid "Send the evaluation"
+msgstr "Envoyer l'évaluation"
+
+msgid "Add a comment (optional)"
+msgstr "Ajouter un commentaire (optionnel)"
+
+msgid "Please select a rating."
+msgstr "Veuillez sélectionner une note."
+
+msgid "Thank you for your evaluation!"
+msgstr "Merci pour votre évaluation !"
+
+msgid "Socket.IO global connected."
+msgstr "Socket.IO connecté globalement."
+
+msgid "You have received a media."
+msgstr "Vous avez reçu un média."
+
+msgid "New message from %(username)s"
+msgstr "Nouveau message de %(username)s"
+
+msgid "Start the conversation!"
+msgstr "Commencez la conversation !"
+
+msgid "Invalid time"
+msgstr "Heure invalide"
+
+msgid "Invalid chatroom ID"
+msgstr "ID de conversation invalide"
+
+msgid "Chatroom not found or user not a participant"
+msgstr "Conversation non trouvée ou utilisateur non participant"
+
+msgid "Empty message"
+msgstr "Message vide"
+
+msgid "User not authenticated"
+msgstr "Utilisateur non authentifié"
+
+msgid "Message deleted"
+msgstr "Message supprimé"
+
+msgid "Reply"
+msgstr "Répondre"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Do you really want to delete this message?"
+msgstr "Voulez-vous vraiment supprimer ce message ?"
+
+msgid "Photo"
+msgstr "Photo"
+
+msgid "Voice message"
+msgstr "Message vocal"
+
+msgid "Attached file"
+msgstr "Pièce jointe"
+
+msgid "Recording..."
+msgstr "Enregistrement..."
+
+msgid "is typing..."
+msgstr "est en train d'écrire..."
+
+msgid "is recording..."
+msgstr "est en train d'enregistrer..."
+
+msgid "Please log in to see your messages."
+msgstr "Veuillez vous connecter pour voir vos messages."
+
+msgid "Loading..."
+msgstr "Chargement..."
+
+msgid "Starting the conversation..."
+msgstr "Démarrage de la conversation..."
+
+msgid "Error creating chat."
+msgstr "Erreur lors de la création du chat."
+
+msgid "Launching chat..."
+msgstr "Lancement du chat..."
+
+msgid "Contact by Chat"
+msgstr "Contacter par chat"
+
+msgid "You must be logged in to contact the author."
+msgstr "Vous devez être connecté pour contacter l'auteur."
+
+msgid "This is your ad. You can edit it here."
+msgstr "Ceci est votre annonce. Vous pouvez la modifier ici."
+
+msgid "Contact via Message"
+msgstr "Contacter via message"
+
+msgid "My Favorites"
+msgstr "Mes favoris"
+
+msgid "Clear the list"
+msgstr "Vider la liste"
+
+msgid "Are you sure you want to clear your favorites list? This action is irreversible."
+msgstr "Êtes-vous sûr de vouloir vider votre liste de favoris ? Cette action est irréversible."
+
+msgid "Your favorites list has been cleared."
+msgstr "Votre liste de favoris a été vidée."
+
+msgid "Network error during deletion."
+msgstr "Erreur réseau lors de la suppression."
+
+msgid "You have no ad in your favorites."
+msgstr "Vous n'avez aucune annonce dans vos favoris."
+
+msgid "Loading..."
+msgstr "Chargement..."
+
+msgid "Network error."
+msgstr "Erreur réseau."
+
+msgid "Help Center"
+msgstr "Centre d'aide"
+
+msgid "Welcome to the Business usage guide. Find here all the answers to your questions."
+msgstr "Bienvenue dans le guide d'utilisation de Business. Trouvez ici toutes les réponses à vos questions."
+
+msgid "Table of contents"
+msgstr "Table des matières"
+
+msgid "1. Quick Start"
+msgstr "1. Démarrage rapide"
+
+msgid "2. Understanding an Ad"
+msgstr "2. Comprendre une annonce"
+
+msgid "3. Manage Ads"
+msgstr "3. Gérer les annonces"
+
+msgid "4. Use Messaging"
+msgstr "4. Utiliser la messagerie"
+
+msgid "5. Manage your Account"
+msgstr "5. Gérer votre compte"
+
+msgid "Create an account and log in"
+msgstr "Créer un compte et se connecter"
+
+msgid "To enjoy all features, you must first create an account. Click on the user icon at the top right, then on \"Register\". Fill in the form with a username, a valid email address and a secure password. A confirmation email will be sent to you to activate your account."
+msgstr "Pour profiter de toutes les fonctionnalités, vous devez d'abord créer un compte. Cliquez sur l'icône utilisateur en haut à droite, puis sur \"S'inscrire\". Remplissez le formulaire avec un nom d'utilisateur, une adresse e-mail valide et un mot de passe sécurisé. Un e-mail de confirmation vous sera envoyé pour activer votre compte."
+
+msgid "Once your account is activated, you can log in via the same user menu by clicking on \"Login\"."
+msgstr "Une fois votre compte activé, vous pouvez vous connecter via le même menu utilisateur en cliquant sur \"Connexion\"."
+
+msgid "The ad cards have been designed to give you essential information at a glance."
+msgstr "Les cartes d'annonces ont été conçues pour vous donner les informations essentielles d'un coup d'œil."
+
+msgid "Author Information:"
+msgstr "Informations sur l'auteur :"
+
+msgid "At the bottom left, you will find the profile picture and the name of the user who published the ad."
+msgstr "En bas à gauche, vous trouverez la photo de profil et le nom de l'utilisateur qui a publié l'annonce."
+
+msgid "Interest Count:"
+msgstr "Nombre d'intérêts :"
+
+msgid "In the center, this number indicates how many people have started a conversation about this ad. It is a good indicator of its popularity."
+msgstr "Au centre, ce nombre indique combien de personnes ont commencé une conversation sur cette annonce. C'est un bon indicateur de sa popularité."
+
+msgid "View Count:"
+msgstr "Nombre de vues :"
+
+msgid "At the bottom right, this shows how many times the ad has been viewed in detail."
+msgstr "En bas à droite, cela montre combien de fois l'annonce a été consultée en détail."
+
+msgid "Interactions on your Profile"
+msgstr "Interactions sur votre profil"
+
+msgid "On your profile page, the \"interactions\" counter shows the total number of interests accumulated on all your ads. It reflects your activity and the attractiveness of what you offer on the platform."
+msgstr "Sur votre page de profil, le compteur \"interactions\" montre le nombre total d'intérêts accumulés sur toutes vos annonces. Il reflète votre activité et l'attractivité de ce que vous proposez sur la plateforme."
+
+msgid "Create an ad"
+msgstr "Créer une annonce"
+
+msgid "Click on the \"Create\" icon (⦁). You will first have to choose if you offer a Service or an Object. Then fill in the form by giving a clear title, a detailed description, and specifying if it is an offer or a request. You can add several photos to your ad."
+msgstr "Cliquez sur l'icône \"Créer\" (⦁). Vous devrez d'abord choisir si vous proposez un Service ou un Objet. Puis remplissez le formulaire en donnant un titre clair, une description détaillée, et en spécifiant s'il s'agit d'une offre ou d'une demande. Vous pouvez ajouter plusieurs photos à votre annonce."
+
+msgid "Manage \"My Ads\""
+msgstr "Gérer \"Mes annonces\""
+
+msgid "This section groups all the ads you have published. For each ad, you can:"
+msgstr "Cette section regroupe toutes les annonces que vous avez publiées. Pour chaque annonce, vous pouvez :"
+
+msgid "Hide/Show:"
+msgstr "Masquer/Afficher :"
+
+msgid "Allows to make an ad temporarily invisible to other users."
+msgstr "Permet de rendre une annonce temporairement invisible aux autres utilisateurs."
+
+msgid "Edit:"
+msgstr "Modifier :"
+
+msgid "Opens the editing form to change the title, description or photos."
+msgstr "Ouvre le formulaire d'édition pour changer le titre, la description ou les photos."
+
+msgid "Delete:"
+msgstr "Supprimer :"
+
+msgid "Permanently deletes the ad."
+msgstr "Supprime définitivement l'annonce."
+
+msgid "Multiple Selection:"
+msgstr "Sélection multiple :"
+
+msgid "Press and hold (on mobile) or use the menu at the top right to select multiple ads and perform bulk actions (hide, show, delete)."
+msgstr "Appuyez longuement (sur mobile) ou utilisez le menu en haut à droite pour sélectionner plusieurs annonces et effectuer des actions en masse (masquer, afficher, supprimer)."
+
+msgid "Messaging allows you to chat privately and securely with other users."
+msgstr "La messagerie vous permet de discuter en privé et en toute sécurité avec d'autres utilisateurs."
+
+msgid "Start a conversation"
+msgstr "Démarrer une conversation"
+
+msgid "To contact a user, go to one of his ads and click on the \"Contact by Chat\" button. This will create a new conversation in your messaging and increase the ad's interest count by one."
+msgstr "Pour contacter un utilisateur, allez sur l'une de ses annonces et cliquez sur le bouton \"Contacter par chat\". Cela créera une nouvelle conversation dans votre messagerie et augmentera le compteur d'intérêts de l'annonce d'un."
+
+msgid "Features"
+msgstr "Fonctionnalités"
+
+msgid "Text, voice and file messages:"
+msgstr "Messages texte, vocal et fichier :"
+
+msgid "You can send written messages, record voice notes by holding the microphone icon, or attach files (paperclip icon)."
+msgstr "Vous pouvez envoyer des messages écrits, enregistrer des notes vocales en maintenant l'icône micro, ou joindre des fichiers (icône trombone)."
+
+msgid "Reply to a message:"
+msgstr "Répondre à un message :"
+
+msgid "Hover over a message to display a reply icon. Click on it to quote this message in your response."
+msgstr "Survolez un message pour afficher l'icône de réponse. Cliquez dessus pour citer ce message dans votre réponse."
+
+msgid "Rate a user:"
+msgstr "Noter un utilisateur :"
+
+msgid "After an interaction, you can leave a rating to your interlocutor thanks to the \"Rate\" button at the top of the conversation."
+msgstr "Après une interaction, vous pouvez laisser une note à votre interlocuteur grâce au bouton \"Noter\" en haut de la conversation."
+
+msgid "The Settings page"
+msgstr "La page Paramètres"
+
+msgid "Accessible from the user menu, the \"Settings\" page allows you to control your account. You can:"
+msgstr "Accessible depuis le menu utilisateur, la page \"Paramètres\" vous permet de contrôler votre compte. Vous pouvez :"
+
+msgid "Change the application language."
+msgstr "Changer la langue de l'application."
+
+msgid "Modify your username and email."
+msgstr "Modifier votre nom d'utilisateur et e-mail."
+
+msgid "Change your password."
+msgstr "Changer votre mot de passe."
+
+msgid "Log out."
+msgstr "Se déconnecter."
+
+msgid "Permanently delete your account (warning, this action is irreversible)."
+msgstr "Supprimer définitivement votre compte (attention, cette action est irréversible)."
+
+msgid "has not published any ad yet."
+msgstr "n'a publié aucune annonce pour le moment."
+
+msgid "has not received any rating yet."
+msgstr "n'a reçu aucune note pour le moment."
+
+msgid "Received ratings"
+msgstr "Notes reçues"
+
+msgid "Member since"
+msgstr "Membre depuis"
+
+msgid "on"
+msgstr "sur"
+
+msgid "reviews"
+msgstr "avis"
+
+msgid "interactions"
+msgstr "interactions"
+
+msgid "Ads of"
+msgstr "Annonces de"
+
+msgid "What do you want to post?"
+msgstr "Que voulez-vous publier ?"
+
+msgid "Choose the type of your post to start."
+msgstr "Choisissez le type de votre publication pour commencer."
+
+msgid "Publish a <strong>Service</strong>"
+msgstr "Publier un <strong>service</strong>"
+
+msgid "Publish an <strong>Object</strong>"
+msgstr "Publier un <strong>objet</strong>"
+
+msgid "Ad title"
+msgstr "Titre de l'annonce"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Ad type"
+msgstr "Type d'annonce"
+
+msgid "I offer or I search?"
+msgstr "J'offre ou je cherche ?"
+
+msgid "I offer this service/object"
+msgstr "J'offre ce service/objet"
+
+msgid "I request this service/object"
+msgstr "Je demande ce service/objet"
+
+msgid "Image(s) (hold Ctrl to select multiple)"
+msgstr "Image(s) (maintenez Ctrl pour sélectionner plusieurs)"
+
+msgid "Create the ad"
+msgstr "Créer l'annonce"
+
+msgid "Please choose a type of ad (Service or Object) first."
+msgstr "Veuillez d'abord choisir un type d'annonce (Service ou Objet)."
+
+msgid "Uploading images..."
+msgstr "Téléversement des images..."
+
+msgid "Upload error for %(filename)s."
+msgstr "Erreur d'upload pour %(filename)s."
+
+msgid "Creating ad..."
+msgstr "Création de l'annonce..."
+
+msgid "Error creating ad."
+msgstr "Erreur lors de la création de l'annonce."
+
+msgid "Modify the ad"
+msgstr "Modifier l'annonce"
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "Type of ad"
+msgstr "Type d'annonce"
+
+msgid "I offer"
+msgstr "J'offre"
+
+msgid "I request"
+msgstr "Je demande"
+
+msgid "Category"
+msgstr "Catégorie"
+
+msgid "Current image"
+msgstr "Image actuelle"
+
+msgid "Change or add an image"
+msgstr "Changer ou ajouter une image"
+
+msgid "Update the ad"
+msgstr "Mettre à jour l'annonce"
+
+msgid "Unable to load post data."
+msgstr "Impossible de charger les données de l'annonce."
+
+msgid "Uploading..."
+msgstr "Téléversement..."
+
+msgid "Update error for %(filename)s."
+msgstr "Erreur de mise à jour pour %(filename)s."
+
+msgid "Updating..."
+msgstr "Mise à jour..."
+
+msgid "Ad updated successfully!"
+msgstr "Annonce mise à jour avec succès !"
+
+msgid "Error updating."
+msgstr "Erreur lors de la mise à jour."
+
+msgid "Notifications"
+msgstr "Notifications"
+
+msgid "Mark all as read"
+msgstr "Tout marquer comme lu"
+
+msgid "Delete all"
+msgstr "Tout supprimer"
+
+msgid "No action"
+msgstr "Aucune action"
+
+msgid "Mark the %(count)s as read"
+msgstr "Marquer les %(count)s comme lues"
+
+msgid "Delete the %(count)s"
+msgstr "Supprimer les %(count)s"
+
+msgid "Cancel the selection"
+msgstr "Annuler la sélection"
+
+msgid "Do you really want to delete ALL your notifications?"
+msgstr "Voulez-vous vraiment supprimer TOUTES vos notifications ?"
+
+msgid "Do you really want to delete the %(count)s selected notifications?"
+msgstr "Voulez-vous vraiment supprimer les %(count)s notifications sélectionnées ?"
+
+msgid "No notifications to process."
+msgstr "Aucune notification à traiter."
+
+msgid "Notifications marked as read."
+msgstr "Notifications marquées comme lues."
+
+msgid "Notifications deleted."
+msgstr "Notifications supprimées."
+
+msgid "Network error."
+msgstr "Erreur réseau."
+
+msgid "No notification."
+msgstr "Aucune notification."
+
+msgid "User deleted"
+msgstr "Utilisateur supprimé"
+
+msgid "[User deleted]"
+msgstr "[Utilisateur supprimé]"
+
+msgid "Details of the ad"
+msgstr "Détails de l'annonce"
+
+msgid "Loading..."
+msgstr "Chargement..."
+
+msgid "Post not found"
+msgstr "Annonce non trouvée"
+
+msgid "Save"
+msgstr "Sauvegarder"
+
+msgid "Published by %(username)s on %(date)s"
+msgstr "Publié par %(username)s le %(date)s"
+
+msgid "You must be connected to contact the author."
+msgstr "Vous devez être connecté pour contacter l'auteur."
+
+msgid "This is your ad. You can modify it here."
+msgstr "Ceci est votre annonce. Vous pouvez la modifier ici."
+
+msgid "Contact via Message"
+msgstr "Contacter via message"
+
+msgid "Launching the chat..."
+msgstr "Lancement du chat..."
+
+msgid "Error creating the chat."
+msgstr "Erreur lors de la création du chat."
+
+msgid "All ads"
+msgstr "Toutes les annonces"
+
+msgid "Type :"
+msgstr "Type :"
+
+msgid "All"
+msgstr "Toutes"
+
+msgid "Offers"
+msgstr "Offres"
+
+msgid "Requests"
+msgstr "Demandes"
+
+msgid "Sort by :"
+msgstr "Trier par :"
+
+msgid "Newest"
+msgstr "Plus récentes"
+
+msgid "Oldest"
+msgstr "Plus anciennes"
+
+msgid "Services"
+msgstr "Services"
+
+msgid "Objects"
+msgstr "Objets"
+
+msgid "No ad matches your search."
+msgstr "Aucune annonce ne correspond à votre recherche."
+
+msgid "All Ads"
+msgstr "Toutes les annonces"
+
+msgid "Profile of %(username)s"
+msgstr "Profil de %(username)s"
+
+msgid "has not published any ad yet."
+msgstr "n'a publié aucune annonce pour le moment."
+
+msgid "has not received any rating yet."
+msgstr "n'a reçu aucune note pour le moment."
+
+msgid "Received ratings (%(count)s)"
+msgstr "Notes reçues (%(count)s)"
+
+msgid "Member since %(date)s"
+msgstr "Membre depuis %(date)s"
+
+msgid "%(rating)s on 5 (%(count)s reviews)"
+msgstr "%(rating)s sur 5 (%(count)s avis)"
+
+msgid "%(count)s interactions"
+msgstr "%(count)s interactions"
+
+msgid "Ads of %(username)s"
+msgstr "Annonces de %(username)s"
+
+msgid "Contact by Chat"
+msgstr "Contacter par chat"
+
+msgid "View photo"
+msgstr "Voir la photo"
+
+msgid "View the profile"
+msgstr "Voir le profil"
+
+msgid "%(count)s people interact with this ad."
+msgstr "%(count)s personnes interagissent avec cette annonce."
+
+msgid "This ad has been viewed %(count)s times."
+msgstr "Cette annonce a été consultée %(count)s fois."
+
+msgid "View interactions"
+msgstr "Voir les interactions"
+
+msgid "View views"
+msgstr "Voir les vues"
+
+msgid "Missing required fields"
+msgstr "Champs requis manquants"
+
+msgid "Password does not meet security criteria."
+msgstr "Le mot de passe ne respecte pas les critères de sécurité."
+
+msgid "This username already exists"
+msgstr "Ce nom d'utilisateur existe déjà"
+
+msgid "This email address is already in use"
+msgstr "Cette adresse e-mail est déjà utilisée"
+
+msgid "Registration successful! Please check your email to confirm your account."
+msgstr "Inscription réussie ! Vérifiez votre e-mail pour confirmer votre compte."
+
+msgid "Your account has not been confirmed. Please check your email."
+msgstr "Votre compte n'a pas été confirmé. Vérifiez votre e-mail."
+
+msgid "Incorrect email address or password."
+msgstr "Adresse e-mail ou mot de passe incorrect."
+
+msgid "Login successful"
+msgstr "Connexion réussie"
+
+msgid "No file part"
+msgstr "Aucune partie fichier"
+
+msgid "Invalid or disallowed file"
+msgstr "Fichier invalide ou non autorisé"
+
+msgid "Post not found"
+msgstr "Annonce non trouvée"
+
+msgid "has added your ad '%(title)s' to favorites."
+msgstr "a ajouté votre annonce '%(title)s' aux favoris."
+
+msgid "Unauthorized"
+msgstr "Non autorisé"
+
+msgid "Action not authorized"
+msgstr "Action non autorisée"
+
+msgid "Favorites list cleared."
+msgstr "Liste de favoris vidée."
+
+msgid "An error occurred."
+msgstr "Une erreur est survenue."
+
+msgid "Chatroom not found or user not a participant"
+msgstr "Conversation non trouvée ou utilisateur non participant"
+
+msgid "Invalid action"
+msgstr "Action invalide"
+
+msgid "If an account with this email exists, a reset link has been sent."
+msgstr "Si un compte avec cet e-mail existe, un lien de réinitialisation a été envoyé."
+
+msgid "Missing data."
+msgstr "Données manquantes."
+
+msgid "The link is invalid or has expired."
+msgstr "Le lien est invalide ou a expiré."
+
+msgid "The password does not meet security criteria."
+msgstr "Le mot de passe ne respecte pas les critères de sécurité."
+
+msgid "User not found."
+msgstr "Utilisateur non trouvé."
+
+msgid "Notification not found"
+msgstr "Notification non trouvée"
+
+msgid "Invalid action."
+msgstr "Action invalide."
+
+msgid "No notifications to process."
+msgstr "Aucune notification à traiter."
+
+msgid "Notifications marked as read."
+msgstr "Notifications marquées comme lues."
+
+msgid "Notifications deleted."
+msgstr "Notifications supprimées."
+
+msgid "Language updated successfully!"
+msgstr "Langue mise à jour avec succès !"
+
+msgid "Invalid language selected."
+msgstr "Langue sélectionnée invalide."
+
+msgid "This username is already taken."
+msgstr "Ce nom d'utilisateur est déjà pris."
+
+msgid "This email address is already in use."
+msgstr "Cette adresse e-mail est déjà utilisée."
+
+msgid "Profile updated successfully!"
+msgstr "Profil mis à jour avec succès !"
+
+msgid "The current password is incorrect."
+msgstr "Le mot de passe actuel est incorrect."
+
+msgid "The new password does not meet security criteria."
+msgstr "Le nouveau mot de passe ne respecte pas les critères de sécurité."
+
+msgid "Password changed successfully!"
+msgstr "Mot de passe modifié avec succès !"
+
+msgid "The password is incorrect."
+msgstr "Le mot de passe est incorrect."
+
+msgid "Account deleted successfully."
+msgstr "Compte supprimé avec succès."
+
+msgid "No ad selected."
+msgstr "Aucune annonce sélectionnée."
+
+msgid "%(count)s ad(s) deleted."
+msgstr "%(count)s annonce(s) supprimée(s)."
+
+msgid "Invalid action or selection."
+msgstr "Action ou sélection invalide."
+
+msgid "Visibility of %(count)s ad(s) updated."
+msgstr "Visibilité de %(count)s annonce(s) mise à jour."
+
+msgid "Subscription saved."
+msgstr "Abonnement sauvegardé."
+
+msgid "User not found"
+msgstr "Utilisateur non trouvé"
+
+msgid "Resend"
+msgstr "Renvoyer"
+
+msgid "Network error on logout:"
+msgstr "Erreur réseau lors de la déconnexion :"
+
+msgid "Socket.IO global connected."
+msgstr "Socket.IO connecté globalement."
+
+msgid "Notification badge update received :"
+msgstr "Mise à jour du badge de notifications reçue :"
+
+msgid "Unread info received:"
+msgstr "Infos non lues reçues :"
+
+msgid "Failed to fetch unread info:"
+msgstr "Échec du chargement des infos non lues :"
+
+msgid "Updating badge with total:"
+msgstr "Mise à jour du badge avec total :"
+
+msgid "Error removing favorite:"
+msgstr "Erreur lors de la suppression du favori :"
+
+msgid "Search error."
+msgstr "Erreur de recherche."
+
+msgid "Error adding/removing favorite:"
+msgstr "Erreur lors de l'ajout/suppression du favori :"
+
+msgid "Loading..."
+msgstr "Chargement..."
+
+msgid "No ad found."
+msgstr "Aucune annonce trouvée."
+
+msgid "Save"
+msgstr "Sauvegarder"
+
+msgid "View photo"
+msgstr "Voir la photo"
+
+msgid "View profile"
+msgstr "Voir le profil"
+
+msgid "%(count)s people interact with this ad."
+msgstr "%(count)s personnes interagissent avec cette annonce."
+
+msgid "This ad has been viewed %(count)s times."
+msgstr "Cette annonce a été consultée %(count)s fois."
+
+msgid "View interactions"
+msgstr "Voir les interactions"
+
+msgid "View views"
+msgstr "Voir les vues"
+
+msgid "Login error:"
+msgstr "Erreur de connexion :"
+
+msgid "A network error occurred."
+msgstr "Une erreur réseau est survenue."
+
+msgid "Please log in to see your messages."
+msgstr "Veuillez vous connecter pour voir vos messages."
+
+msgid "Error loading conversations:"
+msgstr "Erreur lors du chargement des conversations :"
+
+msgid "No conversation."
+msgstr "Aucune conversation."
+
+msgid "Start the conversation!"
+msgstr "Commencez la conversation !"
+
+msgid "Invalid time"
+msgstr "Heure invalide"
+
+msgid "Loading..."
+msgstr "Chargement..."
+
+msgid "Rate"
+msgstr "Noter"
+
+msgid "Media"
+msgstr "Média"
+
+msgid "Attached image"
+msgstr "Image jointe"
+
+msgid "0:00"
+msgstr "0:00"
+
+msgid "Attached file"
+msgstr "Fichier joint"
+
+msgid "Invalid time"
+msgstr "Heure invalide"
+
+msgid "Resend"
+msgstr "Renvoyer"
+
+msgid "Reply"
+msgstr "Répondre"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Do you really want to delete this message?"
+msgstr "Voulez-vous vraiment supprimer ce message ?"
+
+msgid "Photo"
+msgstr "Photo"
+
+msgid "Voice message"
+msgstr "Message vocal"
+
+msgid "Cancel the response"
+msgstr "Annuler la réponse"
+
+msgid "Upload error:"
+msgstr "Erreur d'upload :"
+
+msgid "File send error: "
+msgstr "Erreur d'envoi du fichier : "
+
+msgid "Micro access error:"
+msgstr "Erreur d'accès au micro :"
+
+msgid "Unable to access microphone. Please check permissions."
+msgstr "Impossible d'accéder au micro. Vérifiez les autorisations."
+
+msgid "Please select a rating."
+msgstr "Veuillez sélectionner une note."
+
+msgid "Thank you for your evaluation!"
+msgstr "Merci pour votre évaluation !"
+
+msgid "Rating error:"
+msgstr "Erreur d'évaluation :"
+
+msgid "Write your message..."
+msgstr "Écrivez votre message..."
+
+msgid "Attach a file"
+msgstr "Joindre un fichier"
+
+msgid "Voice message"
+msgstr "Message vocal"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Pause"
+msgstr "Pause"
+
+msgid "Send the voice message"
+msgstr "Envoyer le message vocal"
+
+msgid "is typing..."
+msgstr "est en train d'écrire..."
+
+msgid "is recording..."
+msgstr "est en train d'enregistrer..."
+
+msgid "Socket.IO Connected."
+msgstr "Socket.IO connecté."
+
+msgid "Message deleted"
+msgstr "Message supprimé"
+
+msgid "My ads"
+msgstr "Mes annonces"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Hide all"
+msgstr "Masquer tout"
+
+msgid "Show all"
+msgstr "Afficher tout"
+
+msgid "Delete all"
+msgstr "Tout supprimer"
+
+msgid "Hide the selection"
+msgstr "Masquer la sélection"
+
+msgid "Show the selection"
+msgstr "Afficher la sélection"
+
+msgid "Delete the selection"
+msgstr "Supprimer la sélection"
+
+msgid "Cancel the selection"
+msgstr "Annuler la sélection"
+
+msgid "Are you sure you want to delete this ad?"
+msgstr "Êtes-vous sûr de vouloir supprimer cette annonce ?"
+
+msgid "Hide"
+msgstr "Masquer"
+
+msgid "Show"
+msgstr "Afficher"
+
+msgid "Edit"
+msgstr "Modifier"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "No ad selected."
+msgstr "Aucune annonce sélectionnée."
+
+msgid "%(count)s ad(s) deleted."
+msgstr "%(count)s annonce(s) supprimée(s)."
+
+msgid "Invalid action or selection."
+msgstr "Action ou sélection invalide."
+
+msgid "Visibility of %(count)s ad(s) updated."
+msgstr "Visibilité de %(count)s annonce(s) mise à jour."
+
+msgid "Network error."
+msgstr "Erreur réseau."
+
+msgid "Hide/Show: Allows to make an ad temporarily invisible to other users."
+msgstr "Masquer/Afficher : Permet de rendre une annonce temporairement invisible aux autres utilisateurs."
+
+msgid "Edit: Opens the editing form to change the title, description or photos."
+msgstr "Modifier : Ouvre le formulaire d'édition pour changer le titre, la description ou les photos."
+
+msgid "Delete: Permanently deletes the ad."
+msgstr "Supprimer : Supprime définitivement l'annonce."
+
+msgid "Multiple Selection: Press and hold (on mobile) or use the menu at the top right to select multiple ads and perform bulk actions (hide, show, delete)."
+msgstr "Sélection multiple : Appuyez longuement (sur mobile) ou utilisez le menu en haut à droite pour sélectionner plusieurs annonces et effectuer des actions en masse (masquer, afficher, supprimer)."
+
+msgid "Clear the list"
+msgstr "Vider la liste"
+
+msgid "Are you sure you want to clear your favorites list? This action is irreversible."
+msgstr "Êtes-vous sûr de vouloir vider votre liste de favoris ? Cette action est irréversible."
+
+msgid "Your favorites list has been cleared."
+msgstr "Votre liste de favoris a été vidée."
+
+msgid "Network error during deletion."
+msgstr "Erreur réseau lors de la suppression."
+
+msgid "You have no ad in your favorites."
+msgstr "Vous n'avez aucune annonce dans vos favoris."
+
+msgid "Loading..."
+msgstr "Chargement..."
+
+msgid "Network error."
+msgstr "Erreur réseau."
+
+msgid "My Messages"
+msgstr "Mes messages"
+
+msgid "Conversations"
+msgstr "Conversations"
+
+msgid "Your messaging"
+msgstr "Votre messagerie"
+
+msgid "Select a conversation to start."
+msgstr "Sélectionnez une conversation pour commencer."
+
+msgid "No conversation."
+msgstr "Aucune conversation."
+
+msgid "Write your message..."
+msgstr "Écrivez votre message..."
+
+msgid "Attach a file"
+msgstr "Joindre un fichier"
+
+msgid "Voice message"
+msgstr "Message vocal"
+
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "Pause"
+msgstr "Pause"
+
+msgid "Send the voice message"
+msgstr "Envoyer le message vocal"
+
+msgid "Cancel the response"
+msgstr "Annuler la réponse"
+
+msgid "Rate the user"
+msgstr "Noter l'utilisateur"
+
+msgid "What rating would you give to"
+msgstr "Quelle note donneriez-vous à"
+
+msgid "Send the evaluation"
+msgstr "Envoyer l'évaluation"
+
+msgid "Add a comment (optional)"
+msgstr "Ajouter un commentaire (optionnel)"
+
+msgid "Please select a rating."
+msgstr "Veuillez sélectionner une note."
+
+msgid "Thank you for your evaluation!"
+msgstr "Merci pour votre évaluation !"
+
+msgid "Socket.IO global connected."
+msgstr "Socket.IO connecté globalement."
+
+msgid "You have received a media."
+msgstr "Vous avez reçu un média."
+
+msgid "New message from %(username)s"
+msgstr "Nouveau message de %(username)s"
+
+msgid "Start the conversation!"
+msgstr "Commencez la conversation !"
+
+msgid "Invalid time"
+msgstr "Heure invalide"
+
+msgid "Invalid chatroom ID"
+msgstr "ID de conversation invalide"
+
+msgid "Chatroom not found or user not a participant"
+msgstr "Conversation non trouvée ou utilisateur non participant"
+
+msgid "Empty message"
+msgstr "Message vide"
+
+msgid "User not authenticated"
+msgstr "Utilisateur non authentifié"
+
+msgid "Message deleted"
+msgstr "Message supprimé"
+
+msgid "Reply"
+msgstr "Répondre"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Do you really want to delete this message?"
+msgstr "Voulez-vous vraiment supprimer ce message ?"
+
+msgid "Photo"
+msgstr "Photo"
+
+msgid "Voice message"
+msgstr "Message vocal"
+
+msgid "Attached file"
+msgstr "Pièce jointe"
+
+msgid "Recording..."
+msgstr "Enregistrement..."
+
+msgid "is typing..."
+msgstr "est en train d'écrire..."
+
+msgid "is recording..."
+msgstr "est en train d'enregistrer..."
+
+msgid "Please log in to see your messages."
+msgstr "Veuillez vous connecter pour voir vos messages."
+
+msgid "Loading..."
+msgstr "Chargement..."
+
+msgid "Starting the conversation..."
+msgstr "Démarrage de la conversation..."
+
+msgid "Error creating chat."
+msgstr "Erreur lors de la création du chat."
+
+msgid "Launching chat..."
+msgstr "Lancement du chat..."
+
+msgid "Contact by Chat"
+msgstr "Contacter par chat"
+
+msgid "You must be logged in to contact the author."
+msgstr "Vous devez être connecté pour contacter l'auteur."
+
+msgid "This is your ad. You can edit it here."
+msgstr "Ceci est votre annonce. Vous pouvez la modifier ici."
+
+msgid "Contact via Message"
+msgstr "Contacter via message"
+
+msgid "My Favorites"
+msgstr "Mes favoris"
+
+msgid "Clear the list"
+msgstr "Vider la liste"
+
+msgid "Are you sure you want to clear your favorites list? This action is irreversible."
+msgstr "Êtes-vous sûr de vouloir vider votre liste de favoris ? Cette action est irréversible."
+
+msgid "Your favorites list has been cleared."
+msgstr "Votre liste de favoris a été vidée."
+
+msgid "Network error during deletion."
+msgstr "Erreur réseau lors de la suppression."
+
+msgid "You have no ad in your favorites."
+msgstr "Vous n'avez aucune annonce dans vos favoris."
+
+msgid "Loading..."
+msgstr "Chargement..."
+
+msgid "Network error."
+msgstr "Erreur réseau."
+
+msgid "Help Center"
+msgstr "Centre d'aide"
+
+msgid "Welcome to the Business usage guide. Find here all the answers to your questions."
+msgstr "Bienvenue dans le guide d'utilisation de Business. Trouvez ici toutes les réponses à vos questions."
+
+msgid "Table of contents"
+msgstr "Table des matières"
+
+msgid "1. Quick Start"
+msgstr "1. Démarrage rapide"
+
+msgid "2. Understanding an Ad"
+msgstr "2. Comprendre une annonce"
+
+msgid "3. Manage Ads"
+msgstr "3. Gérer les annonces"
+
+msgid "4. Use Messaging"
+msgstr "4. Utiliser la messagerie"
+
+msgid "5. Manage your Account"
+msgstr "5. Gérer votre compte"
+
+msgid "Create an account and log in"
+msgstr "Créer un compte et se connecter"
+
+msgid "To enjoy all features, you must first create an account. Click on the user icon at the top right, then on \"Register\". Fill in the form with a username, a valid email address and a secure password. A confirmation email will be sent to you to activate your account."
+msgstr "Pour profiter de toutes les fonctionnalités, vous devez d'abord créer un compte. Cliquez sur l'icône utilisateur en haut à droite, puis sur \"S'inscrire\". Remplissez le formulaire avec un nom d'utilisateur, une adresse e-mail valide et un mot de passe sécurisé. Un e-mail de confirmation vous sera envoyé pour activer votre compte."
+
+msgid "Once your account is activated, you can log in via the same user menu by clicking on \"Login\"."
+msgstr "Une fois votre compte activé, vous pouvez vous connecter via le même menu utilisateur en cliquant sur \"Connexion\"."
+
+msgid "The ad cards have been designed to give you essential information at a glance."
+msgstr "Les cartes d'annonces ont été conçues pour vous donner les informations essentielles d'un coup d'œil."
+
+msgid "Author Information:"
+msgstr "Informations sur l'auteur :"
+
+msgid "At the bottom left, you will find the profile picture and the name of the user who published the ad."
+msgstr "En bas à gauche, vous trouverez la photo de profil et le nom de l'utilisateur qui a publié l'annonce."
+
+msgid "Interest Count:"
+msgstr "Nombre d'intérêts :"
+
+msgid "In the center, this number indicates how many people have started a conversation about this ad. It is a good indicator of its popularity."
+msgstr "Au centre, ce nombre indique combien de personnes ont commencé une conversation sur cette annonce. C'est un bon indicateur de sa popularité."
+
+msgid "View Count:"
+msgstr "Nombre de vues :"
+
+msgid "At the bottom right, this shows how many times the ad has been viewed in detail."
+msgstr "En bas à droite, cela montre combien de fois l'annonce a été consultée en détail."
+
+msgid "Interactions on your Profile"
+msgstr "Interactions sur votre profil"
+
+msgid "On your profile page, the \"interactions\" counter shows the total number of interests accumulated on all your ads. It reflects your activity and the attractiveness of what you offer on the platform."
+msgstr "Sur votre page de profil, le compteur \"interactions\" montre le nombre total d'intérêts accumulés sur toutes vos annonces. Il reflète votre activité et l'attractivité de ce que vous proposez sur la plateforme."
+
+msgid "Create an ad"
+msgstr "Créer une annonce"
+
+msgid "Click on the \"Create\" icon (⦁). You will first have to choose if you offer a Service or an Object. Then fill in the form by giving a clear title, a detailed description, and specifying if it is an offer or a request. You can add several photos to your ad."
+msgstr "Cliquez sur l'icône \"Créer\" (⦁). Vous devrez d'abord choisir si vous proposez un Service ou un Objet. Puis remplissez le formulaire en donnant un titre clair, une description détaillée, et en spécifiant s'il s'agit d'une offre ou d'une demande. Vous pouvez ajouter plusieurs photos à votre annonce."
+
+msgid "Manage \"My Ads\""
+msgstr "Gérer \"Mes annonces\""
+
+msgid "This section groups all the ads you have published. For each ad, you can:"
+msgstr "Cette section regroupe toutes les annonces que vous avez publiées. Pour chaque annonce, vous pouvez :"
+
+msgid "Hide/Show:"
+msgstr "Masquer/Afficher :"
+
+msgid "Allows to make an ad temporarily invisible to other users."
+msgstr "Permet de rendre une annonce temporairement invisible aux autres utilisateurs."
+
+msgid "Edit:"
+msgstr "Modifier :"
+
+msgid "Opens the editing form to change the title, description or photos."
+msgstr "Ouvre le formulaire d'édition pour changer le titre, la description ou les photos."
+
+msgid "Delete:"
+msgstr "Supprimer :"
+
+msgid "Permanently deletes the ad."
+msgstr "Supprime définitivement l'annonce."
+
+msgid "Multiple Selection:"
+msgstr "Sélection multiple :"
+
+msgid "Press and hold (on mobile) or use the menu at the top right to select multiple ads and perform bulk actions (hide, show, delete)."
+msgstr "Appuyez longuement (sur mobile) ou utilisez le menu en haut à droite pour sélectionner plusieurs annonces et effectuer des actions en masse (masquer, afficher, supprimer)."
+
+msgid "Messaging allows you to chat privately and securely with other users."
+msgstr "La messagerie vous permet de discuter en privé et en toute sécurité avec d'autres utilisateurs."
+
+msgid "Start a conversation"
+msgstr "Démarrer une conversation"
+
+msgid "To contact a user, go to one of his ads and click on the \"Contact by Chat\" button. This will create a new conversation in your messaging and increase the ad's interest count by one."
+msgstr "Pour contacter un utilisateur, allez sur l'une de ses annonces et cliquez sur le bouton \"Contacter par chat\". Cela créera une nouvelle conversation dans votre messagerie et augmentera le compteur d'intérêts de l'annonce d'un."
+
+msgid "Features"
+msgstr "Fonctionnalités"
+
+msgid "Text, voice and file messages:"
+msgstr "Messages texte, vocal et fichier :"
+
+msgid "You can send written messages, record voice notes by holding the microphone icon, or attach files (paperclip icon)."
+msgstr "Vous pouvez envoyer des messages écrits, enregistrer des notes vocales en maintenant l'icône micro, ou joindre des fichiers (icône trombone)."
+
+msgid "Reply to a message:"
+msgstr "Répondre à un message :"
+
+msgid "Hover over a message to display a reply icon. Click on it to quote this message in your response."
+msgstr "Survolez un message pour afficher l'icône de réponse. Cliquez dessus pour citer ce message dans votre réponse."
+
+msgid "Rate a user:"
+msgstr "Noter un utilisateur :"
+
+msgid "After an interaction, you can leave a rating to your interlocutor thanks to the \"Rate\" button at the top of the conversation."
+msgstr "Après une interaction, vous pouvez laisser une note à votre interlocuteur grâce au bouton \"Noter\" en haut de la conversation."
+
+msgid "The Settings page"
+msgstr "La page Paramètres"
+
+msgid "Accessible from the user menu, the \"Settings\" page allows you to control your account. You can:"
+msgstr "Accessible depuis le menu utilisateur, la page \"Paramètres\" vous permet de contrôler votre compte. Vous pouvez :"
+
+msgid "Change the application language."
+msgstr "Changer la langue de l'application."
+
+msgid "Modify your username and email."
+msgstr "Modifier votre nom d'utilisateur et e-mail."
+
+msgid "Change your password."
+msgstr "Changer votre mot de passe."
+
+msgid "Log out."
+msgstr "Se déconnecter."
+
+msgid "Permanently delete your account (warning, this action is irreversible)."
+msgstr "Supprimer définitivement votre compte (attention, cette action est irréversible)."
+
+msgid "has not published any ad yet."
+msgstr "n'a publié aucune annonce pour le moment."
+
+msgid "has not received any rating yet."
+msgstr "n'a reçu aucune note pour le moment."
+
+msgid "Received ratings"
+msgstr "Notes reçues"
+
+msgid "Member since"
+msgstr "Membre depuis"
+
+msgid "on"
+msgstr "sur"
+
+msgid "reviews"
+msgstr "avis"
+
+msgid "interactions"
+msgstr "interactions"
+
+msgid "Ads of"
+msgstr "Annonces de"
+
+msgid "What do you want to post?"
+msgstr "Que voulez-vous publier ?"
+msgid "Push notification sent."
+msgstr "Notification push envoyée."
+msgid "Subscription invalid, it will be deleted."
+msgstr "L'abonnement est invalide, il sera supprimé."
+msgid "The link has expired. Please re-register."
+msgstr "Le lien a expiré. Veuillez vous réinscrire."
+msgid "The link is invalid."
+msgstr "Le lien est invalide."
+msgid "already_confirmed"
+msgstr "already_confirmed"
+msgid "confirmed"
+msgstr "confirmed"
+msgid "password_reset_success"
+msgstr "password_reset_success"
+msgid "Unauthorized"
+msgstr "Non autorisé"
+msgid "Post not found"
+msgstr "Annonce non trouvée"
+msgid "Action not authorized"
+msgstr "Action non autorisée"
+msgid "An error occurred."
+msgstr "Une erreur est survenue."
+msgid "Chatroom not found or user not a participant"
+msgstr "Conversation non trouvée ou utilisateur non participant"
+msgid "Invalid action"
+msgstr "Action invalide"
+msgid "Empty message"
+msgstr "Message vide"
+msgid "User not authenticated"
+msgstr "Utilisateur non authentifié"
+msgid "Invalid chatroom ID"
+msgstr "ID de conversation invalide"
+msgid "File send error: "
+msgstr "Erreur d'envoi du fichier : "
+msgid "Upload error:"
+msgstr "Erreur d'upload :"
+msgid "Micro access error:"
+msgstr "Erreur d'accès au micro :"
+msgid "Unable to access microphone. Please check permissions."
+msgstr "Impossible d'accéder au micro. Veuillez vérifier les autorisations."
+msgid "Please select a rating."
+msgstr "Veuillez sélectionner une note."
+msgid "Thank you for your evaluation!"
+msgstr "Merci pour votre évaluation !"
+msgid "Rating error:"
+msgstr "Erreur d'évaluation :"
+msgid "Socket.IO global connected."
+msgstr "Socket.IO connecté globalement."
+msgid "Notification badge update received :"
+msgstr "Mise à jour du badge de notifications reçue :"
+msgid "Unread info received:"
+msgstr "Infos non lues reçues :"
+msgid "Failed to fetch unread info:"
+msgstr "Échec du chargement des infos non lues :"
+msgid "Updating badge with total:"
+msgstr "Mise à jour du badge avec total :"
+msgid "Error removing favorite:"
+msgstr "Erreur lors de la suppression du favori :"
+msgid "Search error."
+msgstr "Erreur de recherche."
+msgid "Error adding/removing favorite:"
+msgstr "Erreur lors de l'ajout/suppression du favori :"
+msgid "Loading..."
+msgstr "Chargement..."
+msgid "No ad found."
+msgstr "Aucune annonce trouvée."
+msgid "Save"
+msgstr "Sauvegarder"
+msgid "View photo"
+msgstr "Voir la photo"
+msgid "View profile"
+msgstr "Voir le profil"
+msgid "%(count)s people interact with this ad."
+msgstr "%(count)s personnes interagissent avec cette annonce."
+msgid "This ad has been viewed %(count)s times."
+msgstr "Cette annonce a été consultée %(count)s fois."
+msgid "View interactions"
+msgstr "Voir les interactions"
+msgid "View views"
+msgstr "Voir les vues"
+msgid "Login error:"
+msgstr "Erreur de connexion :"
+msgid "A network error occurred."
+msgstr "Une erreur réseau est survenue."
+msgid "Please log in to see your messages."
+msgstr "Veuillez vous connecter pour voir vos messages."
+msgid "Error loading conversations:"
+msgstr "Erreur lors du chargement des conversations :"
+msgid "No conversation."
+msgstr "Aucune conversation."
+msgid "Start the conversation!"
+msgstr "Commencez la conversation !"
+msgid "Invalid time"
+msgstr "Heure invalide"
+msgid "Invalid chatroom ID"
+msgstr "ID de conversation invalide"
+msgid "Chatroom not found or user not a participant"
+msgstr "Conversation non trouvée ou utilisateur non participant"
+msgid "Empty message"
+msgstr "Message vide"
+msgid "User not authenticated"
+msgstr "Utilisateur non authentifié"
+msgid "Message deleted"
+msgstr "Message supprimé"
+msgid "Reply"
+msgstr "Répondre"
+msgid "Delete"
+msgstr "Supprimer"
+msgid "Do you really want to delete this message?"
+msgstr "Voulez-vous vraiment supprimer ce message ?"
+msgid "Photo"
+msgstr "Photo"
+msgid "Voice message"
+msgstr "Message vocal"
+msgid "Attached file"
+msgstr "Pièce jointe"
+msgid "Recording..."
+msgstr "Enregistrement..."
+msgid "is typing..."
+msgstr "est en train d'écrire..."
+msgid "is recording..."
+msgstr "est en train d'enregistrer..."
+msgid "Please log in to see your messages."
+msgstr "Veuillez vous connecter pour voir vos messages."
+msgid "Loading..."
+msgstr "Chargement..."
+msgid "Starting the conversation..."
+msgstr "Démarrage de la conversation..."
+msgid "Error creating chat."
+msgstr "Erreur lors de la création du chat."
+msgid "Launching chat..."
+msgstr "Lancement du chat..."
+msgid "Contact by Chat"
+msgstr "Contacter par chat"
+msgid "You must be logged in to contact the author."
+msgstr "Vous devez être connecté pour contacter l'auteur."
+msgid "This is your ad. You can edit it here."
+msgstr "Ceci est votre annonce. Vous pouvez la modifier ici."
+msgid "Contact via Message"
+msgstr "Contacter via message"
+msgid "My Favorites"
+msgstr "Mes favoris"
+msgid "Clear the list"
+msgstr "Vider la liste"
+msgid "Are you sure you want to clear your favorites list? This action is irreversible."
+msgstr "Êtes-vous sûr de vouloir vider votre liste de favoris ? Cette action est irréversible."
+msgid "Your favorites list has been cleared."
+msgstr "Votre liste de favoris a été vidée."
+msgid "Network error during deletion."
+msgstr "Erreur réseau lors de la suppression."
+msgid "You have no ad in your favorites."
+msgstr "Vous n'avez aucune annonce dans vos favoris."
+msgid "Loading..."
+msgstr "Chargement..."
+msgid "Network error."
+msgstr "Erreur réseau."
+msgid "Help Center"
+msgstr "Centre d'aide"
+msgid "Welcome to the Business usage guide. Find here all the answers to your questions."
+msgstr "Bienvenue dans le guide d'utilisation de Business. Trouvez ici toutes les réponses à vos questions."
+msgid "Table of contents"
+msgstr "Table des matières"
+msgid "About"
+msgstr "À propos"
+
+msgid "Change language"
+msgstr "Changer de langue"
+
+msgid "Welcome to Business!"
+msgstr "Bienvenue sur Business !"
+
+msgid "Business is a local platform for exchange and sharing. Here, you can give a second life to your objects by exchanging them, or share your skills by offering services."
+msgstr "Business est une plateforme locale d'échange et de partage. Ici, vous pouvez donner une seconde vie à vos objets en les échangeant, ou partager vos compétences en proposant des services."
+
+msgid "To start interacting with the community, discover all the features, and post your own ads, creating an account is necessary. Join us!"
+msgstr "Pour commencer à interagir avec la communauté, découvrir toutes les fonctionnalités et publier vos propres annonces, la création d'un compte est nécessaire. Rejoignez-nous !"
+
+msgid "Sign up for free"
+msgstr "S'inscrire gratuitement"
+
+msgid "6. For Visitors"
+msgstr "6. Pour les visiteurs"
+
+msgid "Discovering the Platform"
+msgstr "Découvrir la plateforme"
+
+msgid "Even without an account, you can browse the latest ads. In the navigation bar, you will find an \"About\" icon (?) that explains the concept of the application and a globe icon to change the display language."
+msgstr "Même sans compte, vous pouvez parcourir les dernières annonces. Dans la barre de navigation, vous trouverez une icône \"À propos\" (?) qui explique le concept de l'application et une icône globe pour changer la langue d'affichage."
+
+msgid "Why Register?"
+msgstr "Pourquoi s'inscrire ?"
+
+msgid "Registration is free and necessary to unlock all features: contact other members, post your own ads, save your favorites, and much more."
+msgstr "L'inscription est gratuite et nécessaire pour débloquer toutes les fonctionnalités : contacter d'autres membres, publier vos propres annonces, sauvegarder vos favoris, et bien plus encore."
+
+msgid "Language:"
+msgstr "Langue :"
+
+msgid "Change the application language for your account. This choice will be saved for your future visits."
+msgstr "Changez la langue de l'application pour votre compte. Ce choix sera sauvegardé pour vos futures visites."
+
+msgid "Theme:"
+msgstr "Thème :"
+
+msgid "Switch between light and dark themes using the sun/moon icon in the top navigation bar."
+msgstr "Basculez entre les thèmes clair et sombre en utilisant l'icône soleil/lune dans la barre de navigation supérieure."
+# Nouvelles traductions pour la page d'aide et autres
+msgid "1. First Steps on Business"
+msgstr "1. Premiers pas sur Business"
+
+msgid "2. Posting and Managing Your Ads"
+msgstr "2. Publier et Gérer Vos Annonces"
+
+msgid "3. Interacting with the Community"
+msgstr "3. Interagir avec la Communauté"
+
+msgid "4. Using Private Messaging"
+msgstr "4. Utiliser la Messagerie Privée"
+
+msgid "5. Managing Your Account and Settings"
+msgstr "5. Gérer Votre Compte et Paramètres"
+
+msgid "6. For Visitors (Without an Account)"
+msgstr "6. Pour les Visiteurs (Sans Compte)"
+
+msgid "Your Department"
+msgstr "Votre Département"
+
+msgid "Detecting location..."
+msgstr "Détection de la localisation..."
+
+msgid "Press to select"
+msgstr "Appuyez pour sélectionner"
+
+msgid "No locations available"
+msgstr "Aucune localisation disponible"
+
+msgid "No results found"
+msgstr "Aucun résultat trouvé"
+
+msgid "Select your department..."
+msgstr "Sélectionnez votre département..."
+
+msgid "Current position"
+msgstr "Position actuelle"
+
+msgid "Socket.IO Connected."
+msgstr "Socket.IO Connecté."
+
+# Strings from JavaScript files
+
+msgid "Publishing..."
+msgstr "Publication en cours..."
+
+msgid "Uploading..."
+msgstr "Téléchargement en cours..."
+
+msgid "Updating..."
+msgstr "Mise à jour en cours..."
+
+msgid "Are you sure you want to delete this ad?"
+msgstr "Êtes-vous sûr de vouloir supprimer cette annonce ?"
+
+msgid "Are you sure you want to hide this ad?"
+msgstr "Êtes-vous sûr de vouloir masquer cette annonce ?"
+
+msgid "Are you sure you want to show this ad?"
+msgstr "Êtes-vous sûr de vouloir afficher cette annonce ?"
+
+msgid "Failed to delete ad."
+msgstr "Échec de la suppression de l'annonce."
+
+msgid "An error occurred while deleting the ad."
+msgstr "Une erreur s'est produite lors de la suppression de l'annonce."
+
+msgid "Failed to update visibility."
+msgstr "Échec de la mise à jour de la visibilité."
+
+msgid "An error occurred while updating the visibility."
+msgstr "Une erreur s'est produite lors de la mise à jour de la visibilité."
+
+msgid "Hide selection"
+msgstr "Masquer la sélection"
+
+msgid "Show selection"
+msgstr "Afficher la sélection"
+
+msgid "Delete selection"
+msgstr "Supprimer la sélection"
+
+msgid "Cancel selection"
+msgstr "Annuler la sélection"
+
+msgid "Hide all selected ads?"
+msgstr "Masquer toutes les annonces sélectionnées ?"
+
+msgid "Show all selected ads?"
+msgstr "Afficher toutes les annonces sélectionnées ?"
+
+msgid "Permanently delete the selected ads?"
+msgstr "Supprimer définitivement les annonces sélectionnées ?"
+
+msgid "Failed to perform action."
+msgstr "Échec de l'exécution de l'action."
+
+msgid "You haven't posted any ads yet. Time to create your first one!"
+msgstr "Vous n'avez pas encore publié d'annonces. Il est temps de créer votre première !"
+
+msgid "Press to select"
+msgstr "Appuyez pour sélectionner"
+
+msgid "Detecting location..."
+msgstr "Détection de l'emplacement..."
+
+msgid "No locations available"
+msgstr "Aucun emplacement disponible"
+
+msgid "No results found"
+msgstr "Aucun résultat trouvé"
+
+msgid "Select your department..."
+msgstr "Sélectionnez votre département..."
+
+msgid "Select your department... (Geolocation blocked)"
+msgstr "Sélectionnez votre département... (Géolocalisation bloquée)"
+
+msgid "Select your department... (Allow location access?)"
+msgstr "Sélectionnez votre département... (Autoriser l'accès à la localisation ?)"
+
+msgid "Select your department... (Not supported)"
+msgstr "Sélectionnez votre département... (Non supporté)"
+
+msgid "Current position"
+msgstr "Position actuelle"
+
+msgid "Error loading locations"
+msgstr "Erreur lors du chargement des emplacements"
+
+msgid "Me"
+msgstr "Moi"
+
+msgid "Gallery"
+msgstr "Galerie"
+
+msgid "Camera"
+msgstr "Caméra"
+
+msgid "Document"
+msgstr "Document"
+
+msgid "Emojis"
+msgstr "Émojis"
+
+msgid "Attach file"
+msgstr "Joindre un fichier"
+
+msgid "Message"
+msgstr "Message"
+
+msgid "Video"
+msgstr "Vidéo"
+
+msgid "Delete messages?"
+msgstr "Supprimer les messages ?"
+
+msgid "Are you sure you want to delete this conversation? This action is irreversible."
+msgstr "Êtes-vous sûr de vouloir supprimer cette conversation ? Cette action est irréversible."
+
+msgid "Error during deletion."
+msgstr "Erreur lors de la suppression."
+
+msgid "A network error has occurred."
+msgstr "Une erreur réseau s'est produite."
+
+msgid "Delete conversation"
+msgstr "Supprimer la conversation"
+
+msgid "Mark the %(count)s as read"
+msgstr "Marquer les %(count)s comme lus"
+
+msgid "Delete the %(count)s"
+msgstr "Supprimer les %(count)s"
+
+msgid "Mark as read"
+msgstr "Marquer comme lu"
+
+msgid "Delete"
+msgstr "Supprimer"
+
+msgid "Do you really want to delete ALL your notifications?"
+msgstr "Voulez-vous vraiment supprimer TOUTES vos notifications ?"
+
+msgid "Do you really want to delete the %(count)s selected notifications?"
+msgstr "Voulez-vous vraiment supprimer les %(count)s notifications sélectionnées ?"
+
+msgid "[User]"
+msgstr "[Utilisateur]"
+
+msgid "Signing up..."
+msgstr "Inscription en cours..."
+
+msgid "Please select your department."
+msgstr "Veuillez sélectionner votre département."
+
+msgid "Password reset successfully! Redirecting..."
+msgstr "Mot de passe réinitialisé avec succès ! Redirection..."
+
+msgid "Upload error"
+msgstr "Erreur de téléchargement"
+
+msgid "Do you really want to log out?"
+msgstr "Voulez-vous vraiment vous déconnecter ?"
+
+msgid "Error deleting."
+msgstr "Erreur lors de la suppression."
+
+msgid "Photo updated!"
+msgstr "Photo mise à jour !"
+
+msgid "Photo deleted."
+msgstr "Photo supprimée."
+
+msgid "What are you looking for today?"
+msgstr "Que recherchez-vous aujourd'hui ?"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Contact by message"
+msgstr "Contacter par message"
+
+# Titles from HTML/JS (Remember to replace static titles in HTML with {{ _('...') }} )
+
+msgid "Your Title"
+msgstr "Votre titre"
+
+msgid "Delete image"
+msgstr "Supprimer l'image"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Sort: Newest"
+msgstr "Trier : Plus récent"
+
+msgid "Sort: Oldest"
+msgstr "Trier : Plus ancien"
+
+msgid "Type (All)"
+msgstr "Type (Tout)"
+msgid "Search for an object or service..."
+msgstr "Rechercher un objet ou un service..."

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}{{ _('All ads') }} - Troquez-Ici{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h2>{{ _('All Ads') }}</h2>
+    
+    <div class="modern-search-bar">
+        <i class="fa-solid fa-search"></i>
+        <input type="search" id="search-input" placeholder="{{ _('Search for an object or service...') }}">
+    </div>
+</div>
+<div class="filters-and-nav-container">
+    <div class="filters-bar-new">
+        <div class="filter-group">
+            <i class="fa-solid fa-filter"></i>
+            <select id="type-filter">
+                <option value="">{{ _('Type (All)') }}</option>
+                <option value="Offre">{{ _('Offers') }}</option>
+                <option value="Demande">{{ _('Requests') }}</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <i class="fa-solid fa-sort-amount-down"></i>
+            <select id="sort-filter">
+                <option value="newest">{{ _('Sort: Newest') }}</option>
+                <option value="oldest">{{ _('Sort: Oldest') }}</option>
+            </select>
+        </div>
+        
+    <div class="filter-group">
+    <i class="fa-solid fa-map-marker-alt"></i>
+    <select id="location-filter" multiple></select>
+</div>
+    </div>
+
+    <div class="category-nav">
+        <button class="category-nav-item active" data-category="">
+            <i class="fa-solid fa-grip"></i>
+            <span>{{ _('All') }}</span>
+        </button>
+        <button class="category-nav-item" data-category="Service">
+            <i class="fa-solid fa-handshake-angle"></i>
+            <span>{{ _('Services') }}</span>
+        </button>
+        <button class="category-nav-item" data-category="Objet">
+            <i class="fa-solid fa-box-open"></i>
+            <span>{{ _('Objects') }}</span>
+        </button>
+    </div>
+</div>
+
+<div id="message-container"></div>
+<div id="posts-list-container" class="posts-grid">
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+<script src="{{ url_for('static', filename='js/geolocation.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/posts.js') }}"></script>
+{% endblock %}

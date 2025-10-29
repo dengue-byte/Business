@@ -1,0 +1,596 @@
+# English translations (source)
+msgid ""
+msgstr ""
+"Project-Id-Version: Business App\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-23 00:00+0000\n"
+"PO-Revision-Date: 2025-09-23 00:00+0000\n"
+"Last-Translator: Grok\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+# From base.html
+msgid "Home"
+msgstr "Home"
+
+msgid "Posts"
+msgstr "Posts"
+
+msgid "Messages"
+msgstr "Messages"
+
+msgid "My Posts"
+msgstr "My Posts"
+
+msgid "Search..."
+msgstr "Search..."
+
+msgid "Change theme"
+msgstr "Change theme"
+
+msgid "Profile"
+msgstr "Profile"
+
+msgid "My Favorites"
+msgstr "My Favorites"
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "Help"
+msgstr "Help"
+
+msgid "Logout"
+msgstr "Logout"
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Register"
+msgstr "Register"
+
+msgid "All rights reserved."
+msgstr "All rights reserved."
+
+# From create_post.html
+msgid "What do you want to post?"
+msgstr "What do you want to post?"
+
+msgid "Choose the type of your post to start."
+msgstr "Choose the type of your post to start."
+
+msgid "Publish a Service"
+msgstr "Publish a Service"
+
+msgid "Publish an Object"
+msgstr "Publish an Object"
+
+msgid "Post Title"
+msgstr "Post Title"
+
+msgid "Description"
+msgstr "Description"
+
+msgid "Post Type"
+msgstr "Post Type"
+
+msgid "I offer this service/object"
+msgstr "I offer this service/object"
+
+msgid "I request this service/object"
+msgstr "I request this service/object"
+
+msgid "Image(s) (hold Ctrl to select multiple)"
+msgstr "Image(s) (hold Ctrl to select multiple)"
+
+msgid "Create the post"
+msgstr "Create the post"
+
+# From edit_post.html
+msgid "Edit the post"
+msgstr "Edit the post"
+
+msgid "Current Image"
+msgstr "Current Image"
+
+msgid "Change or add an image"
+msgstr "Change or add an image"
+
+msgid "Update the post"
+msgstr "Update the post"
+
+# From favorites.html
+msgid "My Favorites"
+msgstr "My Favorites"
+
+msgid "Clear the list"
+msgstr "Clear the list"
+
+# From forgot_password.html
+msgid "Reset Password"
+msgstr "Reset Password"
+
+msgid "Enter your email address and we will send you a link to reset your password."
+msgstr "Enter your email address and we will send you a link to reset your password."
+
+msgid "Email Address"
+msgstr "Email Address"
+
+msgid "Send reset link"
+msgstr "Send reset link"
+
+msgid "Back to login"
+msgstr "Back to login"
+
+# From help.html
+msgid "Help Center"
+msgstr "Help Center"
+
+msgid "Welcome to the Business usage guide. Find all answers to your questions here."
+msgstr "Welcome to the Business usage guide. Find all answers to your questions here."
+
+msgid "Table of Contents"
+msgstr "Table of Contents"
+
+msgid "Quick Start"
+msgstr "Quick Start"
+
+msgid "Create an account and log in"
+msgstr "Create an account and log in"
+
+msgid "To enjoy all features, you must first create an account. Click on the user icon at the top right, then on 'Register'. Fill in the form with a username, a valid email address, and a secure password. A confirmation email will be sent to activate your account."
+msgstr "To enjoy all features, you must first create an account. Click on the user icon at the top right, then on 'Register'. Fill in the form with a username, a valid email address, and a secure password. A confirmation email will be sent to activate your account."
+
+msgid "Once your account is activated, you can log in via the same user menu by clicking on 'Login'."
+msgstr "Once your account is activated, you can log in via the same user menu by clicking on 'Login'."
+
+msgid "Navigating the Application"
+msgstr "Navigating the Application"
+
+msgid "The interface is designed to be simple and intuitive, whether on mobile or computer."
+msgstr "The interface is designed to be simple and intuitive, whether on mobile or computer."
+
+msgid "On Mobile"
+msgstr "On Mobile"
+
+msgid "Navigation is done on two levels at the top of the screen:"
+msgstr "Navigation is done on two levels at the top of the screen:"
+
+msgid "The top bar: Contains the logo, a shortcut to change theme (moon/sun), and the user menu (your profile icon) which gives access to your favorites, settings, and logout."
+msgstr "The top bar: Contains the logo, a shortcut to change theme (moon/sun), and the user menu (your profile icon) which gives access to your favorites, settings, and logout."
+
+msgid "The icons bar: Just below, it allows access to the main sections: Home, My Posts, Create a post, Messages, and All posts."
+msgstr "The icons bar: Just below, it allows access to the main sections: Home, My Posts, Create a post, Messages, and All posts."
+
+msgid "On Computer"
+msgstr "On Computer"
+
+msgid "Navigation is grouped into a single bar at the top of the screen. You will find the logo, the main links (Home, Posts, My Posts) in the center, and actions (theme, search, user menu) on the right."
+msgstr "Navigation is grouped into a single bar at the top of the screen. You will find the logo, the main links (Home, Posts, My Posts) in the center, and actions (theme, search, user menu) on the right."
+
+msgid "Manage Posts"
+msgstr "Manage Posts"
+
+msgid "Create a post"
+msgstr "Create a post"
+
+msgid "Click on the 'Create' icon (plus circle). You must first choose if you are offering a Service or an Object. Then fill in the form with a clear title, a detailed description, and specify if it's an offer or a request. You can add multiple photos to your post."
+msgstr "Click on the 'Create' icon (plus circle). You must first choose if you are offering a Service or an Object. Then fill in the form with a clear title, a detailed description, and specify if it's an offer or a request. You can add multiple photos to your post."
+
+msgid "Manage 'My Posts'"
+msgstr "Manage 'My Posts'"
+
+msgid "This section groups all the posts you have published. For each post, you have three options:"
+msgstr "This section groups all the posts you have published. For each post, you have three options:"
+
+msgid "Hide/Show: Allows to temporarily make a post invisible to other users."
+msgstr "Hide/Show: Allows to temporarily make a post invisible to other users."
+
+msgid "Edit: Opens the editing form to change the title, description, or photos."
+msgstr "Edit: Opens the editing form to change the title, description, or photos."
+
+msgid "Delete: Permanently deletes the post."
+msgstr "Delete: Permanently deletes the post."
+
+msgid "Use Messaging"
+msgstr "Use Messaging"
+
+msgid "Messaging allows you to discuss privately and securely with other users."
+msgstr "Messaging allows you to discuss privately and securely with other users."
+
+msgid "Start a conversation"
+msgstr "Start a conversation"
+
+msgid "To contact a user, go to one of their posts and click on the 'Contact via Message' button. This will create a new conversation in your messaging."
+msgstr "To contact a user, go to one of their posts and click on the 'Contact via Message' button. This will create a new conversation in your messaging."
+
+msgid "Features"
+msgstr "Features"
+
+msgid "Text, voice, and image messages: You can send written messages, record voice notes by holding the microphone icon, or attach files (paperclip icon)."
+msgstr "Text, voice, and image messages: You can send written messages, record voice notes by holding the microphone icon, or attach files (paperclip icon)."
+
+msgid "Reply to a message: Hover over a message to display a reply icon. Click on it to quote this message in your response."
+msgstr "Reply to a message: Hover over a message to display a reply icon. Click on it to quote this message in your response."
+
+msgid "Evaluate a user: After an interaction, you can leave an evaluation for your interlocutor using the 'Evaluate' button at the top of the conversation."
+msgstr "Evaluate a user: After an interaction, you can leave an evaluation for your interlocutor using the 'Evaluate' button at the top of the conversation."
+
+msgid "Manage your Account"
+msgstr "Manage your Account"
+
+msgid "The Settings page"
+msgstr "The Settings page"
+
+msgid "Accessible from the user menu, the 'Settings' page allows you to control your account. You can:"
+msgstr "Accessible from the user menu, the 'Settings' page allows you to control your account. You can:"
+
+msgid "Modify your username and email."
+msgstr "Modify your username and email."
+
+msgid "Change your password."
+msgstr "Change your password."
+
+msgid "Log out."
+msgstr "Log out."
+
+msgid "Permanently delete your account (caution, this action is irreversible)."
+msgstr "Permanently delete your account (caution, this action is irreversible)."
+
+# From index.html
+msgid "Exchange, Share, Discover."
+msgstr "Exchange, Share, Discover."
+
+msgid "Give a second life to your objects and share your services with a benevolent local community."
+msgstr "Give a second life to your objects and share your services with a benevolent local community."
+
+msgid "View all posts"
+msgstr "View all posts"
+
+msgid "Latest Posts"
+msgstr "Latest Posts"
+
+msgid "No post for the moment. Be the first to create one!"
+msgstr "No post for the moment. Be the first to create one!"
+
+# From login.html
+msgid "Log in"
+msgstr "Log in"
+
+msgid "Happy to see you again!"
+msgstr "Happy to see you again!"
+
+msgid "Password forgotten?"
+msgstr "Password forgotten?"
+
+msgid "Log in"
+msgstr "Log in"
+
+msgid "Don't have an account yet? Register here."
+msgstr "Don't have an account yet? Register here."
+
+# From messages.html
+msgid "Your messaging"
+msgstr "Your messaging"
+
+msgid "Select a conversation to start."
+msgstr "Select a conversation to start."
+
+msgid "Conversations"
+msgstr "Conversations"
+
+msgid "No conversation."
+msgstr "No conversation."
+
+msgid "Start the conversation!"
+msgstr "Start the conversation!"
+
+msgid "Loading..."
+msgstr "Loading..."
+
+msgid "Write your message..."
+msgstr "Write your message..."
+
+msgid "Evaluate"
+msgstr "Evaluate"
+
+msgid "Evaluate the user"
+msgstr "Evaluate the user"
+
+msgid "What rating would you give to"
+msgstr "What rating would you give to"
+
+msgid "Add a comment (optional)"
+msgstr "Add a comment (optional)"
+
+msgid "Send the evaluation"
+msgstr "Send the evaluation"
+
+# From my_posts.html
+msgid "My posts"
+msgstr "My posts"
+
+# From post_detail.html
+msgid "Published by"
+msgstr "Published by"
+
+msgid "You must be logged in to contact the author."
+msgstr "You must be logged in to contact the author."
+
+msgid "This is your post. You can edit it here."
+msgstr "This is your post. You can edit it here."
+
+msgid "Contact via Message"
+msgstr "Contact via Message"
+
+# From posts.html
+msgid "All posts"
+msgstr "All posts"
+
+msgid "Type :"
+msgstr "Type :"
+
+msgid "All"
+msgstr "All"
+
+msgid "Offers"
+msgstr "Offers"
+
+msgid "Requests"
+msgstr "Requests"
+
+msgid "Sort by :"
+msgstr "Sort by :"
+
+msgid "Newest"
+msgstr "Newest"
+
+msgid "Oldest"
+msgstr "Oldest"
+
+msgid "All"
+msgstr "All"
+
+msgid "Services"
+msgstr "Services"
+
+msgid "Objects"
+msgstr "Objects"
+
+# From profile.html
+msgid "Member since"
+msgstr "Member since"
+
+msgid "on 5"
+msgstr "on 5"
+
+msgid "Posts of"
+msgstr "Posts of"
+
+msgid "has not published any post yet."
+msgstr "has not published any post yet."
+
+msgid "Received Ratings"
+msgstr "Received Ratings"
+
+msgid "has not received any rating yet."
+msgstr "has not received any rating yet."
+
+# From register.html
+msgid "Create an account"
+msgstr "Create an account"
+
+msgid "Join our exchange and sharing community."
+msgstr "Join our exchange and sharing community."
+
+msgid "Username"
+msgstr "Username"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "At least 6 characters"
+msgstr "At least 6 characters"
+
+msgid "One lowercase letter"
+msgstr "One lowercase letter"
+
+msgid "One uppercase letter"
+msgstr "One uppercase letter"
+
+msgid "One digit"
+msgstr "One digit"
+
+msgid "Confirm password"
+msgstr "Confirm password"
+
+msgid "Register"
+msgstr "Register"
+
+msgid "Already have an account? Log in here."
+msgstr "Already have an account? Log in here."
+
+# From reset_password.html
+msgid "Choose a new password"
+msgstr "Choose a new password"
+
+msgid "Please enter your new password below."
+msgstr "Please enter your new password below."
+
+msgid "New password"
+msgstr "New password"
+
+msgid "Confirm new password"
+msgstr "Confirm new password"
+
+msgid "Reset password"
+msgstr "Reset password"
+
+# From select_language.html
+msgid "Welcome / Bienvenue"
+msgstr "Welcome / Bienvenue"
+
+msgid "Please select your language. / Veuillez sélectionner votre langue."
+msgstr "Please select your language. / Veuillez sélectionner votre langue."
+
+# From settings.html
+msgid "Language"
+msgstr "Language"
+
+msgid "Change the application language"
+msgstr "Change the application language"
+
+msgid "Modify information"
+msgstr "Modify information"
+
+msgid "Username, email"
+msgstr "Username, email"
+
+msgid "Security and password"
+msgstr "Security and password"
+
+msgid "Change your password"
+msgstr "Change your password"
+
+msgid "Change account"
+msgstr "Change account"
+
+msgid "Log out"
+msgstr "Log out"
+
+msgid "Delete account"
+msgstr "Delete account"
+
+msgid "This action is irreversible"
+msgstr "This action is irreversible"
+
+msgid "Save"
+msgstr "Save"
+
+msgid "Current password"
+msgstr "Current password"
+
+msgid "New password"
+msgstr "New password"
+
+msgid "Update"
+msgstr "Update"
+
+msgid "Are you absolutely sure?"
+msgstr "Are you absolutely sure?"
+
+msgid "This action cannot be undone. Your account and all your data will be permanently deleted."
+msgstr "This action cannot be undone. Your account and all your data will be permanently deleted."
+
+msgid "Confirm with your password"
+msgstr "Confirm with your password"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Permanently delete"
+msgstr "Permanently delete"
+
+# From error messages and other dynamic strings
+msgid "Missing required fields"
+msgstr "Missing required fields"
+
+msgid "Password does not meet security criteria."
+msgstr "Password does not meet security criteria."
+
+msgid "This username already exists"
+msgstr "This username already exists"
+
+msgid "This email address is already in use"
+msgstr "This email address is already in use"
+
+msgid "Registration successful! Please check your email to confirm your account."
+msgstr "Registration successful! Please check your email to confirm your account."
+
+msgid "Your account has not been confirmed. Please check your email."
+msgstr "Your account has not been confirmed. Please check your email."
+
+msgid "Incorrect email address or password."
+msgstr "Incorrect email address or password."
+
+msgid "No file part"
+msgstr "No file part"
+
+msgid "Invalid or disallowed file"
+msgstr "Invalid or disallowed file"
+
+msgid "Post not found"
+msgstr "Post not found"
+
+msgid "Unauthorized"
+msgstr "Unauthorized"
+
+msgid "Logout successful"
+msgstr "Logout successful"
+
+msgid "Post created successfully!"
+msgstr "Post created successfully!"
+
+msgid "Post updated successfully"
+msgstr "Post updated successfully"
+
+msgid "Post deleted"
+msgstr "Post deleted"
+
+msgid "Visibility changed"
+msgstr "Visibility changed"
+
+msgid "Favorites list cleared."
+msgstr "Favorites list cleared."
+
+msgid "Invalid action"
+msgstr "Invalid action"
+
+msgid "Thank you for your evaluation!"
+msgstr "Thank you for your evaluation!"
+
+msgid "You cannot rate yourself."
+msgstr "You cannot rate yourself."
+
+msgid "You have already rated this user."
+msgstr "You have already rated this user."
+
+msgid "The link is invalid or has expired."
+msgstr "The link is invalid or has expired."
+
+msgid "If an account with this email exists, a reset link has been sent."
+msgstr "If an account with this email exists, a reset link has been sent."
+
+msgid "Profile updated successfully!"
+msgstr "Profile updated successfully!"
+
+msgid "The current password is incorrect."
+msgstr "The current password is incorrect."
+
+msgid "Password changed successfully!"
+msgstr "Password changed successfully!"
+
+msgid "The password is incorrect."
+msgstr "The password is incorrect."
+
+msgid "Account deleted successfully."
+msgstr "Account deleted successfully."
+
+msgid "No post selected."
+msgstr "No post selected."
+
+msgid "Invalid action or selection."
+msgstr "Invalid action or selection."
+
+msgid "Subscription saved."
+msgstr "Subscription saved."
+
+msgid "Language updated successfully!"
+msgstr "Language updated successfully!"
+
+msgid "Invalid language selected."
+msgstr "Invalid language selected."
