@@ -35,7 +35,6 @@ app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD', 'qsypazfsfylmpmbr'
 app.config['MAIL_DEFAULT_SENDER'] = ('Business', app.config['MAIL_USERNAME'])
 mail = Mail(app)
 s = URLSafeTimedSerializer(app.config['SECRET_KEY'])
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 app.config["JWT_SECRET_KEY"] = "another-super-secret-key-for-jwt"
@@ -1459,7 +1458,18 @@ def on_delete_multiple_messages(data):
     emit('messages_deleted', {'message_ids': deleted_ids}, to=str(chatroom_id))
 
 # --- Démarrage de l'application ---
+
+# AJOUTE CE BLOC POUR CRÉER UNE COMMANDE PERSONNALISÉE
+@app.cli.command("init-db")
+def init_db_command():
+    """Crée les tables de la base de données."""
+    with app.app_context():
+        db.create_all()
+    print("Base de données initialisée !")
+
+# TON ANCIEN BLOC RESTE INCHANGÉ, IL SERVIRA POUR LE DÉVELOPPEMENT LOCAL
 if __name__ == '__main__':
+    # Tu peux même garder le create_all() ici pour la facilité en local
     with app.app_context(): 
         db.create_all()
     socketio.run(app, debug=True, host='0.0.0.0', port=5000)
