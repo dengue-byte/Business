@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, send_from_directory, render_template, redirect, url_for, g, abort, session
 from werkzeug.utils import secure_filename
-from search_service import search_service, _preprocess_text
+#from search_service import search_service, _preprocess_text
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import (
@@ -685,12 +685,12 @@ def get_posts_api():
     locations_filter = request.args.getlist('locations')
     base_query = Post.query.filter_by(is_visible=True)
     if search_term:
-        semantic_ids = search_service.semantic_search(search_term, k=100)
+        #semantic_ids = search_service.semantic_search(search_term, k=100)
         keyword_query = Post.query.with_entities(Post.id).filter(
             Post.title.ilike(f'%{search_term}%') | Post.description.ilike(f'%{search_term}%')
         )
         keyword_ids = [item[0] for item in keyword_query.all()]
-        combined_ids = list(dict.fromkeys(semantic_ids + keyword_ids))
+        combined_ids = list(dict.fromkeys((keyword_ids)))
         if not combined_ids:
             return jsonify(success=True, posts=[], has_next=False)
         base_query = base_query.filter(Post.id.in_(combined_ids))
