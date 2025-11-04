@@ -1,3 +1,5 @@
+import eventlet
+eventlet.monkey_patch()
 from flask import Flask, jsonify, request, send_from_directory, render_template, redirect, url_for, g, abort, session
 from werkzeug.utils import secure_filename
 #from search_service import search_service, _preprocess_text
