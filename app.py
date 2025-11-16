@@ -116,7 +116,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    password_hash = db.Column(db.String(120), nullable=False)
+    password_hash = db.Column(db.String(256), nullable=False)
     is_confirmed = db.Column(db.Boolean, nullable=False, default=False)
     member_since = db.Column(db.DateTime(), default=lambda: datetime.now(timezone.utc))
     preferred_language = db.Column(db.String(5), default='fr')
